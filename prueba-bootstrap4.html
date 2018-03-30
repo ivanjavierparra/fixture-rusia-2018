@@ -18,6 +18,14 @@
             body {
                 background-image: url(static/img/fondo.jpg);
             }
+            .col-14 {
+                flex: 0 0 14%;
+                max-width: 14%;
+            }
+            .col-16 {
+                flex: 0 0 16%;
+                max-width: 16%;
+            }
             #llaves-phone {
                 background-color: red;
                 padding: 20px;
@@ -249,7 +257,15 @@
             <p>llave para celulares</p>
         </div>
         <div id="llaves-desktop" class="container-fluid">
-            <p>llave para escritorio</p>
+            <div class="row">
+                <div class="col-14 text-center">Octavos</div>
+                <div class="col-14 text-center">Cuartos</div>
+                <div class="col-14 text-center">Semis</div>
+                <div class="col-16 text-center">Final</div>
+                <div class="col-14 text-center">Semis</div>
+                <div class="col-14 text-center">Cuartos</div>
+                <div class="col-14 text-center">Octavos</div>
+            </div>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
