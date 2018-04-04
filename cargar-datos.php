@@ -1,4 +1,4 @@
-<?php
+    <?php
     /**
     * Esta clase representa un equipo que compite en el mundial de Rusia 2018
     */
@@ -91,9 +91,11 @@
 
     
     $myJSON = json_encode($grupoa);
+    header('Content-Type: application/json');
     echo $myJSON;
 
 
     //hacer funcion en html que cuando se cargue el documento obtenga los datos.
+    //Hacer posición 1 y posición 2 en Grupo. Metele Ivan!! :D
 ?>
 
