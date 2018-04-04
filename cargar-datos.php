@@ -1,58 +1,98 @@
 <?php
-   $array=array(
-    "grupoa"=>array(
-     array("pais"=>"RUSIA"),
-     array("pais"=>"ARABIA SAUDITA"),
-     array("pais"=>"EGIPTO"),
-     array("pais"=>"URUGUAY")
-    ),
-    "grupob"=>array(
-     array("pais"=>"PORTUGAL"),
-     array("pais"=>"ESPAÑA"),
-     array("pais"=>"MARRUECOS"),
-     array("pais"=>"IRÁN")
-    ),
-    "grupoc"=>array(
-        array("pais"=>"FRANCIA"),
-        array("pais"=>"AUSTRALIA"),
-        array("pais"=>"PERÚ"),
-        array("pais"=>"DINAMARCA")
-    ),
-    "grupod"=>array(
-        array("pais"=>"ARGENTINA"),
-        array("pais"=>"ISLANDIA"),
-        array("pais"=>"CROACIA"),
-        array("pais"=>"NIGERIA")
-    ),
-    "grupoe"=>array(
-        array("pais"=>"BRASIL"),
-        array("pais"=>"SUIZA"),
-        array("pais"=>"COSTA RICA"),
-        array("pais"=>"SERBIA")
-    ),
-    "grupof"=>array(
-        array("pais"=>"ALEMANIA"),
-        array("pais"=>"MÉXICO"),
-        array("pais"=>"SUECIA"),
-        array("pais"=>"COREA DEL SUR")
-    ),
-    "grupog"=>array(
-        array("pais"=>"BÉLGICA"),
-        array("pais"=>"PANAMÁ"),
-        array("pais"=>"TÚNEZ"),
-        array("pais"=>"INGLATERRA")
-    ),
-    "grupoh"=>array(
-        array("pais"=>"POLONIA"),
-        array("pais"=>"SENEGAL"),
-        array("pais"=>"COLOMBIA"),
-        array("pais"=>"JAPÓN")
-       )
-    );
+    /**
+    * Esta clase representa un equipo que compite en el mundial de Rusia 2018
+    */
+    class Equipo 
+    {
+        public $nombre;
+        
+        function __construct($nombre)
+        {
+            $this->nombre = $nombre;
+        }
+    }
 
-    $myJSON = json_encode($array);
+    class Estadio
+    {
+        public $nombre;
+        public $ciudad;
+        public $capacidad;
+        
+        function __construct($nombre,$ciudad,$capacidad)
+        {
+            $this->nombre = $nombre;
+            $this->ciudad = $ciudad;
+            $this->capacidad = $capacidad;
+        }
+    }
+
+
+    class Partido
+    {
+        public $equipoLocal;
+        public $equipoVisitante;
+        public $estadio;
+        public $dia;
+        public $mes;
+        public $hora;
+
+        function __construct($equipoLocal,$equipoVisitante,$estadio,$dia,$mes,$hora)
+        {
+            $this->equipoLocal = $equipoLocal;
+            $this->equipoVisitante = $equipoVisitante;
+            $this->estadio = $estadio;
+            $this->dia = $dia;
+            $this->mes = $mes;
+            $this->hora = $hora;
+        }
+
+    }
+
+    class Grupo 
+    {
+        public $letra;
+        public $equipos;
+        public $partidos;
+
+        function __construct($letra, $equipos, $partidos)
+        {
+            $this->letra = $letra;
+            $this->equipos = $equipos;
+            $this->partidos = $partidos;
+        }
+
+    }
+
+    $estadioUno = new Estadio("SPARTAK STADIUM","Moscú",43298);
+    $estadioDos = new Estadio("ESTADIO LUZHNIKI","Moscú",81000);
+    $estadioTres = new Estadio("KAZÁN ARENA","Kazán",44779);
+    $estadioCuatro = new Estadio("MORDAVIA ARENA","Saransk",44442);
+    $estadioCinco = new Estadio("SAMARA ARENA","Samara",44807);
+    $estadioSeis = new Estadio("EKATERIMBURGO ARENA","Ekaterimburgo",42500);
+    $estadioSiete = new Estadio("VOLGOGRADO ARENA","Volgogrado",45568);
+    $estadioOcho = new Estadio("ROSTOV ARENA","Rostov del Don",45145);
+    $estadioNueve = new Estadio("ESTADIO FISHT","Sochi",47700);
+    $estadioDiez = new Estadio("NIZHNY NÓVGOROD","Nizhny Novgorod",45331);
+    $estadioOnce = new Estadio("SAN PETERSBURGO STADIUM","San Petesburgo",68134);
+    $estadioDoce = new Estadio("ESTADIO DE KALININGRADO","Kaliningrado",35212);
+
+    $rusia = new Equipo("Rusia");
+    $arabia = new Equipo("Arabia Saudita");
+    $egipto = new Equipo("Egipto");
+    $uruguay = new Equipo("Uruguay");
+
+    $partidoRusiaArabia = new Partido($rusia,$arabia,$estadioUno,1,6,10);
+
+    $equipos = array($rusia,$arabia,$egipto,$uruguay);
+    $partidos = array($partidoRusiaArabia);
+
+    $grupoa = new Grupo("A",$equipos,$partidos);
+    
+
+    
+    $myJSON = json_encode($grupoa);
     echo $myJSON;
-    //http://codigo44.blogspot.com.ar/2016/04/crear-un-json-con-php.html
+
 
     //hacer funcion en html que cuando se cargue el documento obtenga los datos.
 ?>
