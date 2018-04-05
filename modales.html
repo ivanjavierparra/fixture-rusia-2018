@@ -727,6 +727,64 @@
         <script>
             //echo por diego...te devuelve un arreglo...el 0 contiene el json
             //$.get("http://localhostcargar-datos.php", function () { console.log(arguments); });
+			            var json;
+
+            function probar(){
+                $.get("http://localhost/fixture/cargar-datos.php", function () { 
+                                json = arguments[0]; 
+                                
+                            });
+                 /*$.getJSON("http://localhost/fixture/cargar-datos.php", function(){
+                    json = arguments[0];
+                });*/
+                           
+                var letra;
+                var equipos;
+                var partidos;
+                var posicion1;
+                var posicion2;
+                            
+               
+                if (typeof json !== 'undefined') {
+                    for (i = 0; i < json.length; i++) {
+                        letra = json[i].letra;
+                        equipos = json[i].equipos;
+                        partidos = json[i].partidos;
+                        posicion1 = json[i].posicion1;
+                        posicion2 = json[i].posicion2;
+                        console.log("GRUPO " + letra);
+                        console.log("Equipos: " + equipos[0].nombre);
+                        console.log("Partidos: " + partidos[0]);
+                        console.log("Posicion 1: " + posicion1);
+                        console.log("Posicion 2: " + posicion2);
+                    }
+                }else{
+                    //debemos volver a pedir...
+                }
+                
+
+            }
+
+			/* Otra forma de hacer lo mismo */
+            function probar2(){
+                 $.ajax({
+                            type: "GET", //rest Type
+                            dataType: 'json', //mispelled
+                            url: "http://localhost/fixture/cargar-datos.php",
+                            async: true,
+                            contentType: "application/json; charset=utf-8",
+                            success: function (msj) {
+                                console.log(msj);         
+                                json = msj;
+                            }
+                });
+                if (typeof json !== 'undefined') {
+                    console.log("BUENAS..." + json);         
+                }
+                else{
+                    //debemos volver a pedir...
+                }
+            }
         </script>
 
       <!-- Modal Info - http://es.fifa.com/worldcup/matches/index.html -->
