@@ -1,0 +1,74 @@
+@font-face {
+    font-family: rusiaFont;
+    src: url(../font/Rusia.ttf);
+}
+
+table,td,th {
+    font-size:15px;
+    background: #e4c275;
+    border-color: #e4c275;
+
+}
+thead {
+    text-align:center;
+}
+body {
+    background-image: url(../img/fondo4.png);
+    font-family: rusiaFont;
+    color: #183e53;
+}
+.col-14 {
+    flex: 0 0 14%;
+    max-width: 14%;
+}
+.col-16 {
+    flex: 0 0 16%;
+    max-width: 16%;
+}
+#fase1, #fase2, #fase3{
+    position: relative;
+    float: left;
+    flex-shrink: 0;
+}
+#fase4{
+    position: relative;
+    flex-shrink: 0;
+}
+#llaves-phone {
+    background-color: white;
+    padding: 20px;
+}
+#llaves-desktop {
+    background-color: yellow;
+    padding: 20px;
+}
+@media screen and (max-width: 768px) {
+    #llaves-desktop {
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) {
+    #llaves-phone {
+        display: none;
+    }
+}
+.line{
+    width: 112px;
+    height: 47px;
+    border-bottom: 1px solid black;
+    position: absolute;
+}
+.flecha_derecha {
+    width:0; 
+    height:0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid gold;
+}
+.flecha_izquierda{
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent; 
+    border-right:50px solid gold;
+}

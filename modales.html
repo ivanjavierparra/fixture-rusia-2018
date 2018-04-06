@@ -1,135 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-        <title>Hello, world!</title>
-
-        <style>
-            table,td,th {
-                font-size:20px;
-                background: white;
-            }
-			thead {
-				text-align:center;
-			}
-            body {
-                background-image: url(static/img/fondo.jpg);
-            }
-            .col-14 {
-                flex: 0 0 14%;
-                max-width: 14%;
-            }
-            .col-16 {
-                flex: 0 0 16%;
-                max-width: 16%;
-            }
-            #fase1, #fase2, #fase3{
-                position: relative;
-                float: left;
-                flex-shrink: 0;
-            }
-            #fase4{
-                position: relative;
-                flex-shrink: 0;
-            }
-            #llaves-phone {
-                background-color: white;
-                padding: 20px;
-            }
-            #llaves-desktop {
-                background-color: yellow;
-                padding: 20px;
-            }
-            @media screen and (max-width: 768px) {
-                #llaves-desktop {
-                    display: none;
-                }
-            }
-            @media screen and (min-width: 768px) {
-                #llaves-phone {
-                    display: none;
-                }
-            }
-            .line{
-                width: 112px;
-                height: 47px;
-                border-bottom: 1px solid black;
-                position: absolute;
-            }
-            .flecha_derecha {
-                width:0; 
-                height:0;
-                border-top: 50px solid transparent;
-                border-bottom: 50px solid transparent;
-                border-left: 50px solid gold;
-            }
-            .flecha_izquierda{
-                width: 0;
-                height: 0;
-                border-top: 50px solid transparent;
-                border-bottom: 50px solid transparent; 
-                border-right:50px solid gold;
-            }
-        </style>
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/estilos.css">
+        <title>Fixture Rusia 2018</title>
     </head>
     <body>
         <div id="grupos" class="container-fluid" style="margin-top:10px">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <!--<th id="1" style="visibility: hidden"></th>-->
-                                    <!--<button type="button" class="btn btn-primary btn-sm"></button>-->
-                                    <th>Grupo A <button class="btn btn-outline-success my-2 my-sm-0 float-right" data-toggle="modal" data-target="#modal-grupoa">+</button>
-                                            
-
+                                    <th>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                        Grupo A
                                     </th>
-                                    
+                                    <th>Pts.</th>
+                                    <th>+/-</th>
                                 </tr>
                             </thead>
                             <tbody id="grupoa">
-                                <tr class="table-primary" >
-                                    
-                                    <td id="grupoa1">
-                                        <img id="grupoa1-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoa1-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Rusia.png" height="38" width="38">RUSIA
-                                        <span class="float-right">0 Pts</span>
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Rusia.png" height="24" width="24">RUSIA
                                     </td>
-                                    
-                                    
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoa2">
-                                        <img id="grupoa2-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoa2-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/ArabiaSaudita.png" height="38" width="38">ARABIA SAUDITA
-                                        <span class="float-right">0 Pts</span>
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/ArabiaSaudita.png" height="24" width="24">ARABIA SAUDITA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoa3">
-                                        <img id="grupoa3-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoa3-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Egipto.png" height="38" width="38">EGIPTO
-                                        <span class="float-right">0 Pts</span>
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Egipto.png" height="24" width="24">EGIPTO   
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoa4">
-                                        <img id="grupoa4-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoa4-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Uruguay.png" height="38" width="38">URUGUAY
-                                        <span class="float-right">0 Pts</span>
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Uruguay.png" height="24" width="24">URUGUAY
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -137,40 +60,45 @@
                 </div>    
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Grupo B</th>
+                                    <th>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-b">+</button>
+                                        Grupo B
+                                    </th>
+                                    <th>Pts.</th>
+                                    <th>+/-</th>
                                 </tr>
                             </thead>
                             <tbody id="grupob">
-                                <tr class="table-primary">
-                                    <td id="grupob1">
-                                        <img id="grupob1-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupob1-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Portugal.png" height="38" width="38">PORTUGAL
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Portugal.png" height="24" width="24">PORTUGAL
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupob2">
-                                        <img id="grupob2-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupob2-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/España.png" height="38" width="38">ESPAÑA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/España.png" height="24" width="24">ESPAÑA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupob3">
-                                        <img id="grupob3-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupob3-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Marruecos.png" height="38" width="38">MARRUECOS
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Marruecos.png" height="24" width="24">MARRUECOS
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary"> 
-                                    <td id="grupob4">
-                                        <img id="grupob4-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupob4-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Iran.png" height="38" width="38">IRÁN
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Iran.png" height="24" width="24">IRÁN
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -178,40 +106,45 @@
                 </div>    
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Grupo C</th>
+                                    <th>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-c">+</button>
+                                        Grupo C
+                                    </th>
+                                    <th>Pts.</th>
+                                    <th>+/-</th>
                                 </tr>
                             </thead>
                             <tbody id="grupoc">
-                                <tr class="table-primary">
-                                    <td id="grupoc1">
-                                        <img id="grupoc1-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoc1-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Francia.png" height="38" width="38">FRANCIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Francia.png" height="24" width="24">FRANCIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoc2">
-                                        <img id="grupoc2-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoc2-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Australia.png" height="38" width="38">AUSTRALIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Australia.png" height="24" width="24">AUSTRALIA
                                     </td>
-                                </tr class="table-primary">
-                                <tr class="table-primary">
-                                    <td id="grupoc3">
-                                        <img id="grupoc3-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoc3-2" src="static/img/2.png" style="display: none"> 
-                                        <img src="static/img/banderas/Peru.png" height="38" width="38">PERÚ
-                                    </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoc4">
-                                        <img id="grupoc4-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoc4-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Dinamarca.png" height="38" width="38">DINAMARCA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Peru.png" height="24" width="24">PERÚ
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Dinamarca.png" height="24" width="24">DINAMARCA
+                                    </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -219,40 +152,45 @@
                 </div>    
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Grupo D</th>
+                                    <th>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-d">+</button>
+                                        Grupo D
+                                    </th>
+                                    <th>Pts.</th>
+                                    <th>+/-</th>
                                 </tr>
                             </thead>
                             <tbody id="grupod">
-                                <tr class="table-primary">
-                                    <td id="grupod1">
-                                        <img id="grupod1-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupod1-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Argentina.png" height="38" width="38">ARGENTINA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Argentina.png" height="24" width="24">ARGENTINA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupod2">
-                                        <img id="grupod2-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupod2-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Islandia.png" height="38" width="38">ISLANDIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Islandia.png" height="24" width="24">ISLANDIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupod3">
-                                        <img id="grupod3-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupod3-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Croacia.png" height="38" width="38">CROACIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Croacia.png" height="24" width="24">CROACIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupod4">
-                                        <img id="grupod4-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupod4-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Nigeria.png" height="24" width="24">NIGERIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -262,40 +200,45 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Grupo E</th>
+                                    <th>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-e">+</button>
+                                        Grupo E
+                                    </th>
+                                    <th>Pts.</th>
+                                    <th>+/-</th>
                                 </tr>
                             </thead>
                             <tbody id="grupoe">
-                                <tr class="table-primary">
-                                    <td id="grupoe1">
-                                        <img id="grupoe1-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoe1-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Brasil.png" height="38" width="38">BRASIL
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Brasil.png" height="24" width="24">BRASIL
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoe2">
-                                        <img id="grupoe2-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoe2-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Suiza.png" height="38" width="38">SUIZA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Suiza.png" height="24" width="24">SUIZA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoe3">
-                                        <img id="grupoe3-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoe3-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/CostaRica.png" height="38" width="38">COSTA RICA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/CostaRica.png" height="24" width="24">COSTA RICA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoe4">
-                                        <img id="grupoe4-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoe4-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Serbia.png" height="38" width="38">SERBIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Serbia.png" height="24" width="24">SERBIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -303,40 +246,45 @@
                 </div>    
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Grupo F</th>
+                                    <th>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-f">+</button>
+                                        Grupo F
+                                    </th>
+                                    <th>Pts.</th>
+                                    <th>+/-</th>
                                 </tr>
                             </thead>
                             <tbody id="grupof">
-                                <tr class="table-primary">
-                                    <td id="grupof1">
-                                        <img id="grupof1-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupof1-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Alemania.png" height="38" width="38">ALEMANIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Alemania.png" height="24" width="24">ALEMANIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupof2">
-                                        <img id="grupof2-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupof2-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Mexico.png" height="38" width="38">MÉXICO
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Mexico.png" height="24" width="24">MÉXICO
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupof3">
-                                        <img id="grupof3-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupof3-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Suecia.png" height="38" width="38">SUECIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Suecia.png" height="24" width="24">SUECIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupof4">
-                                        <img id="grupof4-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupof4-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/CoreaDelSur.png" height="38" width="38">COREA DEL SUR
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/CoreaDelSur.png" height="24" width="24">COREA DEL SUR
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -344,40 +292,45 @@
                 </div>    
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Grupo G</th>
+                                    <th>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-g">+</button>
+                                        Grupo G
+                                    </th>
+                                    <th>Pts.</th>
+                                    <th>+/-</th>
                                 </tr>
                             </thead>
                             <tbody id="grupog">
-                                <tr class="table-primary">
-                                    <td id="grupog1">
-                                        <img id="grupog1-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupog1-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Belgica.png" height="38" width="38">BÉLGICA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Belgica.png" height="24" width="24">BÉLGICA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupog2">
-                                        <img id="grupog2-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupog2-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Panama.png" height="38" width="38">PANAMÁ
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Panama.png" height="24" width="24">PANAMÁ
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupog3">
-                                        <img id="grupog3-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupog3-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Tunez.png" height="38" width="38">TÚNEZ
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Tunez.png" height="24" width="24">TÚNEZ
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupog4">
-                                        <img id="grupog4-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupog4-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Inglaterra.png" height="38" width="38">INGLATERRA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Inglaterra.png" height="24" width="24">INGLATERRA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -385,40 +338,45 @@
                 </div>    
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Grupo H</th>
+                                    <th>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-h">+</button>
+                                        Grupo H
+                                    </th>
+                                    <th>Pts.</th>
+                                    <th>+/-</th>
                                 </tr>
                             </thead>
                             <tbody id="grupoh">
-                                <tr class="table-primary">
-                                    <td id="grupoh1">
-                                        <img id="grupoh1-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoh1-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Polonia.png" height="38" width="38">POLONIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Polonia.png" height="24" width="24">POLONIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoh2">
-                                        <img id="grupoh2-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoh2-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Senegal.png" height="38" width="38">SENEGAL
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Senegal.png" height="24" width="24">SENEGAL
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoh3">
-                                        <img id="grupoh3-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoh3-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Colombia.png" height="38" width="38">COLOMBIA
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Colombia.png" height="24" width="24">COLOMBIA
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
-                                <tr class="table-primary">
-                                    <td id="grupoh4">
-                                        <img id="grupoh4-1" src="static/img/1.png" style="display: none"><!--none and inline-->
-                                        <img id="grupoh4-2" src="static/img/2.png" style="display: none">
-                                        <img src="static/img/banderas/Japon.png" height="38" width="38">JAPÓN
+                                <tr>
+                                    <td>
+                                        <img src="static/img/banderas/Japon.png" height="24" width="24">JAPÓN
                                     </td>
+                                    <td style="text-align:center">0</td>
+                                    <td style="text-align:center">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -438,118 +396,118 @@
                     <div id="fase1">
                         <div class="row">
                             <div id="equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="24" width="24">NIGERIA
                             </button></div>
                             vs <div id="equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-3"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-4"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-5"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-6"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-7"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-8"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-9"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-10"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-11"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-12"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-13"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-14"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-15"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-16"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                     </div>
                     <div id="fase2">
                         <div class="row">
                             <div id="equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-3"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-4"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-5"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-6"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-7"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-8"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                     </div>
                     <div id="fase3">
                         <div class="row">
                             <div id="equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-3"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-4"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                     </div>
@@ -558,18 +516,18 @@
                         </div>
                         <div class="row">
                             <div id="equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                         <div class="row">
                             <div id="equipo-3"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                             vs <div id="equipo-4"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px">
-                                <img src="static/img/banderas/Nigeria.png" height="38" width="38">NIGERIA
+                                <img src="static/img/banderas/Nigeria.png" height="14" width="14">NIGERIA
                             </button></div>
                         </div>
                     </div>
@@ -584,7 +542,7 @@
                             <div id="octavos-left-llave-1" style="margin-bottom:10px">
                                 <div  id="oll1-equipo-1">
                                     
-                                        <img id="img111" src="static/img/banderas/Argentina.png" height="38" width="38">
+                                        <img id="img111" src="static/img/banderas/Argentina.png" height="24" width="24">
                                         <span id="span">Argentina</span>
                                     
                                 </div>
@@ -594,11 +552,11 @@
                                 </div>
                                 <div  id="oll1-equipo-2">
                                     
-                                        <img src="static/img/banderas/Argentina.png" height="38" width="38">
+                                        <img src="static/img/banderas/Argentina.png" height="24" width="24">
                                         <span id="span">Argentina</span>
                                 </div>
                                 <div id=" botones"> 
-                                    <button class="btn btn-success btn-sm "><img src="static/img/ok.ico" height="28" width="28"></button>    
+                                    <button class="btn btn-success btn-sm "><img src="static/img/ok.ico" height="24" width="24"></button>    
                                     <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-info2"><img src="static/img/add.png" height="28" width="28"></button>
                                 </div>
                             </div>
@@ -606,47 +564,47 @@
                                 <div  class="flecha_derecha" style="margin-left: 90%;"></div>
                             
                             <div id="octavos-left-llave-2" style="margin-bottom:83px">
-                                <div  id="oll2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                                <div  id="oll2-left-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="oll2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                                <div  id="oll2-left-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                             </div>
                     </div>
                             <div id="octavos-left-llave-3" style="margin-bottom:10px">
-                                <div  id="oll3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                                <div  id="oll3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="oll3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                                <div  id="oll3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                             </div>
 
                                 <div  class="flecha_derecha" style="margin-left: 90%;"></div>
 
                             <div  id="octavos-left-llave-4" style="margin-bottom:83px">
-                                <div  id="oll4-equipo-7"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                                <div  id="oll4-equipo-8"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="oll4-equipo-7"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                                <div  id="oll4-equipo-8"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                             </div>
                 </div>
                     
                 <div class="col-14 text-center" id="cuartos_left">Cuartos
                     <div id="cuartos-left-llave-1">
                             <div style="margin-bottom:83px"></div>
-                            <div  id="cll1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                            <div  id="cll1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                            <div  id="cll1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                            <div  id="cll1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                     </div>
 
                         <div  class="flecha_derecha" style="margin-left: 90%;margin-top: 50%"> </div> 
-                            <!--<img src="static/img/flecha.jpg" height="38" width="38">-->
+                            <!--<img src="static/img/flecha.jpg" height="24" width="24">-->
                        
                        
                     <div id="cuartos-left-llave-2">
                             <div style="margin-bottom:100px"></div>
-                            <div  id="cll2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                            <div  id="cll2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                            <div  id="cll2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                            <div  id="cll2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                     </div>
                     
                 </div>
                 <div class="col-14 text-center" id="semis-left">Semis
                         <div id="semis-left-llave1">
                                 <div style="margin-bottom:290.5px"></div>
-                                <div  id="sll1-equipo-7"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="sll1-equipo-7"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                                 <div  class="flecha_derecha" style="margin-left: 90%;margin-top:0%"></div> 
-                                <div  id="sll1-equipo-8"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="sll1-equipo-8"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                         
                 </div>
@@ -659,267 +617,243 @@
                                         </div>
                                         <div class="col-md-8">
                                                 <p style="font-weight: 500; font-size: 18px;text-align: center;display: block;margin: 7px 0">CAMPEÓN</p>
-                                                <div  id="pais-campeon"><button type="button" class="btn btn-outline-secondary btn-lg" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>                                
+                                                <div  id="pais-campeon"><button type="button" class="btn btn-outline-secondary btn-lg" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>                                
                                         </div>
                                     </div>
                         </div>
                         <div id="llave-primer-puesto">
                             <div style="margin-bottom:83px"></div>    
                             <p style="font-weight: 500; font-size: 15px;text-align: center;display: block;margin: 15px 0">"1ero y 2do PUESTO"</p>
-                            <div  id="lpp-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                            <div  id="lpp-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                            <div  id="lpp-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                            <div  id="lpp-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                         <div id="llave-tercer-puesto">
                                 <div style="margin-bottom:60px"></div>    
                                 <p style="font-weight: 500; font-size: 15px;text-align: center;display: block;margin: 15px 0">"3er PUESTO"</p>
-                                <div  id="ltp-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                                <div  id="ltp-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="ltp-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                                <div  id="ltp-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                 </div>
                 <div class="col-14 text-center" id="semis-rigth">Semis
                         <div id="semis-rigth-llave-1">
                                 <div style="margin-bottom:290.5px"></div>
-                                <div  id="srl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="srl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                                 <div  class="flecha_izquierda" style="margin-right:100%;margin-top:0%"></div> 
-                                <div  id="srl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="srl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                 </div>
                 <div class="col-14 text-center" id="cuartos_rigth">Cuartos
                         <div id="cuartos-rigth-llave-1">
                                 <div style="margin-bottom:83px"></div>
-                                <div  id="crl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                                <div  id="crl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="crl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                                <div  id="crl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                         <div  class="flecha_izquierda" style="margin-right: 90%;margin-top: 50%"> </div> 
                         <div id="cuartos-rigth-llave-2">
                                 <div style="margin-bottom:200px"></div>
-                                <div  id="crl2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                                <div  id="crl2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                                <div  id="crl2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                                <div  id="crl2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                 </div>
                 <div class="col-14 text-center" id="octavos-right">Octavos
                         <div id="octavos-right-llave-1" style="margin-bottom:10px;margin-top: 10px">
-                            <div  id="orl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                            <div  id="orl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                            <div  id="orl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                            <div  id="orl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                         <div  class="flecha_izquierda" style="margin-right: 90%;"></div>
                         <div id="llave-2" style="margin-bottom:83px">
-                            <div  id="orl2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                            <div  id="orl2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                            <div  id="orl2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                            <div  id="orl2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                         <div id="llave-3" style="margin-bottom:10px">
-                            <div  id="orl3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                            <div  id="orl3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                            <div  id="orl3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                            <div  id="orl3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                         <div  class="flecha_izquierda" style="margin-right: 90%;"></div>
                         <div  id="llave-4" style="margin-bottom:83px">
-                            <div  id="orl3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
-                            <div  id="orl3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="38" width="38">Argentina</button></div>
+                            <div  id="orl3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                            <div  id="orl3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
                         </div>
                 </div>
             </div>
         </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="static/js/jquery-3.3.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script>
-            //echo por diego...te devuelve un arreglo...el 0 contiene el json
-            //$.get("http://localhostcargar-datos.php", function () { console.log(arguments); });
-			            var json;
-
-            function probar(){
-                $.get("http://localhost/fixture/cargar-datos.php", function () { 
-                                json = arguments[0]; 
-                                
-                            });
-                 /*$.getJSON("http://localhost/fixture/cargar-datos.php", function(){
-                    json = arguments[0];
-                });*/
-                           
-                var letra;
-                var equipos;
-                var partidos;
-                var posicion1;
-                var posicion2;
-                            
-               
-                if (typeof json !== 'undefined') {
-                    for (i = 0; i < json.length; i++) {
-                        letra = json[i].letra;
-                        equipos = json[i].equipos;
-                        partidos = json[i].partidos;
-                        posicion1 = json[i].posicion1;
-                        posicion2 = json[i].posicion2;
-                        console.log("GRUPO " + letra);
-                        console.log("Equipos: " + equipos[0].nombre);
-                        console.log("Partidos: " + partidos[0]);
-                        console.log("Posicion 1: " + posicion1);
-                        console.log("Posicion 2: " + posicion2);
-                    }
-                }else{
-                    //debemos volver a pedir...
-                }
-                
-
-            }
-
-			/* Otra forma de hacer lo mismo */
-            function probar2(){
-                 $.ajax({
-                            type: "GET", //rest Type
-                            dataType: 'json', //mispelled
-                            url: "http://localhost/fixture/cargar-datos.php",
-                            async: true,
-                            contentType: "application/json; charset=utf-8",
-                            success: function (msj) {
-                                console.log(msj);         
-                                json = msj;
-                            }
-                });
-                if (typeof json !== 'undefined') {
-                    console.log("BUENAS..." + json);         
-                }
-                else{
-                    //debemos volver a pedir...
-                }
-            }
-        </script>
-
-      <!-- Modal Info - http://es.fifa.com/worldcup/matches/index.html -->
-    
-        <div class="modal" tabindex="-1" role="dialog" id="modal-grupoa">
+        
+        <div class="modal" tabindex="-1" role="dialog" id="modal-partidos">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Partidos Grupo A</h5>
+                        <h5 class="modal-title" id="titulo-modal">Partidos</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div id="infogrupoa" class="container-fluid" style="margin-top:10px">
+                        <div class="container-fluid" style="margin-top:10px">
                             <div class="row">        
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">       
-                                        <tbody id="grupoa">
-                                            <tr class="table-primary" style="text-align: left">
-                                                <td id="grupoa1">
-                                                    <img src="static/img/banderas/Rusia.png" height="28" width="28"><span style="font-size: 11px">RUSIA</span>
+                                    <table class="table">       
+                                        <tbody>
+                                            <tr style="text-align: left">
+                                                <td>
+                                                    <img src="static/img/banderas/Rusia.png" height="24" width="24"><span style="font-size: 11px">RUSIA</span>
                                                 </td>
                                                 <td>  
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td> 
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
                                                 </td>
                                                 <td> 
-                                                    <img src="static/img/banderas/ArabiaSaudita.png" height="28" width="28"><span style="font-size: 11px">ARABIA SAUDITA</span>
+                                                    <img src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span style="font-size: 11px">ARABIA SAUDITA</span>
                                                 </td>
                                                 <td>
-                                                        <button data-toggle="collapse" data-target="#demo">Collapsible</button>
+                                                    <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido1-info">+</button>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="4">
-                                                    <div id="demo" class="collapse">
+                                                <td colspan="5">
+                                                    <div id="partido1-info" class="collapse">
+                                                        Estadio: horario:
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr style="text-align: left">
+                                                <td >
+                                                    <img src="static/img/banderas/Egipto.png" height="24" width="24"><span style="font-size: 11px">EGIPTO</span>
+                                                </td>
+                                                <td> 
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>    
+                                                    <img src="static/img/banderas/Uruguay.png" height="24" width="24"><span style="font-size: 11px">URUGUAY</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido2-info">+</button>
+                                                </td>      
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5">
+                                                    <div id="partido2-info" class="collapse">
+                                                        Estadio: horario:
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr style="text-align: left">
+                                                <td>
+                                                    <img src="static/img/banderas/Rusia.png" height="24" width="24"><span style="font-size: 11px">RUSIA</span>
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <img src="static/img/banderas/Egipto.png" height="24" width="24"><span style="font-size: 11px">EGIPTO</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido3-info">+</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5">
+                                                    <div id="partido3-info" class="collapse">
                                                         hola
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr class="table-primary" style="text-align: left">
-                                                    <td id="grupoa1">
-                                                        <img src="static/img/banderas/Egipto.png" height="28" width="28"><span style="font-size: 11px">EGIPTO</span>
-                                                    </td>
-                                                        <td> <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
-                                                            <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px"></td>
-                                                            <td><img src="static/img/banderas/Uruguay.png" height="28" width="28"><span style="font-size: 11px">URUGUAY</span></td>
-                                                        <td><button data-toggle="collapse" data-target="#demo">Collapsible</button></td>      
+                                            <tr style="text-align: left">
+                                                <td>
+                                                    <img src="static/img/banderas/Uruguay.png" height="24" width="24"><span style="font-size: 11px">URUGUAY</span>
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <img src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span style="font-size: 11px">ARABIA SAUDITA</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido4-info">+</button> 
+                                                </td>       
                                             </tr>
                                             <tr>
-                                                    <td colspan="4">
-                                                        <div id="demo" class="collapse">
-                                                            hola
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            <tr class="table-primary" style="text-align: left">
-                                                    <td id="grupoa1">
-                                                            <img src="static/img/banderas/Rusia.png" height="28" width="28"><span style="font-size: 11px">RUSIA</span></td>
-                                                            <td><input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
-                                                            <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px"></td>
-                                                            <td><img src="static/img/banderas/Egipto.png" height="28" width="28"><span style="font-size: 11px">EGIPTO</span></td>
-                                                            <!--<button class="btn btn-success btn-sm float-right" data-toggle="tooltip"  data-placement="top" title="Fecha y Hora: 15 JUN. 2018 - 17:00 Hora Local Estad: Ekaterimburgo Arena Ciudad: Ekaterimburgo">+</button>-->
-                                                        <td><button class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#modal-info">+</button>  </td>
+                                                <td colspan="5">
+                                                    <div id="partido4-info" class="collapse">
+                                                        Estadio Horario
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr style="text-align: left">
+                                                <td>
+                                                    <img src="static/img/banderas/Uruguay.png" height="24" width="24"><span style="font-size: 11px">URUGUAY</span>
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <img src="static/img/banderas/Rusia.png" height="24" width="24"><span style="font-size: 11px">RUSIA</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido5-info">+</button> 
+                                                </td>
                                             </tr>
                                             <tr>
-                                                    <td colspan="4">
-                                                        <div id="demo" class="collapse">
-                                                            hola
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            <tr class="table-primary" style="text-align: left">
-                                                    <td id="grupoa1">
-                                                            <img src="static/img/banderas/Uruguay.png" height="28" width="28"><span style="font-size: 11px">URUGUAY</span></td>
-                                                            <td><input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
-                                                            <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px"></td>
-                                                            <td><img src="static/img/banderas/ArabiaSaudita.png" height="28" width="28"><span style="font-size: 11px">ARABIA SAUDITA</span></td>
-                                                            <!--<button class="btn btn-success btn-sm float-right" data-toggle="tooltip"  data-placement="top" title="Fecha y Hora: 15 JUN. 2018 - 17:00 Hora Local Estad: Ekaterimburgo Arena Ciudad: Ekaterimburgo">+</button>-->
-                                                        <td><button class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#modal-info">+</button>  </td>       
+                                                <td colspan="5">
+                                                    <div id="partido5-info" class="collapse">
+                                                        Estadio horario
+                                                    </div>
+                                                </td>
                                             </tr>
+                                            <tr style="text-align: left">
+                                                <td>
+                                                    <img src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span style="font-size: 11px">ARABIA SAUDITA</span>
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
+                                                </td>
+                                                <td>
+                                                    <img src="static/img/banderas/Egipto.png" height="24" width="24"><span style="font-size: 11px">EGIPTO</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido6-info">+</button> 
+                                                </td>
+                                            </tr>       
                                             <tr>
-                                                    <td colspan="4">
-                                                        <div id="demo" class="collapse">
-                                                            hola
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            <tr class="table-primary" style="text-align: left">
-                                                    <td id="grupoa1">
-                                                            <img src="static/img/banderas/Uruguay.png" height="28" width="28"><span style="font-size: 11px">URUGUAY</span></td>
-                                                            <td><input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
-                                                            <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px"></td>
-                                                            <td><img src="static/img/banderas/Rusia.png" height="28" width="28"><span style="font-size: 11px">RUSIA</span></td>
-                                                            <!--<button class="btn btn-success btn-sm float-right" data-toggle="tooltip"  data-placement="top" title="Fecha y Hora: 15 JUN. 2018 - 17:00 Hora Local Estad: Ekaterimburgo Arena Ciudad: Ekaterimburgo">+</button>-->
-                                                            <td><button data-toggle="collapse" data-target="#demo">Collapsible</button>      </td>
+                                                <td colspan="5">
+                                                    <div id="partido6-info" class="collapse">
+                                                        Estadio Horario
+                                                    </div>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                    <td colspan="4">
-                                                        <div id="demo" class="collapse">
-                                                            hola
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            <tr class="table-primary" style="text-align: left">
-                                                    <td id="grupoa1">
-                                                            <img src="static/img/banderas/ArabiaSaudita.png" height="28" width="28"><span style="font-size: 11px">ARABIA SAUDITA</span></td>
-                                                        <td><input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
-                                                            <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px"></td>
-                                                            <td><img src="static/img/banderas/Egipto.png" height="28" width="28"><span style="font-size: 11px">EGIPTO</span></td>
-                                                            <!--<button class="btn btn-success btn-sm float-right" data-toggle="tooltip"  data-placement="top" title="Fecha y Hora: 15 JUN. 2018 - 17:00 Hora Local Estad: Ekaterimburgo Arena Ciudad: Ekaterimburgo">+</button>-->
-                                                            <td><button data-toggle="collapse" data-target="#demo">Collapsible</button>      </td>
-                                                    
-                                            </tr>
-                                            <tr>
-                                                    <td colspan="4">
-                                                        <div id="demo" class="collapse">
-                                                            hola
-                                                        </div>
-                                                    </td>
-                                                </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-         <!-- Modal Info - http://es.fifa.com/worldcup/matches/index.html -->      
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="static/js/jquery-3.3.1.min.js"></script>
+        <script src="static/js/popper.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="static/js/logica.js"></script>
+        <!-- Modal Info - http://es.fifa.com/worldcup/matches/index.html -->
+
     </body>
 </html> 
