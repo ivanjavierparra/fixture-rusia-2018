@@ -10,7 +10,11 @@ function partidos(id) {
     switch (id){
         case 'grupo-a':
             $("#titulo-modal").append(" Grupo A");
-            //con un for itero sobre los partidos del grupo a y voy modificando el modal
+            $("#imagen_local_1").prop("src","static/img/banderas/Argentina.png");
+            $('#nombre_local_1').text("ARGENTINA");
+            for (var i = 0; i < 8; i++){
+                console.log(json[0].partidos[1]);
+            }
             break;
         case 'grupo-b':
             $("#titulo-modal").append(" Grupo B");

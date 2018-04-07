@@ -250,7 +250,6 @@
     $grupog = new Grupo("G",$equipos_G,$partidos_G,$posicion1_G,$posicion2_G);
 
 
-
     /* GRUPO H */
     $polonia = new Equipo("Polonia");
     $senegal = new Equipo("Senegal");
@@ -271,8 +270,6 @@
     $posicion2_H = new Posicion("OCTAVOS","LEFT",7);
 
     $grupoh = new Grupo("H",$equipos_H,$partidos_H,$posicion1_H,$posicion2_H);
-
-
 
     /* JSON GRUPOS  */
     $grupos = array($grupoa,$grupob,$grupoc,$grupod,$grupoe,$grupof,$grupog,$grupoh);
