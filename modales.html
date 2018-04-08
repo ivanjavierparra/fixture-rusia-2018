@@ -534,79 +534,213 @@
                 </div>
             </div>
         </div>
-        <div id="llaves-desktop" class="container-fluid"><!--style="background-image: url('static/img/fondo.png')"-->
+        <div id="llaves-desktop" class="container-fluid">
             <p>llave para escritorio</p>
             <div class="row">
                 <div class="col-14 text-center" id="octavos_left">Octavos
-                    <div style="border-radius: 10px; background-color:yellow;margin-left: 20px"> <!-- cambiar color para sombrear equipos -->
-                            <div id="octavos-left-llave-1" style="margin-bottom:10px">
-                                <div  id="oll1-equipo-1">
-                                    
-                                        <img id="img111" src="static/img/banderas/Argentina.png" height="24" width="24">
-                                        <span id="span">Argentina</span>
-                                    
-                                </div>
-                                <div id="goles">
-                                        <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
-                                        <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
-                                </div>
-                                <div  id="oll1-equipo-2">
-                                    
-                                        <img src="static/img/banderas/Argentina.png" height="24" width="24">
-                                        <span id="span">Argentina</span>
-                                </div>
-                                <div id=" botones"> 
-                                    <button class="btn btn-success btn-sm "><img src="static/img/ok.ico" height="24" width="24"></button>    
-                                    <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-info2"><img src="static/img/add.png" height="28" width="28"></button>
-                                </div>
-                            </div>
-                            
-                                <div  class="flecha_derecha" style="margin-left: 90%;"></div>
-                            
-                            <div id="octavos-left-llave-2" style="margin-bottom:83px">
-                                <div  id="oll2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                                <div  id="oll2-left-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            </div>
-                    </div>
-                            <div id="octavos-left-llave-3" style="margin-bottom:10px">
-                                <div  id="oll3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                                <div  id="oll3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            </div>
-
-                                <div  class="flecha_derecha" style="margin-left: 90%;"></div>
-
-                            <div  id="octavos-left-llave-4" style="margin-bottom:83px">
-                                <div  id="oll4-equipo-7"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                                <div  id="oll4-equipo-8"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            </div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275;">
+                                    <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                        <thead>
+                                                <tr>
+                                                    <th>
+                                                        <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                        Partido 49
+                                                    </th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                    <td style="border-top:#e4c275;">
+                                                        <img id="bandera-octavos-left-0" src="static/img/banderas/Argentina.png" height="24" width="24">
+                                                        <span id="equipo-octavos-left-0">Argentina </span>
+                                                        <input id="octavos-left-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-top:#e4c275;">
+                                                        <img id="bandera-octavos-left-1"  src="static/img/banderas/Egipto.png" height="24" width="24">
+                                                        <span id="equipo-octavos-left-1">Egipto</span>
+                                                        <input id="octavos-left-1"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                    </td>
+                                                </tr>
+                                        </tbody>
+                                </table>
+                        </div>
+                        <div  class="flecha_derecha" style="margin-left: 90%;"></div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 50
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-octavos-left-2" src="static/img/banderas/Islandia.png" height="24" width="24">
+                                                    <span id="equipo-octavos-left-2">Islandia</span>
+                                                    <input id="octavos-left-2"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-octavos-left-3" src="static/img/banderas/Alemania.png" height="24" width="24">
+                                                    <span id="equipo-octavos-left-3">Alemania</span>
+                                                    <input id="octavos-left-3"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:83px">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 53
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-octavos-left-4" src="static/img/banderas/Dinamarca.png" height="24" width="24">
+                                                    <span id="equipo-octavos-left-4">Dinamarca</span>
+                                                    <input id="octavos-left-4"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-octavos-left-5"  src="static/img/banderas/Japon.png" height="24" width="24">
+                                                    <span id="equipo-octavos-left-5">Japón</span>
+                                                    <input id="octavos-left-5"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div  class="flecha_derecha" style="margin-left: 90%;"></div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 54
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-octavos-left-6" src="static/img/banderas/Marruecos.png" height="24" width="24">
+                                                    <span id="equipo-octavos-left-6">Marruecos</span>
+                                                    <input id="octavos-left-6"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-octavos-left-7"  src="static/img/banderas/Mexico.png" height="24" width="24">
+                                                    <span id="equipo-octavos-left-7">México</span>
+                                                    <input id="octavos-left-7"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>        
                 </div>
-                    
                 <div class="col-14 text-center" id="cuartos_left">Cuartos
-                    <div id="cuartos-left-llave-1">
-                            <div style="margin-bottom:83px"></div>
-                            <div  id="cll1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            <div  id="cll1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                    </div>
-
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:50%;margin-left:5%;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 57
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-cuartos-left-0" src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-cuartos-left-0">Equipo 1</span>
+                                                    <input id="cuartos-left-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-cuartos-left-1"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-cuartos-left-1">Equipo 2</span>
+                                                    <input id="cuartos-left-1"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
                         <div  class="flecha_derecha" style="margin-left: 90%;margin-top: 50%"> </div> 
-                            <!--<img src="static/img/flecha.jpg" height="24" width="24">-->
-                       
-                       
-                    <div id="cuartos-left-llave-2">
-                            <div style="margin-bottom:100px"></div>
-                            <div  id="cll2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            <div  id="cll2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                    </div>
-                    
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:50%;margin-left:5%;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 58
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-cuartos-left-2" src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-cuartos-left-2">Equipo 1</span>
+                                                    <input id="cuartos-left-2"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-cuartos-left-3"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-cuartos-left-3">Equipo 2</span>
+                                                    <input id="cuartos-left-3"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
                 </div>
                 <div class="col-14 text-center" id="semis-left">Semis
-                        <div id="semis-left-llave1">
-                                <div style="margin-bottom:290.5px"></div>
-                                <div  id="sll1-equipo-7"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                                <div  class="flecha_derecha" style="margin-left: 90%;margin-top:0%"></div> 
-                                <div  id="sll1-equipo-8"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:180%;margin-left:5%;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 61
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-semis-left-0" src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-semis-left-0">Equipo 1</span>
+                                                    <input id="semis-left-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-semis-left-1"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-semis-left-1">Equipo 2</span>
+                                                    <input id="semis-left-1"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
                         </div>
-                        
                 </div>
                 <div class="col-16 text-center" id="campeon">Final
                         <div style="border-radius: 10px; background-color:yellow">
@@ -617,67 +751,287 @@
                                         </div>
                                         <div class="col-md-8">
                                                 <p style="font-weight: 500; font-size: 18px;text-align: center;display: block;margin: 7px 0">CAMPEÓN</p>
-                                                <div  id="pais-campeon"><button type="button" class="btn btn-outline-secondary btn-lg" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>                                
+                                                <div  id="pais-campeon">
+                                                        <img id="bandera-ganador"  src="static/img/sinbandera.jpg" height="30" width="30">
+                                                        <span id="equipo-ganador" style="font-size: 18px">Equipo Ganador</span>
+                                                </div>                                
                                         </div>
                                     </div>
                         </div>
                         <div id="llave-primer-puesto">
-                            <div style="margin-bottom:83px"></div>    
-                            <p style="font-weight: 500; font-size: 15px;text-align: center;display: block;margin: 15px 0">"1ero y 2do PUESTO"</p>
-                            <div  id="lpp-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            <div  id="lpp-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                                <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:83px;margin-left:5%;">
+                                        <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                            <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                            1ero y 2do PUESTO
+                                                        </th>
+                                                    </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                        <td style="border-top:#e4c275;">
+                                                            <img id="numero1-final-0" style="display: none;" src="static/img/uno.png" height="15" width="15" class="float-left">
+                                                            <img id="numero2-final-0" style="display: none;" src="static/img/dos.png" height="15" width="15" class="float-left">
+                                                            <img id="bandera-final-0" src="static/img/sinbandera.jpg" height="24" width="24">
+                                                            <span id="equipo-final-0">Equipo 1</span>
+                                                            <input id="final-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border-top:#e4c275;">
+                                                            <img id="numero1-final-1" style="display: none;" src="static/img/uno.png" height="15" width="15" class="float-left">
+                                                            <img id="numero2-final-1" style="display: none;" src="static/img/dos.png" height="15" width="15" class="float-left">
+                                                            <img id="bandera-final-1"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                                            <span id="equipo-final-1">Equipo 2</span>
+                                                            <input id="final-1"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                        </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
                         </div>
                         <div id="llave-tercer-puesto">
-                                <div style="margin-bottom:60px"></div>    
-                                <p style="font-weight: 500; font-size: 15px;text-align: center;display: block;margin: 15px 0">"3er PUESTO"</p>
-                                <div  id="ltp-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                                <div  id="ltp-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                                <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:83px;margin-left:5%;">
+                                        <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                            <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                            3er PUESTO
+                                                        </th>
+                                                    </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                        <td style="border-top:#e4c275;">
+                                                            <img id="numero-3puesto-0" style="display: none;" src="static/img/tres.png" height="15" width="15" class="float-left">
+                                                            <img id="bandera-3puesto-0" src="static/img/sinbandera.jpg" height="24" width="24">
+                                                            <span id="equipo-3puesto-0">Equipo 1</span>
+                                                            <input id="3puesto-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border-top:#e4c275;">
+                                                            <img id="numero-3puesto-1" style="display: none;" src="static/img/tres.png" height="15" width="15" class="float-left">
+                                                            <img id="bandera-3puesto-1"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                                            <span id="equipo-3puesto-1">Equipo 2</span>
+                                                            <input id="3puesto-1"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                        </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
                         </div>
                 </div>
                 <div class="col-14 text-center" id="semis-rigth">Semis
-                        <div id="semis-rigth-llave-1">
-                                <div style="margin-bottom:290.5px"></div>
-                                <div  id="srl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                                <div  class="flecha_izquierda" style="margin-right:100%;margin-top:0%"></div> 
-                                <div  id="srl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:180%;margin-left:5%;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 62
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-semis-right-0" src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-semis-right-0">Equipo 1</span>
+                                                    <input id="semis-right-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-semis-right-1"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-semis-right-1">Equipo 2</span>
+                                                    <input id="semis-right-1"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
                         </div>
                 </div>
                 <div class="col-14 text-center" id="cuartos_rigth">Cuartos
-                        <div id="cuartos-rigth-llave-1">
-                                <div style="margin-bottom:83px"></div>
-                                <div  id="crl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                                <div  id="crl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:50%;margin-left:5%;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 59
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-cuartos-right-0" src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-cuartos-right-0">Equipo 1</span>
+                                                    <input id="cuartos-right-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-cuartos-right-1"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-cuartos-right-1">Equipo 2</span>
+                                                    <input id="cuartos-right-1"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
                         </div>
                         <div  class="flecha_izquierda" style="margin-right: 90%;margin-top: 50%"> </div> 
-                        <div id="cuartos-rigth-llave-2">
-                                <div style="margin-bottom:200px"></div>
-                                <div  id="crl2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                                <div  id="crl2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:50%;margin-left:5%;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 60
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-cuartos-right-2" src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-cuartos-right-2">Equipo 1</span>
+                                                    <input id="cuartos-right-2"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-cuartos-right-3"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                                    <span id="equipo-cuartos-right-3">Equipo 2</span>
+                                                    <input id="cuartos-right-3"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
                         </div>
                 </div>
                 <div class="col-14 text-center" id="octavos-right">Octavos
-                        <div id="octavos-right-llave-1" style="margin-bottom:10px;margin-top: 10px">
-                            <div  id="orl1-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            <div  id="orl1-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                        </div>
-                        <div  class="flecha_izquierda" style="margin-right: 90%;"></div>
-                        <div id="llave-2" style="margin-bottom:83px">
-                            <div  id="orl2-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            <div  id="orl2-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                        </div>
-                        <div id="llave-3" style="margin-bottom:10px">
-                            <div  id="orl3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            <div  id="orl3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                        </div>
-                        <div  class="flecha_izquierda" style="margin-right: 90%;"></div>
-                        <div  id="llave-4" style="margin-bottom:83px">
-                            <div  id="orl3-equipo-1"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px; margin-bottom: 5px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                            <div  id="orl3-equipo-2"><button type="button" class="btn btn-outline-secondary" style="border-radius: 10px"><img src="static/img/banderas/Argentina.png" height="24" width="24">Argentina</button></div>
-                        </div>
+                        <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275;">
+                                <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                    <thead>
+                                            <tr>
+                                                <th>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                    Partido 51
+                                                </th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-octavos-right-0" src="static/img/banderas/Polonia.png" height="24" width="24">
+                                                    <span id="equipo-octavos-right-0">Polonia </span>
+                                                    <input id="octavos-right-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border-top:#e4c275;">
+                                                    <img id="bandera-octavos-right-1"  src="static/img/banderas/Panama.png" height="24" width="24">
+                                                    <span id="equipo-octavos-right-1">Panama</span>
+                                                    <input id="octavos-right-1"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                            </table>
+                    </div>
+                    <div  class="flecha_izquierda" style="margin-right: 90%;"></div>
+                    <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275;">
+                            <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                <thead>
+                                        <tr>
+                                            <th>
+                                                <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                Partido 52
+                                            </th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td style="border-top:#e4c275;">
+                                                <img id="bandera-octavos-right-2" src="static/img/banderas/Peru.png" height="24" width="24">
+                                                <span id="equipo-octavos-right-2">Perú</span>
+                                                <input id="octavos-right-2"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-top:#e4c275;">
+                                                <img id="bandera-octavos-right-3" src="static/img/banderas/Senegal.png" height="24" width="24">
+                                                <span id="equipo-octavos-right-3">Senegal</span>
+                                                <input id="octavos-right-3"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                    <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275; margin-top:83px">
+                            <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                <thead>
+                                        <tr>
+                                            <th>
+                                                <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                Partido 55
+                                            </th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td style="border-top:#e4c275;">
+                                                <img id="bandera-octavos-right-4" src="static/img/banderas/Portugal.png" height="24" width="24">
+                                                <span id="equipo-octavos-right-4">Portugal</span>
+                                                <input id="octavos-right-4"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-top:#e4c275;">
+                                                <img id="bandera-octavos-right-5"  src="static/img/banderas/Iran.png" height="24" width="24">
+                                                <span id="equipo-octavos-right-5">Irán</span>
+                                                <input id="octavos-right-5"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                    <div  class="flecha_izquierda" style="margin-right: 90%;"></div>
+                    <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275;">
+                            <table id="tabla-partido-49" class="table table-sm table-llaves">
+                                <thead>
+                                        <tr>
+                                            <th>
+                                                <button type="button" class="btn btn-info btn-sm" onclick="partidos(this.id)" id="grupo-a">+</button>
+                                                Partido 56
+                                            </th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td style="border-top:#e4c275;">
+                                                <img id="bandera-octavos-right-6" src="static/img/banderas/Inglaterra.png" height="24" width="24">
+                                                <span id="equipo-octavos-right-6">Inglaterra</span>
+                                                <input id="octavos-right-6"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-top:#e4c275;">
+                                                <img id="bandera-octavos-right-7"  src="static/img/banderas/Brasil.png" height="24" width="24">
+                                                <span id="equipo-octavos-right-7">Brasil</span>
+                                                <input id="octavos-right-7"  onchange="verinputs(this.id)" type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 40px">
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                    </div>        
                 </div>
             </div>
         </div>
-        
         <div class="modal" tabindex="-1" role="dialog" id="modal-partidos">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -853,7 +1207,7 @@
         <script src="static/js/popper.min.js"></script>
         <script src="static/js/bootstrap.min.js"></script>
         <script src="static/js/logica.js"></script>
-        <!-- Modal Info - http://es.fifa.com/worldcup/matches/index.html -->
+        <script src="static/js/logica-desktop.js"></script>
 
     </body>
 </html> 
