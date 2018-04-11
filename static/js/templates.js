@@ -6,7 +6,7 @@
             <thead>
                 <tr>
                     <th>
-                        <button type="button" class="btn btn-info btn-sm" onclick="partidos()">+</button>
+                        <button type="button" class="btn btn-info btn-sm" onclick="partidos('${grupo.letra}')">+</button>
                         Grupo ${grupo.letra}
                     </th>
                     <th>Pts.</th>

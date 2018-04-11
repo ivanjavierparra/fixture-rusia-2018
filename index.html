@@ -1166,16 +1166,19 @@
                 </div>
             </div>
         </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-partidos">
+                Launch demo modal
+              </button>
         <div class="modal" tabindex="-1" role="dialog" id="modal-partidos">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: black;color: white">
                         <h5 class="modal-title" id="titulo-modal">Partidos</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" onclick="cerrarModal()" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body" style="overflow: scroll;" >
+                    <div class="modal-body">
                         <div class="container-fluid" style="margin-top:10px">
                             <div class="row">        
                                 <div class="table-responsive">
@@ -1192,7 +1195,7 @@
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
                                                 </td>
                                                 <td> 
-                                                    <img src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span style="font-size: 11px">ARABIA SAUDITA</span>
+                                                    <img id="imagen_visitante_1" src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span id="nombre_visitante_1" style="font-size: 11px">ARABIA SAUDITA</span>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido1-info">+</button>
@@ -1207,7 +1210,7 @@
                                             </tr>
                                             <tr style="text-align: left">
                                                 <td >
-                                                    <img src="static/img/banderas/Egipto.png" height="24" width="24"><span style="font-size: 11px">EGIPTO</span>
+                                                    <img id="imagen_local_2" src="static/img/banderas/Egipto.png" height="24" width="24"><span id="nombre_local_2" style="font-size: 11px">EGIPTO</span>
                                                 </td>
                                                 <td> 
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
@@ -1216,7 +1219,7 @@
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
                                                 </td>
                                                 <td>    
-                                                    <img src="static/img/banderas/Uruguay.png" height="24" width="24"><span style="font-size: 11px">URUGUAY</span>
+                                                    <img id="imagen_visitante_2" src="static/img/banderas/Uruguay.png" height="24" width="24"><span id="nombre_visitante_2" style="font-size: 11px">URUGUAY</span>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido2-info">+</button>
@@ -1231,7 +1234,7 @@
                                             </tr>
                                             <tr style="text-align: left">
                                                 <td>
-                                                    <img src="static/img/banderas/Rusia.png" height="24" width="24"><span style="font-size: 11px">RUSIA</span>
+                                                    <img id="imagen_local_3" src="static/img/banderas/Rusia.png" height="24" width="24"><span id="nombre_local_3" style="font-size: 11px">RUSIA</span>
                                                 </td>
                                                 <td>
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
@@ -1240,7 +1243,7 @@
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
                                                 </td>
                                                 <td>
-                                                    <img src="static/img/banderas/Egipto.png" height="24" width="24"><span style="font-size: 11px">EGIPTO</span>
+                                                    <img id="imagen_visitante_3" src="static/img/banderas/Egipto.png" height="24" width="24"><span id="nombre_visitante_3" style="font-size: 11px">EGIPTO</span>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido3-info">+</button>
@@ -1255,7 +1258,7 @@
                                             </tr>
                                             <tr style="text-align: left">
                                                 <td>
-                                                    <img src="static/img/banderas/Uruguay.png" height="24" width="24"><span style="font-size: 11px">URUGUAY</span>
+                                                    <img id="imagen_local_4" src="static/img/banderas/Uruguay.png" height="24" width="24"><span id="nombre_local_4" style="font-size: 11px">URUGUAY</span>
                                                 </td>
                                                 <td>
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
@@ -1264,7 +1267,7 @@
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
                                                 </td>
                                                 <td>
-                                                    <img src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span style="font-size: 11px">ARABIA SAUDITA</span>
+                                                    <img id="imagen_visitante_4" src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span id="nombre_visitante_4" style="font-size: 11px">ARABIA SAUDITA</span>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido4-info">+</button> 
@@ -1279,7 +1282,7 @@
                                             </tr>
                                             <tr style="text-align: left">
                                                 <td>
-                                                    <img src="static/img/banderas/Uruguay.png" height="24" width="24"><span style="font-size: 11px">URUGUAY</span>
+                                                    <img id="imagen_local_5" src="static/img/banderas/Uruguay.png" height="24" width="24"><span id="nombre_local_5" style="font-size: 11px">URUGUAY</span>
                                                 </td>
                                                 <td>
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
@@ -1288,7 +1291,7 @@
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
                                                 </td>
                                                 <td>
-                                                    <img src="static/img/banderas/Rusia.png" height="24" width="24"><span style="font-size: 11px">RUSIA</span>
+                                                    <img id="imagen_visitante_5" src="static/img/banderas/Rusia.png" height="24" width="24"><span id="nombre_visitante_5" style="font-size: 11px">RUSIA</span>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido5-info">+</button> 
@@ -1303,7 +1306,7 @@
                                             </tr>
                                             <tr style="text-align: left">
                                                 <td>
-                                                    <img src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span style="font-size: 11px">ARABIA SAUDITA</span>
+                                                    <img id="imagen_local_6" src="static/img/banderas/ArabiaSaudita.png" height="24" width="24"><span id="nombre_local_6" style="font-size: 11px">ARABIA SAUDITA</span>
                                                 </td>
                                                 <td>
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
@@ -1312,7 +1315,7 @@
                                                     <input type="number" size="1" min="0" style="font-size: 11px;text-align: center;width: 50px">
                                                 </td>
                                                 <td>
-                                                    <img src="static/img/banderas/Egipto.png" height="24" width="24"><span style="font-size: 11px">EGIPTO</span>
+                                                    <img id="imagen_visitante_6" src="static/img/banderas/Egipto.png" height="24" width="24"><span id="nombre_visitante_6" style="font-size: 11px">EGIPTO</span>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-success btn-sm float-right" data-toggle="collapse" data-target="#partido6-info">+</button> 
@@ -1348,7 +1351,11 @@
         <script src="static/js/main.js"></script>
         <script>
             function partidos(letra){
+                app.cargarModal(letra);
                 $("#modal-partidos").show();
+            }
+            function cerrarModal(){
+                $("#modal-partidos").modal("toggle");
             }
         </script>
     </body>
