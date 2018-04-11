@@ -38,7 +38,7 @@ var app = (function(scope = {}) {
             equipos: equiposACargar,
             partidos: partidosACargar,
             getEquipo: function(nombre) {return this.equipos},
-            setGanador: (x) => {this.ganador = x},
+            setGanador: function(x) {this.ganador = x},
             getGanador: () => {return this.ganador}
         })
     }

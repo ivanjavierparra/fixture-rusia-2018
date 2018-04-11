@@ -289,7 +289,7 @@
             }
             else{//empataron --> tengo que borrar campeón.
                 document.getElementById("equipo-ganador").innerHTML = "Equipo Ganador";
-                document.getElementById("bandera-ganador").src = "http://localhost/fixture/static/img/sinbandera.jpg";
+                document.getElementById("bandera-ganador").src = "http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg";
                 //oculto imágenes
                 document.getElementById("numero1-final-0").style.display = "none";
                 document.getElementById("numero2-final-0").style.display = "none";
