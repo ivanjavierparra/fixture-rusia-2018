@@ -24,20 +24,20 @@
                 <div id="grupoH" class="col-lg-3 col-md-3 col-sm-6 col-xs-12"></div>    
             </div>
         </div>
-        <div id="llaves-phone" class="container-fluid">
+		<div id="llaves-phone" class="container-fluid" style="background-color: yellow">
                 <p>llave para celular</p>
                 <div id="llaves" class="col-sm-12 col-xs-12"> 
 
                                 <div class="row" style="background-color: black; border-radius: 10px">
                                         <div id="selector" style="margin-left: 10px">
-                                                <button type="button" class="btn btn-sm" onclick="if ( $('#tabla-octavos').css('display') == 'none' )$('#tabla-octavos').show();else $('#tabla-octavos').hide();"  id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Octavos</button>
-                                                <button type="button" class="btn btn-sm" onclick="if ( $('#tabla-cuartos').css('display') == 'none' )$('#tabla-cuartos').show();else $('#tabla-cuartos').hide();" id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Cuartos</button>
-                                                <button type="button" class="btn btn-sm" onclick="if ( $('#tabla-semis').css('display') == 'none' )$('#tabla-semis').show();else $('#tabla-semis').hide();" id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Semis</button>
-                                                <button type="button" class="btn btn-sm" onclick="if ( $('#tabla-final').css('display') == 'none' )$('#tabla-final').show();else $('#tabla-final').hide();" id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Final</button>
+                                                <button id="btn-tabla-octavos" type="button" class="btn btn-sm" id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Octavos</button>
+                                                <button type="button" id="btn-tabla-cuartos" class="btn btn-sm" id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Cuartos</button>
+                                                <button type="button" id="btn-tabla-semis" class="btn btn-sm" id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Semis</button>
+                                                <button type="button" id="btn-tabla-final" class="btn btn-sm" id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Final</button>
                                         </div>
                                 </div>
 
-                        <div id="tabla-octavos"> 
+                        <div id="tabla-octavos" style="display: none"> 
                                 <center> Octavos</center>
                                 <div style="margin-top: 10px;margin-bottom: 10px;">
                                         <center>
@@ -257,11 +257,11 @@
                                 </div>
 
 
-                        </div>            ---> aca termina octavods
+                        </div>   <!-- aca termina octavos --> 
 
 
                                
-                        <div id="tabla-cuartos"> 
+                        <div id="tabla-cuartos" style="display: none"> 
                                 <center> Cuartos </center>
                                 <div style="margin-top: 10px;margin-bottom: 10px;">
                                         <center>
@@ -375,10 +375,10 @@
                                 </div>
 
 
-                        </div>      -----> aca termina cuartos
+                        </div>     <!-- aca termina cuartos --> 
 
 
-                        <div id="tabla-semis"> 
+                        <div id="tabla-semis" style="display: none"> 
                                 <center> Semis </center>
                                 <div style="margin-top: 10px;margin-bottom: 10px;">
                                         <center>
@@ -436,12 +436,93 @@
                                         </div>
                                 </div>
                         
-                        </div>      ---> aca termina semis
+                        </div>  <!-- aca termina semis  --> 
 
                         
-                        <div id="tabla-semis"> 
-                            
-                        </div>   ---> aca termina final
+                        <div id="tabla-final" style="display: none"> 
+
+                                <div style="margin-top: 10px;margin-bottom: 10px;">
+                                    <center>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#phone-datos-partido-final" id="grupo-a">+</button>
+                                                                        1ero y 2do PUESTO
+                                    
+                                        <div id="phone-datos-partido-final" class="collapse">
+                                            Fecha: 15 jul. <br>  Horario: 18 hs <br> Estadio: Luzhnikí <br> Ciudad: Moscú
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center">
+                                        <img id="numero1-phone-final-0" style="display: none;" src="static/img/uno.png" height="15" width="15" class="float-left">
+                                        <img id="numero2-phone-final-0" style="display: none;" src="static/img/dos.png" height="15" width="15" class="float-left">
+                                        <img id="bandera-phone-final-0" src="static/img/sinbandera.jpg" height="24" width="24">
+                                        <span id="equipo-phone-final-0">Equipo 1</span>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input id="phone-final-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                    </div>
+                                    <div class="col-2 text-center">
+                                            <input id="phone-final-1" onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <img id="numero1-phone-final-1" style="display: none;" src="static/img/uno.png" height="15" width="15" class="float-left">
+                                        <img id="numero2-phone-final-1" style="display: none;" src="static/img/dos.png" height="15" width="15" class="float-left">
+                                        <img id="bandera-phone-final-1"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                        <span id="equipo-phone-final-1">Equipo 2</span>
+                                    </div>
+                                </div>
+
+
+                                <div style="margin-top: 10px;margin-bottom: 10px;">
+                                    <center>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#phone-datos-partido-final" id="grupo-a">+</button>
+                                                                        3er PUESTO
+                                    
+                                        <div id="phone-datos-partido-final" class="collapse">
+                                            Fecha: 14 jul. <br>  Horario: 17 hs <br> Estadio: San Petersburgo <br> Ciudad: San Petersburgo
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center">
+                                        <img id="numero-phone-3puesto-0" style="display: none;" src="static/img/tres.png" height="15" width="15" class="float-left">
+                                        <img id="bandera-phone-3puesto-0" src="static/img/sinbandera.jpg" height="24" width="24">
+                                        <span id="equipo-phone-3puesto-0">Equipo 1</span>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input id="phone-3puesto-0"  onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                    </div>
+                                    <div class="col-2 text-center">
+                                            <input id="phone-3puesto-1" onchange="verinputs(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <img id="numero-phone-3puesto-1" style="display: none;" src="static/img/tres.png" height="15" width="15" class="float-left">
+                                        <img id="bandera-phone-3puesto-1"  src="static/img/sinbandera.jpg" height="24" width="24">
+                                        <span id="equipo-phone-3puesto-1">Equipo 2</span> 
+                                    </div>
+                                </div>
+
+
+
+                                <div style="border-radius: 10px; background-color:yellow" class="text-center" >
+                                    <div style="margin-bottom:30px"></div>    
+                                        <div class="row">
+                                            
+                                                    <img src="static/img/copa.png" height="100" width="69" style="margin-left: auto;margin-right: auto;">
+                                            
+                                            <div class="col-md-8">
+                                                    <p style="font-weight: 500; font-size: 18px;text-align: center;display: block;margin: 7px 0">CAMPEÓN</p>
+                                                    <div  id="pais-campeon-phone">
+                                                            <img id="bandera-ganador-phone"  src="static/img/sinbandera.jpg" height="30" width="30">
+                                                            <span id="equipo-ganador-phone" style="font-size: 18px">Equipo Ganador</span>
+                                                    </div>                                
+                                            </div>
+                                        </div>
+                                </div>
+
+
+
+                        </div> <!-- aca termina final  --> 
 
                         
                 </div>
@@ -1088,13 +1169,13 @@
         <div class="modal" tabindex="-1" role="dialog" id="modal-partidos">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header" style="background-color: black;color: white">
                         <h5 class="modal-title" id="titulo-modal">Partidos</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="overflow: scroll;" >
                         <div class="container-fluid" style="margin-top:10px">
                             <div class="row">        
                                 <div class="table-responsive">
@@ -1118,7 +1199,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="5">
+                                                <td colspan="5" style="border-top:#e4c275;">
                                                     <div id="partido1-info" class="collapse">
                                                         Estadio: horario:
                                                     </div>
@@ -1142,7 +1223,7 @@
                                                 </td>      
                                             </tr>
                                             <tr>
-                                                <td colspan="5">
+                                                <td colspan="5" style="border-top:#e4c275;">
                                                     <div id="partido2-info" class="collapse">
                                                         Estadio: horario:
                                                     </div>
@@ -1166,7 +1247,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="5">
+                                                <td colspan="5" style="border-top:#e4c275;">
                                                     <div id="partido3-info" class="collapse">
                                                         hola
                                                     </div>
@@ -1190,7 +1271,7 @@
                                                 </td>       
                                             </tr>
                                             <tr>
-                                                <td colspan="5">
+                                                <td colspan="5" style="border-top:#e4c275;">
                                                     <div id="partido4-info" class="collapse">
                                                         Estadio Horario
                                                     </div>
@@ -1214,7 +1295,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="5">
+                                                <td colspan="5" style="border-top:#e4c275;">
                                                     <div id="partido5-info" class="collapse">
                                                         Estadio horario
                                                     </div>
@@ -1238,7 +1319,7 @@
                                                 </td>
                                             </tr>       
                                             <tr>
-                                                <td colspan="5">
+                                                <td colspan="5" style="border-top:#e4c275;">
                                                     <div id="partido6-info" class="collapse">
                                                         Estadio Horario
                                                     </div>
@@ -1249,6 +1330,7 @@
                                 </div>
                             </div>
                         </div>
+                       <center> <button type="button" class="btn btn-dark">Aceptar</button> </center>
                     </div>
                 </div>
             </div>
@@ -1259,6 +1341,7 @@
         <script src="static/js/popper.min.js"></script>
         <script src="static/js/bootstrap.min.js"></script>
         <script src="static/js/logica-desktop.js"></script>
+        <script src="static/js/logica-phone.js"></script>
         <!--<script src="static/js/tabla.js"></script>-->
         <script src="static/js/app.js"></script>
         <script src="static/js/templates.js"></script>
