@@ -20,8 +20,16 @@ var app = (function(scope = {}) {
             equipoVisitante: equipovisitante
         },
         {goles_local:0, goles_visitante:0,
-        setGolesLocal: function(goles) {this.goles_local = goles},
-        setGolesVisitante: function(goles) {this.goles_visitante = goles},
+        setGolesLocal: function(goles) {
+            this.goles_local = parseInt(goles);
+            this.equipoLocal.goles_a_favor += parseInt(goles);
+            this.equipoVisitante.goles_en_contra += parseInt(goles);
+        },
+        setGolesVisitante: function(goles) {
+            this.goles_visitante = parseInt(goles);
+            this.equipoVisitante.goles_a_favor += parseInt(goles);
+            this.equipoLocal.goles_en_contra += parseInt(goles);
+        },
         getGanador: function() {
             if (this.goles_local > this.goles_visitante){
                 return this.equipoLocal;
@@ -56,6 +64,27 @@ var app = (function(scope = {}) {
             partidosACargar[i] = partidoFactory(grupo.partidos[i],equipolocal,equipovisitante);
         }
 
+        function comparacionEquipos(a,b){
+            if(a.puntos > b.puntos){
+                return 1;
+            } else if (a.puntos < b.puntos){
+                return -1;
+            } else {
+                if (a.goles_a_favor - a.goles_en_contra > b.goles_a_favor - b.goles_en_contra){
+                    return 1;
+                } else if (a.goles_a_favor - a.goles_en_contra < b.goles_a_favor - b.goles_en_contra){
+                    return -1;
+                } else {
+                    if (a.goles_a_favor > b.goles_a_favor){
+                        return 1;
+                    } else if (a.goles_a_favor < b.goles_a_favor){
+                        return -1;
+                    }
+                }
+            }
+            return 0;
+        };
+    
         return Object.assign({},{
             letra:grupo.letra,
             posicion1:grupo.posicion1,
@@ -63,7 +92,10 @@ var app = (function(scope = {}) {
             equipos: equiposACargar,
             partidos: partidosACargar,
             setGanador: function(x) {this.ganador = x},
-            getGanador: () => {return this.ganador}
+            getGanador: () => {return this.ganador},
+            ordenarEquipos: function(){
+                this.equipos.sort(comparacionEquipos);
+            }
         })
     }
 
@@ -117,6 +149,7 @@ var app = (function(scope = {}) {
 	var aceptarModal = () => {
         //console.log("El modal activo es: " + modal_activo);
         var grupo = fixture.getGrupo(modal_activo);
+        var equipos;
         //console.log(grupo.partidos[0]);
         var inputs = $(".input_modal");
         var contador = 0;
@@ -139,14 +172,12 @@ var app = (function(scope = {}) {
                 equipo_ganador.puntos = equipo_ganador.puntos + 3 
             }
         }
-        for (var i=0;i<grupo.partidos.length;i++){
-            console.log(grupo.partidos[i].equipoLocal)
-            console.log(grupo.partidos[i].equipoVisitante)
+        for (var i=0;i<grupo.equipos.length;i++){
+            console.log(grupo.equipos[i])
         }
-        //armo tabla con puntos y goles
+        //armo tabla con puntos y goles (Reordenando los td de la tabla del grupo correspondiente)
+        grupo.ordenarEquipos();
         
-
-
         //paso datos a llaves-phone y llaves-desktop
     }
 
