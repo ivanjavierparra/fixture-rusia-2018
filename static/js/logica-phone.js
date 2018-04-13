@@ -34,4 +34,6 @@ $("#btn-tabla-final").click(function() {
 
 }); 
 
-
+function verinputsphone (id){
+    console.log("Hola Mundo");
+}

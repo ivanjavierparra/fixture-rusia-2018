@@ -17,7 +17,7 @@
                 ${grupo.equipos.map(e => 
                     `<tr>
                         <td>
-                            <img src="static/img/banderas/${e.nombre}.png" height="24" width="24">${e.nombre}
+                            <img src="static/img/banderas/${e.foto}.png" height="24" width="24">${e.nombre}
                         </td>
                         <td style="text-align:center">0</td>
                         <td style="text-align:center">0</td>
