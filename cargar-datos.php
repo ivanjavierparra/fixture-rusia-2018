@@ -5,10 +5,12 @@
     class Equipo 
     {
         public $nombre;
+        public $foto;
         
-        function __construct($nombre)
+        function __construct($nombre,$foto)
         {
             $this->nombre = $nombre;
+            $this->foto = $foto;
         }
     }
 
@@ -81,6 +83,16 @@
             $this->lugar = $lugar;
         }
     }
+
+    class Fixture
+    {
+        public $grupos;
+
+        function __construct($grupos)
+        {
+            $this->grupos = $grupos;
+        }
+    }
     
     /* ESTADIOS */
     $estadioUno = new Estadio("SPARTAK STADIUM","Moscú",43298);
@@ -97,10 +109,10 @@
     $estadioDoce = new Estadio("ESTADIO DE KALININGRADO","Kaliningrado",35212);
 
     /* GRUPO A */
-    $rusia = new Equipo("Rusia");
-    $arabia = new Equipo("Arabia Saudita");
-    $egipto = new Equipo("Egipto");
-    $uruguay = new Equipo("Uruguay");
+    $rusia = new Equipo("Rusia","rusia");
+    $arabia = new Equipo("Arabia Saudita","arabiaSaudita");
+    $egipto = new Equipo("Egipto","egipto");
+    $uruguay = new Equipo("Uruguay","uruguay");
 
     $partidoRusiaArabia = new Partido($rusia,$arabia,$estadioUno,15,6,17);
     $partidoEgiptoUruguay = new Partido($egipto,$uruguay,$estadioSeis,15,6,17);
@@ -119,10 +131,10 @@
     
 
     /* GRUPO  B */
-    $portugal = new Equipo("Portugal");
-    $espana = new Equipo("España");
-    $marruecos = new Equipo("Marruecos");
-    $iran = new Equipo("Irán");
+    $portugal = new Equipo("Portugal","portugal");
+    $espana = new Equipo("España","españa");
+    $marruecos = new Equipo("Marruecos","marruecos");
+    $iran = new Equipo("Irán","iran");
 
     $partidoMarruecosIran = new Partido($marruecos,$iran,$estadioOnce,15,6,18);
     $partidoPortugalEspana = new Partido($portugal,$espana,$estadioNueve,15,6,21);
@@ -141,10 +153,10 @@
     
 
     /* GRUPO  C */
-    $francia = new Equipo("Francia");
-    $australia = new Equipo("Australia");
-    $peru = new Equipo("Perú");
-    $dinamarca = new Equipo("Dinamarca");
+    $francia = new Equipo("Francia","francia");
+    $australia = new Equipo("Australia","australia");
+    $peru = new Equipo("Perú","peru");
+    $dinamarca = new Equipo("Dinamarca","dinamarca");
 
     $partidoFranciaAustralia = new Partido($francia,$australia,$estadioTres,16,6,13);
     $partidoPeruDinamarca = new Partido($peru,$dinamarca,$estadioCuatro,16,6,19);
@@ -163,10 +175,10 @@
 
 
     /* GRUPO  D */
-    $argentina = new Equipo("Argentina");
-    $islandia = new Equipo("Islandia");
-    $croacia = new Equipo("Croacia");
-    $nigeria = new Equipo("Nigeria");
+    $argentina = new Equipo("Argentina","argentina");
+    $islandia = new Equipo("Islandia","islandia");
+    $croacia = new Equipo("Croacia","croacia");
+    $nigeria = new Equipo("Nigeria","nigeria");
 
     $partidoArgentinaIslandia = new Partido($argentina,$islandia,$estadioUno,16,6,16);
     $partidoCrociaNigeria = new Partido($croacia,$nigeria,$estadioDoce,16,6,21);
@@ -185,10 +197,10 @@
 
 
     /* GRUPO E */
-    $brasil = new Equipo("Brasil");
-    $suiza = new Equipo("Suiza");
-    $costaRica = new Equipo("Costa Rica");
-    $serbia = new Equipo("Serbia");
+    $brasil = new Equipo("Brasil","brasil");
+    $suiza = new Equipo("Suiza","suiza");
+    $costaRica = new Equipo("Costa Rica","costaRica");
+    $serbia = new Equipo("Serbia","serbia");
 
     $partidoCostaSerbia = new Partido($costaRica,$serbia,$estadioCinco,17,6,16);
     $partidoBrasilSuiza = new Partido($brasil,$suiza,$estadioOcho,17,6,21);
@@ -207,10 +219,10 @@
 
 
     /* GRUPO F */
-    $alemania = new Equipo("Alemania");
-    $mexico = new Equipo("Mexico");
-    $suecia = new Equipo("Suecia");
-    $coreaSur = new Equipo("Corea del Sur");
+    $alemania = new Equipo("Alemania","alemania");
+    $mexico = new Equipo("Mexico","mexico");
+    $suecia = new Equipo("Suecia","suecia");
+    $coreaSur = new Equipo("Corea del Sur","coreaSur");
 
     $partidoAlemaniaMexico = new Partido($alemania,$mexico,$estadioDos,17,6,18);
     $partidoSueciaCorea = new Partido($suecia,$coreaSur,$estadioDiez,18,6,15);
@@ -229,10 +241,10 @@
 
 
     /* GRUPO G */
-    $belgica = new Equipo("Bélgica");
-    $panama = new Equipo("Panamá");
-    $tunez = new Equipo("Túnez");
-    $inglaterra = new Equipo("Inglaterra");
+    $belgica = new Equipo("Bélgica","belgica");
+    $panama = new Equipo("Panamá","panama");
+    $tunez = new Equipo("Túnez","tunez");
+    $inglaterra = new Equipo("Inglaterra","inglaterra");
 
     $partidoBelgicaPanama = new Partido($belgica,$panama,$estadioNueve,18,6,18);
     $partidoTunezInglaterra = new Partido($tunez,$inglaterra,$estadioSiete,18,6,21);
@@ -251,10 +263,10 @@
 
 
     /* GRUPO H */
-    $polonia = new Equipo("Polonia");
-    $senegal = new Equipo("Senegal");
-    $colombia = new Equipo("Colombia");
-    $japon = new Equipo("Japón");
+    $polonia = new Equipo("Polonia","polonia");
+    $senegal = new Equipo("Senegal","senegal");
+    $colombia = new Equipo("Colombia","colombia");
+    $japon = new Equipo("Japón","japon");
 
     $partidoColombiaJapon = new Partido($colombia,$japon,$estadioCuatro,19,6,15);
     $partidoPoloniaSenegal = new Partido($polonia,$senegal,$estadioUno,19,6,18);
@@ -274,9 +286,10 @@
     /* JSON GRUPOS  */
     $grupos = array($grupoa,$grupob,$grupoc,$grupod,$grupoe,$grupof,$grupog,$grupoh);
 
-    $myJSON = json_encode($grupos); 
+    $fixture = new Fixture($grupos);
+
+    $myJSON = json_encode($fixture); 
     header('Content-Type: application/json');
     echo $myJSON;
-
 ?>
 
