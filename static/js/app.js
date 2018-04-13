@@ -177,7 +177,9 @@ var app = (function(scope = {}) {
         }
         //armo tabla con puntos y goles (Reordenando los td de la tabla del grupo correspondiente)
         grupo.ordenarEquipos();
-        
+        var selector = "#grupo" + grupo.letra;
+        $(selector).html(app.templates.grupoTemplate(grupo));
+		
         //paso datos a llaves-phone y llaves-desktop
     }
 

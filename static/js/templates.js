@@ -19,8 +19,8 @@
                         <td>
                             <img src="static/img/banderas/${e.foto}.png" height="24" width="24">${e.nombre}
                         </td>
-                        <td style="text-align:center">0</td>
-                        <td style="text-align:center">0</td>
+                        <td style="text-align:center">${e.puntos}</td>
+                        <td style="text-align:center">${e.goles_a_favor - e.goles_en_contra}</td>
                     </tr>        
                 `).join("")}
             </tbody>
