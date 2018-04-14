@@ -154,8 +154,8 @@ var app = (function(scope = {}) {
 
             $(selector_imagen_local).attr("src",imagen_local);
             $(selector_nombre_local).html(partido.equipoLocal.nombre);
-            $(selector_input_local).value = partido.goles_local;
-            $(selector_input_visitante).value = partido.goles_visitante;
+            $(selector_input_local).val(partido.goles_local);
+            $(selector_input_visitante).val(partido.goles_visitante);
             $(selector_imagen_visitante).attr("src",imagen_visitante);
             $(selector_nombre_visitante).html(partido.equipoVisitante.nombre);
             $(selector_estadio_horario).html(estadio_horario);
