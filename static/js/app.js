@@ -19,16 +19,24 @@ var app = (function(scope = {}) {
             equipoLocal: equipolocal,
             equipoVisitante: equipovisitante
         },
-        {goles_local:0, goles_visitante:0,
+        {goles_local:null, goles_visitante:null,
         setGolesLocal: function(goles) {
-            this.goles_local = parseInt(goles);
-            this.equipoLocal.goles_a_favor += parseInt(goles);
-            this.equipoVisitante.goles_en_contra += parseInt(goles);
+            if(goles)
+                this.goles_local = parseInt(goles);
+            else
+                this.goles_local = null;
         },
         setGolesVisitante: function(goles) {
-            this.goles_visitante = parseInt(goles);
-            this.equipoVisitante.goles_a_favor += parseInt(goles);
-            this.equipoLocal.goles_en_contra += parseInt(goles);
+            if(goles)
+                this.goles_visitante = parseInt(goles);
+            else
+                this.goles_visitante = null;
+        },
+        setGolesEquipos: function(){
+            this.equipoLocal.goles_a_favor += this.goles_local;
+            this.equipoLocal.goles_en_contra += this.goles_visitante;
+            this.equipoVisitante.goles_a_favor += this.goles_visitante;
+            this.equipoVisitante.goles_en_contra += this.goles_local;
         },
         getGanador: function() {
             if (this.goles_local > this.goles_visitante){
@@ -66,19 +74,19 @@ var app = (function(scope = {}) {
 
         function comparacionEquipos(a,b){
             if(a.puntos > b.puntos){
-                return 1;
-            } else if (a.puntos < b.puntos){
                 return -1;
+            } else if (a.puntos < b.puntos){
+                return 1;
             } else {
                 if (a.goles_a_favor - a.goles_en_contra > b.goles_a_favor - b.goles_en_contra){
-                    return 1;
-                } else if (a.goles_a_favor - a.goles_en_contra < b.goles_a_favor - b.goles_en_contra){
                     return -1;
+                } else if (a.goles_a_favor - a.goles_en_contra < b.goles_a_favor - b.goles_en_contra){
+                    return 1;
                 } else {
                     if (a.goles_a_favor > b.goles_a_favor){
-                        return 1;
-                    } else if (a.goles_a_favor < b.goles_a_favor){
                         return -1;
+                    } else if (a.goles_a_favor < b.goles_a_favor){
+                        return 1;
                     }
                 }
             }
@@ -92,7 +100,6 @@ var app = (function(scope = {}) {
             equipos: equiposACargar,
             partidos: partidosACargar,
             setGanador: function(x) {this.ganador = x},
-            getGanador: () => {return this.ganador},
             ordenarEquipos: function(){
                 this.equipos.sort(comparacionEquipos);
             }
@@ -124,6 +131,12 @@ var app = (function(scope = {}) {
     var cargarModal = (letra) => {
 		modal_activo = letra;
         var grupo = fixture.getGrupo(letra);
+        for (var i=0; i<grupo.equipos.length;i++){
+            grupo.equipos[i].puntos = 0;
+            grupo.equipos[i].goles_a_favor = 0;
+            grupo.equipos[i].goles_en_contra = 0;
+        }
+        //Cargo los inputs del equipo correspondinte inputs para cargar los de otro grupo;
         for (var i=0;i<grupo.partidos.length;i++){
             var partido = grupo.partidos[i];
             var numero_partido = i+1;
@@ -135,10 +148,14 @@ var app = (function(scope = {}) {
             var imagen_visitante = "static/img/banderas/"+partido.equipoVisitante.foto+".png";
             var selector_estadio_horario = "#partido" + numero_partido + "-info";
             var estadio_horario = "Estudio:" + partido.estadio.nombre + " Fecha: " +
-             partido.dia + "/" + partido.mes + " " + partido.hora + ":00";
+            partido.dia + "/" + partido.mes + " " + partido.hora + ":00";
+            var selector_input_local = "#id_input_local_" + numero_partido;
+            var selector_input_visitante = "#id_input_visitante_" + numero_partido;
 
             $(selector_imagen_local).attr("src",imagen_local);
             $(selector_nombre_local).html(partido.equipoLocal.nombre);
+            $(selector_input_local).value = partido.goles_local;
+            $(selector_input_visitante).value = partido.goles_visitante;
             $(selector_imagen_visitante).attr("src",imagen_visitante);
             $(selector_nombre_visitante).html(partido.equipoVisitante.nombre);
             $(selector_estadio_horario).html(estadio_horario);
@@ -147,33 +164,36 @@ var app = (function(scope = {}) {
 	
 	
 	var aceptarModal = () => {
-        //console.log("El modal activo es: " + modal_activo);
         var grupo = fixture.getGrupo(modal_activo);
         var equipos;
-        //console.log(grupo.partidos[0]);
         var inputs = $(".input_modal");
         var contador = 0;
-
         //recorro inputs y seteo partidos
         for (var i=0;i<grupo.partidos.length;i++){
-            grupo.partidos[i].setGolesLocal( inputs[contador].value );
-            contador++;
-            grupo.partidos[i].setGolesVisitante ( inputs[contador].value );
-            contador++;
+            if (inputs[contador].value != "" && inputs[contador+1].value != ""){
+                grupo.partidos[i].setGolesLocal( inputs[contador].value );
+                contador++;
+                grupo.partidos[i].setGolesVisitante ( inputs[contador].value );
+                contador++;
+            } else {
+                grupo.partidos[i].setGolesLocal(null);
+                grupo.partidos[i].setGolesVisitante(null);
+                contador += 2;
+            }
         }
         //calculo ganador
         var equipo_ganador;
         for (var i=0;i<grupo.partidos.length;i++){
-            if (grupo.partidos[i].getGanador() == null){
-                grupo.partidos[i].equipoLocal.puntos += 1;
-                grupo.partidos[i].equipoVisitante.puntos += 1;
-            } else {
-                equipo_ganador =  grupo.partidos[i].getGanador();
-                equipo_ganador.puntos = equipo_ganador.puntos + 3 
+            if (grupo.partidos[i].goles_local != null && grupo.partidos[i].goles_visitante != null){
+                grupo.partidos[i].setGolesEquipos();
+                if (grupo.partidos[i].getGanador() == null){
+                    grupo.partidos[i].equipoLocal.puntos += 1;
+                    grupo.partidos[i].equipoVisitante.puntos += 1;
+                } else {
+                    equipo_ganador =  grupo.partidos[i].getGanador();
+                    equipo_ganador.puntos = equipo_ganador.puntos + 3 
+                }
             }
-        }
-        for (var i=0;i<grupo.equipos.length;i++){
-            console.log(grupo.equipos[i])
         }
         //armo tabla con puntos y goles (Reordenando los td de la tabla del grupo correspondiente)
         grupo.ordenarEquipos();
@@ -212,7 +232,9 @@ var app = (function(scope = {}) {
         $(span2_phone).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
         $(img2_phone).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
         /* fin phone */
+        $('#modal-partidos').modal('toggle');
     }
+    $
 
     return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal});
 

@@ -24,10 +24,9 @@
                 <div id="grupoH" class="col-lg-3 col-md-3 col-sm-6 col-xs-12"></div>    
             </div>
         </div>
-		<div id="llaves-phone" class="container-fluid" style="background-color: yellow">
+		<div id="llaves-phone" class="container-fluid">
                 <p>llave para celular</p>
                 <div id="llaves" class="col-sm-12 col-xs-12"> 
-
                                 <div class="row" style="background-color: black; border-radius: 10px">
                                         <div id="selector" style="margin-left: 10px">
                                                 <button id="btn-tabla-octavos" type="button" class="btn btn-sm" id="grupo-a" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px; background-color: black; color:white;">Octavos</button>
@@ -42,8 +41,7 @@
                                 <div style="margin-top: 10px;margin-bottom: 10px;">
                                         <center>
                                             <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#phone-datos-partido-49" id="grupo-a">+</button>
-                                                                                    Partido 49
-                                        
+                                                                                    Partido 49    
                                             <div id="phone-datos-partido-49" class="collapse">
                                                     Fecha: 30 jun.<br>Horario: 21 hs<br>Estadio: Fisht<br>Ciudad: Sochi
                                             </div>
@@ -1351,7 +1349,7 @@
         <script>
             function partidos(letra){
                 app.cargarModal(letra);
-                $("#modal-partidos").show();
+                $('#modal-partidos').modal('toggle');
             }
             function cerrarModal(){
                 $("#modal-partidos").modal("toggle");
