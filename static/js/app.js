@@ -181,6 +181,37 @@ var app = (function(scope = {}) {
         $(selector).html(app.templates.grupoTemplate(grupo));
 		
         //paso datos a llaves-phone y llaves-desktop
+		/* desktop */
+        var pos1 = "" +  grupo.posicion1.fase + "-" + grupo.posicion1.tipo + "-" + grupo.posicion1.lugar + "";
+        var selector_input_1 = pos1.toLowerCase();
+        var span1 = "#equipo-" + selector_input_1;
+        var img1 = "#bandera-" + selector_input_1;
+
+        var pos2 = "" +  grupo.posicion2.fase + "-" + grupo.posicion2.tipo + "-" + grupo.posicion2.lugar + "";
+        var selector_input_2 = pos2.toLowerCase();
+        var span2 = "#equipo-" + selector_input_2;
+        var img2 = "#bandera-" + selector_input_2;
+
+        $(span1).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
+        $(img1).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
+        
+        $(span2).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
+        $(img2).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
+        /* fin desktop */
+
+        /* phone */
+        var span1_phone = "#equipo-phone" + selector_input_1;
+        var img1_phone = "#bandera-phone" + selector_input_1;
+         
+        var span2_phone = "#equipo-phone" + selector_input_2;
+        var img2_phone = "#bandera-phone" + selector_input_2;
+
+        $(span1_phone).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
+        $(img1_phone).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
+        
+        $(span2_phone).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
+        $(img2_phone).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
+        /* fin phone */
     }
 
     return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal});
