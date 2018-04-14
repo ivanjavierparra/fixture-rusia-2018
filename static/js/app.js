@@ -200,11 +200,11 @@ var app = (function(scope = {}) {
         /* fin desktop */
 
         /* phone */
-        var span1_phone = "#equipo-phone" + selector_input_1;
-        var img1_phone = "#bandera-phone" + selector_input_1;
+        var span1_phone = "#equipo-phone-" + selector_input_1;
+        var img1_phone = "#bandera-phone-" + selector_input_1;
          
-        var span2_phone = "#equipo-phone" + selector_input_2;
-        var img2_phone = "#bandera-phone" + selector_input_2;
+        var span2_phone = "#equipo-phone-" + selector_input_2;
+        var img2_phone = "#bandera-phone-" + selector_input_2;
 
         $(span1_phone).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
         $(img1_phone).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
