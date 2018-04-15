@@ -241,12 +241,12 @@ $("#btn-tabla-final").click(function() {
                     var goles_equipo1 = parseInt($(selector_equipo1).val());
                     var goles_equipo2 = parseInt($(selector_equipo2).val());
          
-                    /* desktop 
-                    var selector_phone_equipo_1 = "#phone-" + id_equipo1;
-                    var selector_phone_equipo_2 = "#phone-" + id_equipo2;
-                    $(selector_phone_equipo_1).val($(selector_equipo1).val());
-                    $(selector_phone_equipo_2).val($(selector_equipo2).val());
-                    fin desktop */
+                    /* desktop */
+                    var selector_desktop_equipo_1 = "#" + id_equipo1.substr(6);
+                    var selector_desktop_equipo_2 = "#" + id_equipo2.substr(6);
+                    $(selector_desktop_equipo_1).val($(selector_equipo1).val());
+                    $(selector_desktop_equipo_2).val($(selector_equipo2).val());
+                    /* fin desktop */
                     
                     if ( goles_equipo1 > goles_equipo2 ){ //ganó equipo1.
                          pasarganador_phone(id_equipo1,id_posicion);
@@ -256,6 +256,10 @@ $("#btn-tabla-final").click(function() {
                     }
                     else{ //empataron.
                          pasarganador_phone("",id_posicion);
+                         ocultarImagenPosiciones();
+                        if ((id_equipo1.indexOf("octavos") > -1) || (id_equipo1.indexOf("cuartos") > -1)){
+                                arreglar_fixture_empate(id_equipo1);
+                        }
                     }
                 }
 
@@ -264,10 +268,10 @@ $("#btn-tabla-final").click(function() {
                     var id_span_posicion = "#equipo-"+id_posicion;
                     var id_img_posicion = "#bandera-"+id_posicion;
 
-                    /* desktop 
-                    var selector_phone_span2 = "#equipo-phone-" + id_posicion;
-                    var selector_phone_img2 = "#bandera-phone-" + id_posicion;
-                        fin desktop */
+                    /* desktop */
+                    var selector_desktop_span2 = "#equipo-" + id_posicion.substr(6);
+                    var selector_desktop_img2 = "#bandera-" + id_posicion.substr(6);
+                    /* fin desktop */
     
                     if(id_input!=""){
                             var id_span1 = "#equipo-"+id_input;
@@ -277,29 +281,29 @@ $("#btn-tabla-final").click(function() {
                             $(id_span_posicion).html($(id_span1).html());
                             $(id_img_posicion).attr("src",selector_imagen);
     
-                            /* desktop 
-                            $(selector_phone_span2).html($(id_span1).html());
-                            $(selector_phone_img2).attr("src",selector_imagen);
-                                fin desktop */
+                            /* desktop */
+                            $(selector_desktop_span2).html($(id_span1).html());
+                            $(selector_desktop_img2).attr("src",selector_imagen);
+                            /* fin desktop */
                             
                     }else{
                             if (id_posicion.charAt(id_posicion.length-1)%2==0){
                                     $(id_span_posicion).html("Equipo 1");
                                     $(id_img_posicion).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
     
-                                    /* desktop 
-                                    $(selector_phone_span2).html("Equipo 1");
-                                    $(selector_phone_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
-                                         fin desktop */
+                                    /* desktop */
+                                    $(selector_desktop_span2).html("Equipo 1");
+                                    $(selector_desktop_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                    /* fin desktop */
                             }
                             else{
                                     $(id_span_posicion).html("Equipo 2");
                                     $(id_img_posicion).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
                                     
-                                    /* desktop 
-                                    $(selector_phone_span2).html("Equipo 2");
-                                    $(selector_phone_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
-                                     fin desktop */
+                                    /* desktop */
+                                    $(selector_desktop_span2).html("Equipo 2");
+                                    $(selector_desktop_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                    /* fin desktop */
                             }
                     }
             }
@@ -310,12 +314,12 @@ $("#btn-tabla-final").click(function() {
                 var goles_equipo1 = parseInt($(selector_equipo1).val());
                 var goles_equipo2 = parseInt($(selector_equipo2).val());
      
-                /* desktop 
-                var selector_phone_equipo_1 = "#phone-" + id_equipo1;
-                var selector_phone_equipo_2 = "#phone-" + id_equipo2;
-                $(selector_phone_equipo_1).val($(selector_equipo1).val());
-                $(selector_phone_equipo_2).val($(selector_equipo2).val());
-                 fin desktop */
+                /* desktop */
+                var selector_desktop_equipo_1 = "#" + id_equipo1.substr(6);
+                var selector_desktop_equipo_2 = "#" + id_equipo2.substr(6);
+                $(selector_desktop_equipo_1).val($(selector_equipo1).val());
+                $(selector_desktop_equipo_2).val($(selector_equipo2).val());
+                /* fin desktop */
      
                 if ( goles_equipo1 > goles_equipo2 ){
                      pasarganador(id_equipo1,id_posicion1);
@@ -328,6 +332,7 @@ $("#btn-tabla-final").click(function() {
                 else{
                      pasarganador("",id_posicion1);
                      pasarganador("",id_posicion2);
+                     ocultarImagenPosiciones();
                 }
             }
 
@@ -340,12 +345,12 @@ $("#btn-tabla-final").click(function() {
                 var goles_equipo1 = parseInt($(selector_equipo1).val());
                 var goles_equipo2 = parseInt($(selector_equipo2).val());
                 
-                /* desktop: seteo los goles 
-                var selector_phone_equipo_1 = "#phone-" + id_equipo1;
-                var selector_phone_equipo_2 = "#phone-" + id_equipo2;
-                $(selector_phone_equipo_1).val($(selector_equipo1).val());
-                $(selector_phone_equipo_2).val($(selector_equipo2).val());
-                 fin desktop */
+                /* desktop: seteo los goles */
+                var selector_desktop_equipo_1 = "#" + id_equipo1.substr(6);
+                var selector_desktop_equipo_2 = "#" + id_equipo2.substr(6);
+                $(selector_desktop_equipo_1).val($(selector_equipo1).val());
+                $(selector_desktop_equipo_2).val($(selector_equipo2).val());
+                /* fin desktop */
     
                 if ( goles_equipo1 > goles_equipo2 ){ //ganó equipo1
                     id_span = "#equipo-"+id_equipo1;
@@ -360,14 +365,14 @@ $("#btn-tabla-final").click(function() {
                     $("#numero1-phone-final-1").hide();
                     $("#numero2-phone-final-1").show();
     
-                    /* desktop: seteo span e imagen 
-                    $("#equipo-ganador-phone").html($(id_span).html());
-                    $("#bandera-ganador-phone").attr("src",selector_imagen);
-                    $("#numero1-phone-final-0").show();
-                    $("#numero2-phone-final-0").hide();
-                    $("#numero1-phone-final-1").hide();
-                    $("#numero2-phone-final-1").show();
-                     fin desktop */
+                    /* desktop: seteo span e imagen */
+                    $("#equipo-ganador").html($(id_span).html());
+                    $("#bandera-ganador").attr("src",selector_imagen);
+                    $("#numero1-final-0").show();
+                    $("#numero2-final-0").hide();
+                    $("#numero1-final-1").hide();
+                    $("#numero2-final-1").show();
+                     /* fin desktop */
                 }
                 else if ( goles_equipo1 < goles_equipo2 ){ //ganó equipo2
                     id_span = "#equipo-"+id_equipo2;
@@ -381,28 +386,32 @@ $("#btn-tabla-final").click(function() {
                     $("#numero1-phone-final-0").hide();
                     $("#numero2-phone-final-0").show();
     
-                    /* desktop: seteo span e imagen 
-                    $("#equipo-ganador-phone").html($(id_span).html());
-                    $("#bandera-ganador-phone").attr("src",selector_imagen);
-                    $("#numero1-phone-final-1").show();
-                    $("#numero2-phone-final-1").hide();
-                    $("#numero1-phone-final-0").hide();
-                    $("#numero2-phone-final-0").show()
-                     fin desktop */
+                    /* desktop: seteo span e imagen */
+                    $("#equipo-ganador").html($(id_span).html());
+                    $("#bandera-ganador").attr("src",selector_imagen);
+                    $("#numero1-final-1").show();
+                    $("#numero2-final-1").hide();
+                    $("#numero1-final-0").hide();
+                    $("#numero2-final-0").show()
+                    /* fin desktop */
                 }
                 else{//empataron --> tengo que borrar campeón.
-                    $("#equipo-ganador-phone").html("Equipo Ganador");
-                    $("#bandera-ganador-phone").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
-                    //oculto imágenes
-                    $("#numero1-phone-final-0").hide();
-                    $("#numero2-phone-final-0").hide();
-                    $("#numero1-phone-final-1").hide();
-                    $("#numero2-phone-final-1").hide();
-    
-                    /* desktop: seteo span e imagen 
-                    $("#equipo-ganador-phone").html("Equipo Ganador");
-                    $("#bandera-ganador-phone").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
-                     fin desktop */
+                        $("#equipo-ganador").html("Equipo Ganador");
+                        $("#bandera-ganador").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //oculto imágenes
+                        $("#numero1-final-0").hide();
+                        $("#numero2-final-0").hide();
+                        $("#numero1-final-1").hide();
+                        $("#numero2-final-1").hide();
+        
+                        /* phone: seteo span e imagen */
+                        $("#equipo-ganador-phone").html("Equipo Ganador");
+                        $("#bandera-ganador-phone").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        $("#numero1-phone-final-0").hide();
+                        $("#numero2-phone-final-0").hide();
+                        $("#numero1-phone-final-1").hide();
+                        $("#numero2-phone-final-1").hide();
+                        /* fin phone */
                 }
             }
                 
@@ -413,34 +422,34 @@ $("#btn-tabla-final").click(function() {
                 var goles_equipo1 = parseInt($(selector_equipo1).val());
                 var goles_equipo2 = parseInt($(selector_equipo2).val());
       
-                /* desktop 
-                $("#phone-3puesto-0").val(goles_equipo1);
-                $("#phone-3puesto-1").val(goles_equipo2);
-                 fin phone */
+                /* desktop */
+                $("#3puesto-0").val(goles_equipo1);
+                $("#3puesto-1").val(goles_equipo2);
+                /* fin desktop */
       
       
                  if ( goles_equipo1 > goles_equipo2 ){ //ganó equipo1
                       $("#numero-phone-3puesto-0").show();
                       $("#numero-phone-3puesto-1").hide();
-                      /* desktop 
-                      $("#numero-phone-3puesto-0").show();
-                      $("#numero-phone-3puesto-1").hide();
+                      /* desktop */
+                      $("#numero-3puesto-0").show();
+                      $("#numero-3puesto-1").hide();
                       /* fin desktop */
                   }
                   else if ( goles_equipo1 < goles_equipo2 ){ //ganó equipo2
                       $("#numero-phone-3puesto-0").hide();
                       $("#numero-phone-3puesto-1").show();
-                      /* desktop 
-                      $("#numero-phone-3puesto-0").hide();
-                      $("#numero-phone-3puesto-1").show();
+                      /* desktop */
+                      $("#numero-3puesto-0").hide();
+                      $("#numero-3puesto-1").show();
                       /* fin desktop */
                   }
                   else{ //empate
                       $("#numero-phone-3puesto-0").hide();
                       $("#numero-phone-3puesto-1").hide();
-                      /* desktop 
-                      $("#numero-phone-3puesto-0").hide();
-                      $("#numero-phone-3puesto-1").hide();
+                      /* desktop */
+                      $("#numero-3puesto-0").hide();
+                      $("#numero-3puesto-1").hide();
                       /* fin desktop */
                   }
               }
