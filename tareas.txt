@@ -1,5 +1,8 @@
-1. validar inputs en modal de grupo 
+1. validar inputs en modal de grupo --> ya esta...
 2. limpiar valores cuando pasas de un modal a otro.
-3. lógica de llaves de phone.
+3. lï¿½gica de llaves de phone.
 4. ver penales.
-5. cambiar estética de las llaves.
+5. cambiar estï¿½tica de las llaves.
+6. poner tooltips en los botones
+7. en llaves-phone poner espacio entre partidos
+8. cuando esta el fixture lleno, si por ej en octavos argentina le gana a nigeria 4 a 0, que yo modifique el valor a 3 o a 2, que no me cambie el resto de la tabla. Solo cambiar cuando cambia ganador del partido.
