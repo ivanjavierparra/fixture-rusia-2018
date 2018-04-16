@@ -466,6 +466,12 @@ var app = (function(scope = {}) {
         }
     }
 
-    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,cambiaron_ganadores});
+    function validar_inputs_modal(input){
+        if((input.value.length>2) || (input.value>10)){
+            input.value = 0;
+        }
+    }
+
+    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,cambiaron_ganadores,validar_inputs_modal});
 
 })();
