@@ -1,4 +1,7 @@
-        /**
+var id_semis_left = "";
+var id_semis_right = "";
+      
+      /**
         * Valida que sólo se ingresen números en los input type number.
         */
         $("[type='number']").keypress(function (evt) {
@@ -7,7 +10,10 @@
             
         });
 
-       
+        $("[type='number']").attr({
+                "max" : 10,        // substitute your own
+                "min" : 0          // values (or variables) here
+             });
        
         /**
             * id: id perteneciente a algún input type number (representa goles de un equipo).
@@ -375,9 +381,11 @@
            
            if ( goles_equipo1 > goles_equipo2 ){ //ganó equipo1.
                 pasarganador(id_equipo1,id_posicion);
+                arreglar_fixture_ganador(id_equipo1);
            }
            else if  ( goles_equipo1 < goles_equipo2 ){ //ganó equipo2.
                 pasarganador(id_equipo2,id_posicion);
+                arreglar_fixture_ganador(id_equipo2);
            }
            else{ //empataron.
                 pasarganador_phone("",id_posicion);
@@ -717,6 +725,289 @@
         }
 
         
+        //iria en pasarganador: en goles1 > goles2 
+        function arreglar_fixture_ganador(id_equipo1){
+                //si cambia octavos -> cambiar semis y final
+                //si cambia cuartos --> cambiar final
+                var adentro = false;
+                if((id_equipo1=="octavos-left-0")||(id_equipo1=="octavos-left-1")||(id_equipo1=="phone-octavos-left-0")||(id_equipo1=="phone-octavos-left-1")){
+                        adentro = true;
+                        //semis
+                        $("#equipo-semis-left-0").html("Equipo 1");
+                        $("#bandera-semis-left-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //tercer puesto
+                        $("#equipo-3puesto-0").html("Equipo 1");
+                        $("#bandera-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-final-0").html("Equipo 1");
+                        $("#bandera-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                        /* phone */
+                        //semis
+                        $("#equipo-phone-semis-left-0").html("Equipo 1");
+                        $("#bandera-phone-semis-left-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //tercer puesto
+                        $("#equipo-phone-3puesto-0").html("Equipo 1");
+                        $("#bandera-phone-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-phone-final-0").html("Equipo 1");
+                        $("#bandera-phone-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        /* fin phone */
+                }
+                else if((id_equipo1=="octavos-left-2")||(id_equipo1=="octavos-left-3")||(id_equipo1=="phone-octavos-left-2")||(id_equipo1=="phone-octavos-left-3")){
+                        adentro = true;
+                        //semis
+                        $("#equipo-semis-left-0").html("Equipo 1");
+                        $("#bandera-semis-left-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //tercer puesto
+                        $("#equipo-3puesto-0").html("Equipo 1");
+                        $("#bandera-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-final-0").html("Equipo 1");
+                        $("#bandera-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                        /* phone */
+                        //semis
+                        $("#equipo-phone-semis-left-0").html("Equipo 1");
+                        $("#bandera-phone-semis-left-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //tercer puesto
+                        $("#equipo-phone-3puesto-0").html("Equipo 1");
+                        $("#bandera-phone-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-phone-final-0").html("Equipo 1");
+                        $("#bandera-phone-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        /* fin phone */
+                }
+                else if((id_equipo1=="octavos-left-4")||(id_equipo1=="octavos-left-5")||(id_equipo1=="phone-octavos-left-4")||(id_equipo1=="phone-octavos-left-5")){
+                        adentro = true;
+                       //semis
+                       $("#equipo-semis-left-1").html("Equipo 2");
+                       $("#bandera-semis-left-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-3puesto-0").html("Equipo 1");
+                       $("#bandera-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-final-0").html("Equipo 1");
+                       $("#bandera-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                       /* phone */
+                       //semis
+                       $("#equipo-phone-semis-left-1").html("Equipo 2");
+                       $("#bandera-phone-semis-left-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-phone-3puesto-0").html("Equipo 1");
+                       $("#bandera-phone-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-phone-final-0").html("Equipo 1");
+                       $("#bandera-phone-sfinal-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       /* fin phone */
+                }
+                else if((id_equipo1=="octavos-left-6")||(id_equipo1=="octavos-left-7")||(id_equipo1=="phone-octavos-left-6")||(id_equipo1=="phone-octavos-left-7")){
+                        adentro = true;
+                       //semis
+                       $("#equipo-semis-left-1").html("Equipo 2");
+                       $("#bandera-semis-left-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-3puesto-0").html("Equipo 1");
+                       $("#bandera-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-final-0").html("Equipo 1");
+                       $("#bandera-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                       /* phone */
+                        //semis
+                        $("#equipo-phone-semis-left-1").html("Equipo 2");
+                        $("#bandera-phone-semis-left-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //tercer puesto
+                        $("#equipo-phone-3puesto-0").html("Equipo 1");
+                        $("#bandera-phone-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-phone-final-0").html("Equipo 1");
+                        $("#bandera-phone-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       /* fin phone */
+                }
+                else if((id_equipo1=="octavos-right-0")||(id_equipo1=="octavos-right-1")||(id_equipo1=="phone-octavos-right-0")||(id_equipo1=="phone-octavos-right-1")){
+                        adentro = true;
+                       //semis
+                       $("#equipo-semis-right-0").html("Equipo 2");
+                       $("#bandera-semis-right-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-3puesto-1").html("Equipo 2");
+                       $("#bandera-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-final-1").html("Equipo 2");
+                       $("#bandera-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                       /* phone */
+                        //semis
+                        $("#equipo-phone-semis-right-0").html("Equipo 2");
+                        $("#bandera-phone-semis-right-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //tercer puesto
+                        $("#equipo-phone-3puesto-1").html("Equipo 2");
+                        $("#bandera-phone-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-phone-final-1").html("Equipo 2");
+                        $("#bandera-phone-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       /* fin phone */
+                }
+                else if((id_equipo1=="octavos-right-2")||(id_equipo1=="octavos-right-3")||(id_equipo1=="phone-octavos-right-2")||(id_equipo1=="phone-octavos-right-3")){
+                        adentro = true;
+                       //semis
+                       $("#equipo-semis-right-0").html("Equipo 2");
+                       $("#bandera-semis-right-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-3puesto-1").html("Equipo 2");
+                       $("#bandera-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-final-1").html("Equipo 2");
+                       $("#bandera-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                       /* phone */
+                       //semis
+                       $("#equipo-phone-semis-right-0").html("Equipo 2");
+                       $("#bandera-phone-semis-right-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-phone-3puesto-1").html("Equipo 2");
+                       $("#bandera-phone-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-phone-final-1").html("Equipo 2");
+                       $("#bandera-phone-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       /* fin phone */
+                }
+                else if((id_equipo1=="octavos-right-4")||(id_equipo1=="octavos-right-5")||(id_equipo1=="phone-octavos-right-4")||(id_equipo1=="phone-octavos-right-5")){
+                        adentro = true;
+                       //semis
+                       $("#equipo-semis-right-1").html("Equipo 2");
+                       $("#bandera-semis-right-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-3puesto-1").html("Equipo 1");
+                       $("#bandera-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-final-1").html("Equipo 1");
+                       $("#bandera-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                       /* phone */
+                       //semis
+                       $("#equipo-phone-semis-right-1").html("Equipo 2");
+                       $("#bandera-phone-semis-right-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-phone-3puesto-1").html("Equipo 1");
+                       $("#bandera-phone-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-phone-final-1").html("Equipo 1");
+                       $("#bandera-phone-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       /* fin phone */
+                }
+                else if((id_equipo1=="octavos-right-6")||(id_equipo1=="octavos-right-7")||(id_equipo1=="phone-octavos-right-6")||(id_equipo1=="phone-octavos-right-7")){
+                        adentro = true;
+                       //semis
+                       $("#equipo-semis-right-1").html("Equipo 2");
+                       $("#bandera-semis-right-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-3puesto-1").html("Equipo 1");
+                       $("#bandera-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-final-1").html("Equipo 1");
+                       $("#bandera-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                       /* phone */
+                       //semis
+                       $("#equipo-phone-semis-right-1").html("Equipo 2");
+                       $("#bandera-phone-semis-right-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //tercer puesto
+                       $("#equipo-phone-3puesto-1").html("Equipo 1");
+                       $("#bandera-phone-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-phone-final-1").html("Equipo 1");
+                       $("#bandera-phone-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       /* fin phone */
+                }
+                else if((id_equipo1=="cuartos-left-0")||(id_equipo1=="cuartos-left-1")||(id_equipo1=="phone-cuartos-left-0")||(id_equipo1=="phone-cuartos-left-1")){
+                        adentro = true;
+                        //tercer puesto
+                        $("#equipo-3puesto-0").html("Equipo 2");
+                        $("#bandera-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-final-0").html("Equipo 2");
+                        $("#bandera-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                        /* phone */
+                        
+                        //tercer puesto
+                        $("#equipo-phone-3puesto-0").html("Equipo 2");
+                        $("#bandera-phone-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-phone-final-0").html("Equipo 2");
+                        $("#bandera-phone-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        /* fin phone */
+                }
+                else if((id_equipo1=="cuartos-left-2")||(id_equipo1=="cuartos-left-3")||(id_equipo1=="phone-cuartos-left-1")||(id_equipo1=="phone-cuartos-left-2")){
+                        adentro = true;
+                        //tercer puesto
+                        $("#equipo-3puesto-0").html("Equipo 2");
+                        $("#bandera-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-final-0").html("Equipo 2");
+                        $("#bandera-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                        /* phone */
+                        
+                        //tercer puesto
+                        $("#equipo-phone-3puesto-0").html("Equipo 2");
+                        $("#bandera-phone-3puesto-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        //final
+                        $("#equipo-phone-final-0").html("Equipo 2");
+                        $("#bandera-phone-final-0").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                        /* fin phone */
+                }
+                else if((id_equipo1=="cuartos-right-0")||(id_equipo1=="cuartos-right-1")||(id_equipo1=="phone-cuartos-right-0")||(id_equipo1=="phone-right-left-1")){
+                        adentro = true;
+                       //tercer puesto
+                       $("#equipo-3puesto-1").html("Equipo 2");
+                       $("#bandera-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-final-1").html("Equipo 2");
+                       $("#bandera-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                       /* phone */
+                       
+                       //tercer puesto
+                       $("#equipo-phone-3puesto-1").html("Equipo 2");
+                       $("#bandera-phone-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-phone-final-1").html("Equipo 2");
+                       $("#bandera-phone-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       /* fin phone */
+                }
+                else if((id_equipo1=="cuartos-right-2")||(id_equipo1=="cuartos-right-3")||(id_equipo1=="phone-cuartos-right-3")||(id_equipo1=="phone-right-left-3")){
+                        adentro = true;
+                       //tercer puesto
+                       $("#equipo-3puesto-1").html("Equipo 2");
+                       $("#bandera-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-final-1").html("Equipo 2");
+                       $("#bandera-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+
+                       /* phone */
+                       
+                       //tercer puesto
+                       $("#equipo-phone-3puesto-1").html("Equipo 2");
+                       $("#bandera-phone-3puesto-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       //final
+                       $("#equipo-phone-final-1").html("Equipo 2");
+                       $("#bandera-phone-final-1").attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
+                       /* fin phone */
+                }
+                else{
+
+                }
+
+                if(adentro)ocultarImagenPosiciones();
+
+        }
+
+
+
 
         /**
          * id_equipo1: id del input del equipo 1 en el fixture.
@@ -741,10 +1032,49 @@
            if ( goles_equipo1 > goles_equipo2 ){
                 pasarganador(id_equipo1,id_posicion1);
                 pasarganador(id_equipo2,id_posicion2);
+                //si noto que en la misma llave en semis cambio el ganador, lo que hago es ocultar las imagenes de los ganadores.
+                if(id_equipo1.indexOf("left") > -1){
+                        if(id_semis_left=="")id_semis_left = id_equipo1;
+                        else{
+                                if(id_equipo1 != id_semis_left){
+                                        id_semis_left = id_equipo1;
+                                        ocultarImagenPosiciones();
+                                }
+                        }
+                        
+                }else{//semis-right
+                        if(id_semis_right == "")id_semis_right = id_equipo1;
+                        else{
+                                if(id_equipo1 != id_semis_right){
+                                        id_semis_right = id_equipo1;
+                                        ocultarImagenPosiciones();
+                                }
+                        }
+                }
+                
            }
            else if  ( goles_equipo1 < goles_equipo2 ){
                 pasarganador(id_equipo2,id_posicion1);
                 pasarganador(id_equipo1,id_posicion2);
+                //si noto que en la misma llave en semis cambio el ganador, lo que hago es ocultar las imagenes de los ganadores.
+                if(id_equipo2.indexOf("left") > -1){
+                        if(id_semis_left=="")id_semis_left = id_equipo2;
+                        else{
+                                if(id_equipo2 != id_semis_left){
+                                        id_semis_left = id_equipo2;
+                                        ocultarImagenPosiciones();
+                                }
+                        }
+                        
+                }else{//semis-right
+                        if(id_semis_right == "")id_semis_right = id_equipo2;
+                        else{
+                                if(id_equipo2 != id_semis_right){
+                                        id_semis_right = id_equipo2;
+                                        ocultarImagenPosiciones();
+                                }
+                        }
+                }
            }
            else{
                 pasarganador("",id_posicion1);

@@ -1,3 +1,6 @@
+var id_semis_left_phone = "";
+var id_semis_right_phone = "";
+
 $("#btn-tabla-octavos").click(function() {
                 
     $("#tabla-octavos").show();
@@ -203,7 +206,7 @@ $("#btn-tabla-final").click(function() {
                                 validarinputs(id);
                                 if (!hayEquipo("phone-semis-right-0"))return;
                                 validarinputs("phone-semis-right-0");
-                                computar_ganador_phone_2("phone-semis-right-0","phone-semis-right-1","final-1","phone-3puesto-1");
+                                computar_ganador_phone_2("phone-semis-right-0","phone-semis-right-1","phone-final-1","phone-3puesto-1");
                                 break;  
                         case 'phone-final-0':
                                 validarinputs(id);
@@ -250,9 +253,11 @@ $("#btn-tabla-final").click(function() {
                     
                     if ( goles_equipo1 > goles_equipo2 ){ //ganó equipo1.
                          pasarganador_phone(id_equipo1,id_posicion);
+                         arreglar_fixture_ganador(id_equipo1);
                     }
                     else if  ( goles_equipo1 < goles_equipo2 ){ //ganó equipo2.
                          pasarganador_phone(id_equipo2,id_posicion);
+                         arreglar_fixture_ganador(id_equipo2);
                     }
                     else{ //empataron.
                          pasarganador_phone("",id_posicion);
@@ -322,16 +327,55 @@ $("#btn-tabla-final").click(function() {
                 /* fin desktop */
      
                 if ( goles_equipo1 > goles_equipo2 ){
-                     pasarganador(id_equipo1,id_posicion1);
-                     pasarganador(id_equipo2,id_posicion2);
+                     pasarganador_phone(id_equipo1,id_posicion1);
+                     pasarganador_phone(id_equipo2,id_posicion2);
+                     //si noto que en la misma llave en semis cambio el ganador, lo que hago es ocultar las imagenes de los ganadores.
+                     if(id_equipo1.indexOf("left") > -1){
+                        if(id_semis_left_phone=="")id_semis_left_phone = id_equipo1;
+                                else{
+                                        if(id_equipo1 != id_semis_left_phone){
+                                                id_semis_left_phone = id_equipo1;
+                                                ocultarImagenPosiciones();
+                                        }
+                                }
+                        
+                        }else{//semis-right
+                                if(id_semis_right_phone == "")id_semis_right_phone = id_equipo1;
+                                else{
+                                        if(id_equipo1 != id_semis_right_phone){
+                                                id_semis_right_phone = id_equipo1;
+                                                ocultarImagenPosiciones();
+                                        }
+                                }
+                        }
+                     
                 }
                 else if  ( goles_equipo1 < goles_equipo2 ){
-                     pasarganador(id_equipo2,id_posicion1);
-                     pasarganador(id_equipo1,id_posicion2);
+                     pasarganador_phone(id_equipo2,id_posicion1);
+                     pasarganador_phone(id_equipo1,id_posicion2);
+                     //si noto que en la misma llave en semis cambio el ganador, lo que hago es ocultar las imagenes de los ganadores.
+                     if(id_equipo2.indexOf("left") > -1){
+                        if(id_semis_left_phone=="")id_semis_left_phone = id_equipo2;
+                        else{
+                                if(id_equipo2 != id_semis_left_phone){
+                                        id_semis_left_phone = id_equipo2;
+                                        ocultarImagenPosiciones();
+                                }
+                        }
+                        
+                        }else{//semis-right
+                                if(id_semis_right_phone == "")id_semis_right_phone = id_equipo2;
+                                else{
+                                        if(id_equipo2 != id_semis_right_phone){
+                                                id_semis_right_phone = id_equipo2;
+                                                ocultarImagenPosiciones();
+                                        }
+                                }
+                        }
                 }
                 else{
-                     pasarganador("",id_posicion1);
-                     pasarganador("",id_posicion2);
+                     pasarganador_phone("",id_posicion1);
+                     pasarganador_phone("",id_posicion2);
                      ocultarImagenPosiciones();
                 }
             }
