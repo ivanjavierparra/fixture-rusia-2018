@@ -5,9 +5,9 @@ var app = (function(scope = {}) {
     var equipoFactory = (equipo) => {
         return Object.assign({},{nombre: equipo.nombre,
             foto: equipo.foto,
-            puntos:0,
-            goles_a_favor:0,
-            goles_en_contra:0})
+            puntos: equipo.puntos || 0,
+            goles_a_favor: equipo.goles_a_favor || 0,
+            goles_en_contra: equipo.goles_en_contra || 0})
     }
  
     var partidoFactory = (partido,equipolocal,equipovisitante) => {
@@ -99,7 +99,6 @@ var app = (function(scope = {}) {
             posicion2:grupo.posicion2,
             equipos: equiposACargar,
             partidos: partidosACargar,
-            setGanador: function(x) {this.ganador = x},
             ordenarEquipos: function(){
                 this.equipos.sort(comparacionEquipos);
             }
@@ -232,9 +231,9 @@ var app = (function(scope = {}) {
         $(span2_phone).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
         $(img2_phone).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
         /* fin phone */
+        localStorage.setItem('fixture', JSON.stringify(fixture));
         $('#modal-partidos').modal('toggle');
     }
-    $
 
     return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal});
 
