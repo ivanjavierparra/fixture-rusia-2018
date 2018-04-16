@@ -1,6 +1,8 @@
 var app = (function(scope = {}) {
     let fixture = {};
-	let modal_activo = "";
+    let modal_activo = "";
+    let historico_equipos_ganadores = [];
+    
 
     var equipoFactory = (equipo) => {
         return Object.assign({},{nombre: equipo.nombre,
@@ -206,7 +208,8 @@ var app = (function(scope = {}) {
         var pos2 = "" +  grupo.posicion2.fase + "-" + grupo.posicion2.tipo + "-" + grupo.posicion2.lugar + "";
         var selector_input_2 = pos2.toLowerCase();
 
-        //paso datos a llaves-phone y llaves-desktop
+        //---->paso datos a llaves-phone y llaves-desktop<---------
+        //validacion: si usuario me borra todo el modal, actualizo la tabla.
         if((grupo.equipos[0].puntos == 0) && ( (grupo.equipos[0].goles_a_favor - grupo.equipos[0].goles_en_contra )==0 )){
             console.log("entre 1");
             var span1 = "#equipo-" + selector_input_1;
@@ -240,6 +243,9 @@ var app = (function(scope = {}) {
             ocultarImagenPosiciones();
         }
         else{
+            //aca hacer una case segun modal....function cambiaron_ganadores(equipo1,equipo2)
+            cambiaron_ganadores(grupo.equipos[0],grupo.equipos[1]);
+
             /* desktop */
             console.log("entre 2");
             var span1 = "#equipo-" + selector_input_1;
@@ -274,6 +280,192 @@ var app = (function(scope = {}) {
         $('#modal-partidos').modal('toggle');
     }
 
-    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal});
+    function cambiaron_ganadores(equipo1,equipo2){
+        var grupo = fixture.getGrupo(modal_activo);
+        var pos1 = "" +  grupo.posicion1.fase + "-" + grupo.posicion1.tipo + "-" + grupo.posicion1.lugar + "";
+        var selector1 = pos1.toLowerCase();
+        var pos2 = "" +  grupo.posicion2.fase + "-" + grupo.posicion2.tipo + "-" + grupo.posicion2.lugar + "";
+        var selector2 = pos2.toLowerCase();
+        switch(modal_activo){
+            case 'A':
+                if(!historico_equipos_ganadores[0]){
+                    historico_equipos_ganadores[0] = equipo1;
+                }
+                else{
+                    if(historico_equipos_ganadores[0] != equipo1){
+                        arreglar_fixture_empate(selector1);//poner id
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[0] = equipo1;
+                    }
+                }
+                if(!historico_equipos_ganadores[1]){
+                    historico_equipos_ganadores[1] = equipo2;
+                }
+                else{
+                    if(historico_equipos_ganadores[1] != equipo2){
+                        arreglar_fixture_empate(selector2);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[2] = equipo2;
+                    }
+                }
+                break;
+            case 'B':
+                if(!historico_equipos_ganadores[2]){
+                    historico_equipos_ganadores[2] = equipo1;
+                }
+                else{
+                    if(historico_equipos_ganadores[2] != equipo1){
+                        arreglar_fixture_empate(selector1);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[2] = equipo1;
+                    }
+                }
+                if(!historico_equipos_ganadores[3]){
+                    historico_equipos_ganadores[3] = equipo2;
+                }
+                else{
+                    if(historico_equipos_ganadores[3] != equipo2){
+                        arreglar_fixture_empate(selector2);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[3] = equipo2;
+                    }
+                }
+                break;
+            case 'C':
+                if(!historico_equipos_ganadores[4]){
+                    historico_equipos_ganadores[4] = equipo1;
+                }
+                else{
+                    if(historico_equipos_ganadores[4] != equipo1){
+                        arreglar_fixture_empate(selector1);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[4] = equipo1;
+                    }
+                }
+                if(!historico_equipos_ganadores[5]){
+                    historico_equipos_ganadores[5] = equipo2;
+                }
+                else{
+                    if(historico_equipos_ganadores[5] != equipo2){
+                        arreglar_fixture_empate(selector2);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[5] = equipo2;
+                    }
+                }
+                break;
+            case 'D':
+                if(!historico_equipos_ganadores[6]){
+                    historico_equipos_ganadores[6] = equipo1;
+                }
+                else{
+                    if(historico_equipos_ganadores[6] != equipo1){
+                        arreglar_fixture_empate(selector1);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[6] = equipo1;
+                    }
+                }
+                if(!historico_equipos_ganadores[7]){
+                    historico_equipos_ganadores[7] = equipo2;
+                }
+                else{
+                    if(historico_equipos_ganadores[7] != equipo2){
+                        arreglar_fixture_empate(selector2);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[7] = equipo2;
+                    }
+                }
+                break;
+            case 'E':
+                if(!historico_equipos_ganadores[8]){
+                    historico_equipos_ganadores[8] = equipo1;
+                }
+                else{
+                    if(historico_equipos_ganadores[8] != equipo1){
+                        arreglar_fixture_empate(selector1);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[8] = equipo1;
+                    }
+                }
+                if(!historico_equipos_ganadores[9]){
+                    historico_equipos_ganadores[9] = equipo2;
+                }
+                else{
+                    if(historico_equipos_ganadores[9] != equipo2){
+                        arreglar_fixture_empate(selector2);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[9] = equipo2;
+                    }
+                }
+                break;
+            case 'F':
+                if(!historico_equipos_ganadores[10]){
+                    historico_equipos_ganadores[10] = equipo1;
+                }
+                else{
+                    if(historico_equipos_ganadores[10] != equipo1){
+                        arreglar_fixture_empate(selector1);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[10] = equipo1;
+                    }
+                }
+                if(!historico_equipos_ganadores[11]){
+                    historico_equipos_ganadores[11] = equipo2;
+                }
+                else{
+                    if(historico_equipos_ganadores[11] != equipo2){
+                        arreglar_fixture_empate(selector2);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[11] = equipo2;
+                    }
+                }
+                break;
+            case 'G':
+                if(!historico_equipos_ganadores[12]){
+                    historico_equipos_ganadores[12] = equipo1;
+                }
+                else{
+                    if(historico_equipos_ganadores[12] != equipo1){
+                        arreglar_fixture_empate(selector1);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[12] = equipo1;
+                    }
+                }
+                if(!historico_equipos_ganadores[13]){
+                    historico_equipos_ganadores[13] = equipo2;
+                }
+                else{
+                    if(historico_equipos_ganadores[13] != equipo2){
+                        arreglar_fixture_empate(selector2);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[13] = equipo2;
+                    }
+                }
+                break;
+            case 'H':
+                if(!historico_equipos_ganadores[14]){
+                    historico_equipos_ganadores[14] = equipo1;
+                }
+                else{
+                    if(historico_equipos_ganadores[14] != equipo1){
+                        arreglar_fixture_empate(selector1);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[14] = equipo1;
+                    }
+                }
+                if(!historico_equipos_ganadores[15]){
+                    historico_equipos_ganadores[15] = equipo2;
+                }
+                else{
+                    if(historico_equipos_ganadores[15] != equipo2){
+                        arreglar_fixture_empate(selector2);
+                        ocultarImagenPosiciones();
+                        historico_equipos_ganadores[15] = equipo2;
+                    }
+                }
+                break;    
+        }
+    }
+
+    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,cambiaron_ganadores});
 
 })();
