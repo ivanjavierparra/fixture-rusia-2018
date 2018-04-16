@@ -200,38 +200,75 @@ var app = (function(scope = {}) {
         var selector = "#grupo" + grupo.letra;
         $(selector).html(app.templates.grupoTemplate(grupo));
 		
-        //paso datos a llaves-phone y llaves-desktop
-		/* desktop */
+        
         var pos1 = "" +  grupo.posicion1.fase + "-" + grupo.posicion1.tipo + "-" + grupo.posicion1.lugar + "";
         var selector_input_1 = pos1.toLowerCase();
-        var span1 = "#equipo-" + selector_input_1;
-        var img1 = "#bandera-" + selector_input_1;
-
         var pos2 = "" +  grupo.posicion2.fase + "-" + grupo.posicion2.tipo + "-" + grupo.posicion2.lugar + "";
         var selector_input_2 = pos2.toLowerCase();
-        var span2 = "#equipo-" + selector_input_2;
-        var img2 = "#bandera-" + selector_input_2;
 
-        $(span1).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
-        $(img1).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
-        
-        $(span2).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
-        $(img2).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
-        /* fin desktop */
+        //paso datos a llaves-phone y llaves-desktop
+        if((grupo.equipos[0].puntos == 0) && ( (grupo.equipos[0].goles_a_favor - grupo.equipos[0].goles_en_contra )==0 )){
+            console.log("entre 1");
+            var span1 = "#equipo-" + selector_input_1;
+            var img1 = "#bandera-" + selector_input_1;
 
-        /* phone */
-        var span1_phone = "#equipo-phone-" + selector_input_1;
-        var img1_phone = "#bandera-phone-" + selector_input_1;
-         
-        var span2_phone = "#equipo-phone-" + selector_input_2;
-        var img2_phone = "#bandera-phone-" + selector_input_2;
+            var span2 = "#equipo-" + selector_input_2;
+            var img2 = "#bandera-" + selector_input_2;
 
-        $(span1_phone).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
-        $(img1_phone).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
-        
-        $(span2_phone).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
-        $(img2_phone).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
-        /* fin phone */
+            $(span1).html("Equipo 1"); //equipos[0] es el ganador del grupo
+            $(img1).attr("src","static/img/sinbandera.jpg");
+            
+            $(span2).html("Equipo 2"); //equipos[1] es el segundo del grupo
+            $(img2).attr("src","static/img/sinbandera.jpg");
+            /* fin desktop */
+
+            /* phone */
+            var span1_phone = "#equipo-phone-" + selector_input_1;
+            var img1_phone = "#bandera-phone-" + selector_input_1;
+            
+            var span2_phone = "#equipo-phone-" + selector_input_2;
+            var img2_phone = "#bandera-phone-" + selector_input_2;
+
+            $(span1_phone).html("Equipo 1"); //equipos[0] es el ganador del grupo
+            $(img1_phone).attr("src","static/img/sinbandera.jpg");
+            
+            $(span2_phone).html("Equipo 2"); //equipos[1] es el segundo del grupo
+            $(img2_phone).attr("src","static/img/sinbandera.jpg");
+            /* fin phone */
+            arreglar_fixture_empate(selector_input_1);
+            arreglar_fixture_empate(selector_input_2);
+        }
+        else{
+            /* desktop */
+            console.log("entre 2");
+            var span1 = "#equipo-" + selector_input_1;
+            var img1 = "#bandera-" + selector_input_1;
+
+            var span2 = "#equipo-" + selector_input_2;
+            var img2 = "#bandera-" + selector_input_2;
+
+            $(span1).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
+            $(img1).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
+            
+            $(span2).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
+            $(img2).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
+            /* fin desktop */
+
+            /* phone */
+            var span1_phone = "#equipo-phone-" + selector_input_1;
+            var img1_phone = "#bandera-phone-" + selector_input_1;
+            
+            var span2_phone = "#equipo-phone-" + selector_input_2;
+            var img2_phone = "#bandera-phone-" + selector_input_2;
+
+            $(span1_phone).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
+            $(img1_phone).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
+            
+            $(span2_phone).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
+            $(img2_phone).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
+            /* fin phone */
+        }
+		
         localStorage.setItem('fixture', JSON.stringify(fixture));
         $('#modal-partidos').modal('toggle');
     }
