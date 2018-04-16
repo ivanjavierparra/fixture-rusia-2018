@@ -206,7 +206,7 @@ $("#btn-tabla-final").click(function() {
                                 validarinputs(id);
                                 if (!hayEquipo("phone-semis-right-0"))return;
                                 validarinputs("phone-semis-right-0");
-                                computar_ganador_phone_2("phone-semis-right-0","phone-semis-right-1","final-1","phone-3puesto-1");
+                                computar_ganador_phone_2("phone-semis-right-0","phone-semis-right-1","phone-final-1","phone-3puesto-1");
                                 break;  
                         case 'phone-final-0':
                                 validarinputs(id);
