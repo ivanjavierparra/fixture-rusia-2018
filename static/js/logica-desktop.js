@@ -10,7 +10,10 @@ var id_semis_right = "";
             
         });
 
-       
+        $("[type='number']").attr({
+                "max" : 10,        // substitute your own
+                "min" : 0          // values (or variables) here
+             });
        
         /**
             * id: id perteneciente a algún input type number (representa goles de un equipo).
