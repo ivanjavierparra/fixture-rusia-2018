@@ -19,7 +19,8 @@ var app = (function(scope = {}) {
             equipoLocal: equipolocal,
             equipoVisitante: equipovisitante
         },
-        {goles_local:null, goles_visitante:null,
+        {goles_local: partido.goles_local, 
+        goles_visitante: partido.goles_visitante,
         setGolesLocal: function(goles) {
             if(goles)
                 this.goles_local = parseInt(goles);
