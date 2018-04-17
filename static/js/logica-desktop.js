@@ -693,6 +693,8 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
 
         function setearInputs(id){
                 $(id).val(0);
+                var selector_phone = "#phone-" + id.substr(1);
+                $(selector_phone).val(0);
         }
 
         function arreglar_fixture_empate(id_equipo1){
