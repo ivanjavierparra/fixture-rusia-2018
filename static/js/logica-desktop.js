@@ -398,6 +398,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
         }
 
         function cambiaron_ganadores_partido(id){
+                var selector = "#";
                 switch(id){
                         case 'octavos-left-0':
                                 if(!historico_inputs_llaves[0]){
@@ -407,6 +408,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[0]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[0] = id;
+                                                setearInputs("#cuartos-left-0");
                                         }
                                 }
                                 break;
@@ -418,6 +420,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[0]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[0] = id;
+                                                setearInputs("#cuartos-left-0");
                                         }
                                 }
                                 break;
@@ -429,6 +432,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[1]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[1] = id;
+                                                setearInputs("#cuartos-left-1");
                                         }
                                 }
                                 break;
@@ -440,6 +444,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[1]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[1] = id;
+                                                setearInputs("#cuartos-left-1");
                                         }
                                 }
                                 break;
@@ -451,6 +456,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[2]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[2] = id;
+                                                setearInputs("#cuartos-left-2");
                                         }
                                 }
                                 break;
@@ -462,6 +468,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[2]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[2] = id;
+                                                setearInputs("#cuartos-left-2");
                                         }
                                 }
                                 break;
@@ -473,6 +480,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[3]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[3] = id;
+                                                setearInputs("#cuartos-left-3");
                                         }
                                 }
                                 break;
@@ -484,6 +492,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[3]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[3] = id;
+                                                setearInputs("#cuartos-left-3");
                                         }
                                 }
                                 break;
@@ -495,6 +504,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[4]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[4] = id;
+                                                setearInputs("#cuartos-right-0");
                                         }
                                 }
                                 break;
@@ -506,6 +516,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[4]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[4] = id;
+                                                setearInputs("#cuartos-right-0");
                                         }
                                 }
                                 break;       
@@ -517,6 +528,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[5]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[5] = id;
+                                                setearInputs("#cuartos-right-1");
                                         }
                                 }
                                 break; 
@@ -528,6 +540,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[5]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[5] = id;
+                                                setearInputs("#cuartos-right-1");
                                         }
                                 }
                                 break; 
@@ -539,6 +552,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[6]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[6] = id;
+                                                setearInputs("#cuartos-right-2");
                                         }
                                 }
                                 break; 
@@ -550,6 +564,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[6]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[6] = id;
+                                                setearInputs("#cuartos-right-2");
                                         }
                                 }
                                 break; 
@@ -561,6 +576,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[7]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[7] = id;
+                                                setearInputs("#cuartos-right-3");
                                         }
                                 }
                                 break; 
@@ -572,6 +588,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[7]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[7] = id;
+                                                setearInputs("#cuartos-right-3");
                                         }
                                 }
                                 break; 
@@ -583,6 +600,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[8]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[8] = id;
+                                                setearInputs("#semis-left-0");
                                         }
                                 }
                                 break; 
@@ -594,6 +612,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[8]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[8] = id;
+                                                setearInputs("#semis-left-0");
                                         }
                                 }
                                 break; 
@@ -605,6 +624,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[9]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[9] = id;
+                                                setearInputs("#semis-left-1");
                                         }
                                 }
                                 break; 
@@ -616,6 +636,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[9]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[9] = id;
+                                                setearInputs("#semis-left-1");
                                         }
                                 }
                                 break; 
@@ -627,6 +648,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[10]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[10] = id;
+                                                setearInputs("#semis-right-0");
                                         }
                                 }
                                 break; 
@@ -638,6 +660,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[10]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[10] = id;
+                                                setearInputs("#semis-right-0");
                                         }
                                 }
                                 break; 
@@ -649,6 +672,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[11]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[11] = id;
+                                                setearInputs("#semis-right-1");
                                         }
                                 }
                                 break; 
@@ -660,12 +684,16 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[11]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[11] = id;
+                                                setearInputs("#semis-right-0");
                                         }
                                 }
                                 break; 
                 }
         }
 
+        function setearInputs(id){
+                $(id).val(0);
+        }
 
         function arreglar_fixture_empate(id_equipo1){
                 if((id_equipo1=="octavos-left-0")||(id_equipo1=="octavos-left-1")||(id_equipo1=="phone-octavos-left-0")||(id_equipo1=="phone-octavos-left-1")){
