@@ -72,3 +72,9 @@ body {
     border-bottom: 50px solid transparent; 
     border-right:50px solid gold;
 }
+.phone-cabecera{
+    margin-top: 30px;
+}
+.phone-cuerpo{
+    margin-top: 30px;
+}
