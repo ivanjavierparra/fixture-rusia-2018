@@ -275,6 +275,7 @@ var app = (function(scope = {}) {
             /* fin phone */
             arreglar_fixture_empate(selector_input_1);
             arreglar_fixture_empate(selector_input_2);
+            ocultarImagenPosiciones();
         }
         else{
             /* desktop */
