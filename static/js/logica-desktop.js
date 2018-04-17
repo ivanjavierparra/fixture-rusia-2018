@@ -1,6 +1,6 @@
 var id_semis_left = "";
 var id_semis_right = "";
-      
+var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de octavos, 12 representa el ultimo partido de cuartos.
       /**
         * Valida que sólo se ingresen números en los input type number.
         */
@@ -381,17 +381,289 @@ var id_semis_right = "";
            
            if ( goles_equipo1 > goles_equipo2 ){ //ganó equipo1.
                 pasarganador(id_equipo1,id_posicion);
-                arreglar_fixture_ganador(id_equipo1);
+                //if (cambiaron_ganadores_partido(id_equipo1)) entonces arreglo el fixture
+                //arreglar_fixture_ganador(id_equipo1);//solo arreglo fixture si cambio de ganador
+                cambiaron_ganadores_partido(id_equipo1);
            }
            else if  ( goles_equipo1 < goles_equipo2 ){ //ganó equipo2.
                 pasarganador(id_equipo2,id_posicion);
-                arreglar_fixture_ganador(id_equipo2);
+                //arreglar_fixture_ganador(id_equipo2);
+                cambiaron_ganadores_partido(id_equipo2);
            }
            else{ //empataron.
                 pasarganador_phone("",id_posicion);
                 ocultarImagenPosiciones();
                 arreglar_fixture_empate(id_equipo1);
            }
+        }
+
+        function cambiaron_ganadores_partido(id){
+                switch(id){
+                        case 'octavos-left-0':
+                                if(!historico_inputs_llaves[0]){
+                                        historico_inputs_llaves[0] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[0]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[0] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-left-1':
+                                if(!historico_inputs_llaves[0]){
+                                        historico_inputs_llaves[0] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[0]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[0] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-left-2':
+                                if(!historico_inputs_llaves[1]){
+                                        historico_inputs_llaves[1] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[1]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[1] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-left-3':
+                                if(!historico_inputs_llaves[1]){
+                                        historico_inputs_llaves[1] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[1]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[1] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-left-4':
+                                if(!historico_inputs_llaves[2]){
+                                        historico_inputs_llaves[2] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[2]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[2] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-left-5':
+                                if(!historico_inputs_llaves[2]){
+                                        historico_inputs_llaves[2] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[2]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[2] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-left-6':
+                                if(!historico_inputs_llaves[3]){
+                                        historico_inputs_llaves[3] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[3]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[3] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-left-7':
+                                if(!historico_inputs_llaves[3]){
+                                        historico_inputs_llaves[3] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[3]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[3] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-right-0':
+                                if(!historico_inputs_llaves[4]){
+                                        historico_inputs_llaves[4] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[4]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[4] = id;
+                                        }
+                                }
+                                break;
+                        case 'octavos-right-1':
+                                if(!historico_inputs_llaves[4]){
+                                        historico_inputs_llaves[4] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[4]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[4] = id;
+                                        }
+                                }
+                                break;       
+                        case 'octavos-right-2':
+                                if(!historico_inputs_llaves[5]){
+                                        historico_inputs_llaves[5] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[5]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[5] = id;
+                                        }
+                                }
+                                break; 
+                        case 'octavos-right-3':
+                                if(!historico_inputs_llaves[5]){
+                                        historico_inputs_llaves[5] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[5]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[5] = id;
+                                        }
+                                }
+                                break; 
+                        case 'octavos-right-4':
+                                if(!historico_inputs_llaves[6]){
+                                        historico_inputs_llaves[6] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[6]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[6] = id;
+                                        }
+                                }
+                                break; 
+                        case 'octavos-right-5':
+                                if(!historico_inputs_llaves[6]){
+                                        historico_inputs_llaves[6] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[6]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[6] = id;
+                                        }
+                                }
+                                break; 
+                        case 'octavos-right-6':
+                                if(!historico_inputs_llaves[7]){
+                                        historico_inputs_llaves[7] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[7]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[7] = id;
+                                        }
+                                }
+                                break; 
+                        case 'octavos-right-7':
+                                if(!historico_inputs_llaves[7]){
+                                        historico_inputs_llaves[7] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[7]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[7] = id;
+                                        }
+                                }
+                                break; 
+                        case 'cuartos-left-0':
+                                if(!historico_inputs_llaves[8]){
+                                        historico_inputs_llaves[8] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[8]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[8] = id;
+                                        }
+                                }
+                                break; 
+                        case 'cuartos-left-1':
+                                if(!historico_inputs_llaves[8]){
+                                        historico_inputs_llaves[8] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[8]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[8] = id;
+                                        }
+                                }
+                                break; 
+                        case 'cuartos-left-2':
+                                if(!historico_inputs_llaves[9]){
+                                        historico_inputs_llaves[9] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[9]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[9] = id;
+                                        }
+                                }
+                                break; 
+                        case 'cuartos-left-3':
+                                if(!historico_inputs_llaves[9]){
+                                        historico_inputs_llaves[9] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[9]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[9] = id;
+                                        }
+                                }
+                                break; 
+                        case 'cuartos-right-0':
+                                if(!historico_inputs_llaves[10]){
+                                        historico_inputs_llaves[10] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[10]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[10] = id;
+                                        }
+                                }
+                                break; 
+                        case 'cuartos-right-1':
+                                if(!historico_inputs_llaves[10]){
+                                        historico_inputs_llaves[10] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[10]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[10] = id;
+                                        }
+                                }
+                                break; 
+                        case 'cuartos-right-2':
+                                if(!historico_inputs_llaves[11]){
+                                        historico_inputs_llaves[11] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[11]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[11] = id;
+                                        }
+                                }
+                                break; 
+                        case 'cuartos-right-3':
+                                if(!historico_inputs_llaves[11]){
+                                        historico_inputs_llaves[11] = id;
+                                }
+                                else{
+                                        if(historico_inputs_llaves[11]!=id){
+                                                arreglar_fixture_ganador(id);
+                                                historico_inputs_llaves[11] = id;
+                                        }
+                                }
+                                break; 
+                }
         }
 
 
