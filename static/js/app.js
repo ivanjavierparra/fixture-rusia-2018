@@ -10,14 +10,16 @@ var app = (function(scope = {}) {
             goles_en_contra: equipo.goles_en_contra || 0})
     }
  
-    var partidoFactory = (partido,equipolocal,equipovisitante) => {
+    var partidoFactory = (partido,equipolocal,equipovisitante,partido_siguiente) => {
         return Object.assign({},{
+            numero: partido.numero,
             estadio: partido.estadio,
             dia: partido.dia,
             mes: partido.mes,
             hora: partido.hora,
             equipoLocal: equipolocal,
-            equipoVisitante: equipovisitante
+            equipoVisitante: equipovisitante,
+            partidoSiguiente: partido_siguiente
         },
         {goles_local: partido.goles_local, 
         goles_visitante: partido.goles_visitante,
@@ -51,7 +53,7 @@ var app = (function(scope = {}) {
         })
     }
 
-    var grupoFactory = (grupo) => {
+    var grupoFactory = (grupo,octavos) => {
         var equiposACargar = [];
         for(var i = 0; i < grupo.equipos.length; i++){
             equiposACargar[i] = equipoFactory(grupo.equipos[i]);
@@ -70,7 +72,8 @@ var app = (function(scope = {}) {
                    equipovisitante = equiposACargar[j];
                 }
             }
-            partidosACargar[i] = partidoFactory(grupo.partidos[i],equipolocal,equipovisitante);
+            partidosACargar[i] = partidoFactory(grupo.partidos[i],equipolocal,equipovisitante,
+                octavos.getPartido(grupo.partidos[i].partidoSiguiente));
         }
 
         function comparacionEquipos(a,b){
@@ -96,8 +99,8 @@ var app = (function(scope = {}) {
     
         return Object.assign({},{
             letra:grupo.letra,
-            posicion1:grupo.posicion1,
-            posicion2:grupo.posicion2,
+            partido1:octavos.getPartido(grupo.partido1),
+            partido2:octavos.getPartido(grupo.partido2),
             equipos: equiposACargar,
             partidos: partidosACargar,
             ordenarEquipos: function(){
@@ -106,12 +109,47 @@ var app = (function(scope = {}) {
         })
     }
 
+    var faseFactory = (fase,fase_anterior) => {
+        var partidosACargar = [];
+        for(var i = 0; i < fase.partidos.length; i++){
+            if (fase_anterior){
+                partidosACargar[i] = partidoFactory(fase.partidos[i],
+                    fase.partidos[i].equipoLocal,
+                    fase.partidos[i].equipoVisitante,
+                    fase_anterior.getPartido(fase.partidos[i].partidoSiguiente)); 
+            } else {
+                partidosACargar[i] = partidoFactory(fase.partidos[i],
+                    fase.partidos[i].equipoLocal,
+                    fase.partidos[i].equipoVisitante,
+                    null); 
+            }
+        }
+        return Object.assign({},{nombre:fase.nombre,partidos:partidosACargar},{
+            getPartido: function(numero){
+                for(var i=0;i<this.partidos.length;i++){
+                    if(numero == this.partidos[i].numero){
+                        return this.partidos[i];
+                    }
+                }
+            }
+        })
+    }
+
     var fixtureFactory = (datos) => {
+        var fasesACargar = [];
+        for(var i = 0; i< datos.fases.length; i++){
+            if (i<2){
+                fasesACargar[i] = faseFactory(datos.fases[i],null);
+            } else {
+                fasesACargar[i] = faseFactory(datos.fases[i],fasesACargar[i-1]);
+            }
+            ultima_fase = i;
+        }
         var gruposACargar = [];
         for(var i = 0; i < datos.grupos.length; i++){ // probar con datos.length
-            gruposACargar[i] = grupoFactory(datos.grupos[i]) // probar con datos[i]
+            gruposACargar[i] = grupoFactory(datos.grupos[i],fasesACargar[ultima_fase]); // probar con datos[i]
         }
-        return Object.assign({},{grupos: gruposACargar,
+        return Object.assign({},{grupos: gruposACargar,fases:fasesACargar,
         getGrupo: function(letra){
             for(var i = 0; i< this.grupos.length; i++){
                 if (this.grupos[i].letra == letra){
