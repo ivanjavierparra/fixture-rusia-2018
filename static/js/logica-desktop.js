@@ -403,11 +403,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-left-0':
                                 if(!historico_inputs_llaves[0]){
                                         historico_inputs_llaves[0] = id;
+                                        historico_llaves_input_phone[0]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[0]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[0] = id;
+                                                historico_llaves_input_phone[0]="phone-"+id;
                                                 setearInputs("#cuartos-left-0");
                                         }
                                 }
@@ -415,11 +417,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-left-1':
                                 if(!historico_inputs_llaves[0]){
                                         historico_inputs_llaves[0] = id;
+                                        historico_llaves_input_phone[0]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[0]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[0] = id;
+                                                historico_llaves_input_phone[0]="phone-"+id;
                                                 setearInputs("#cuartos-left-0");
                                         }
                                 }
@@ -427,11 +431,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-left-2':
                                 if(!historico_inputs_llaves[1]){
                                         historico_inputs_llaves[1] = id;
+                                        historico_llaves_input_phone[1]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[1]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[1] = id;
+                                                historico_llaves_input_phone[1]="phone-"+id;
                                                 setearInputs("#cuartos-left-1");
                                         }
                                 }
@@ -439,11 +445,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-left-3':
                                 if(!historico_inputs_llaves[1]){
                                         historico_inputs_llaves[1] = id;
+                                        historico_llaves_input_phone[1]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[1]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[1] = id;
+                                                historico_llaves_input_phone[1]="phone-"+id;
                                                 setearInputs("#cuartos-left-1");
                                         }
                                 }
@@ -451,11 +459,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-left-4':
                                 if(!historico_inputs_llaves[2]){
                                         historico_inputs_llaves[2] = id;
+                                        historico_llaves_input_phone[2]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[2]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[2] = id;
+                                                historico_llaves_input_phone[2]="phone-"+id;
                                                 setearInputs("#cuartos-left-2");
                                         }
                                 }
@@ -463,11 +473,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-left-5':
                                 if(!historico_inputs_llaves[2]){
                                         historico_inputs_llaves[2] = id;
+                                        historico_llaves_input_phone[2]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[2]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[2] = id;
+                                                historico_llaves_input_phone[2]="phone-"+id;
                                                 setearInputs("#cuartos-left-2");
                                         }
                                 }
@@ -475,11 +487,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-left-6':
                                 if(!historico_inputs_llaves[3]){
                                         historico_inputs_llaves[3] = id;
+                                        historico_llaves_input_phone[3]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[3]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[3] = id;
+                                                historico_llaves_input_phone[3]="phone-"+id;
                                                 setearInputs("#cuartos-left-3");
                                         }
                                 }
@@ -487,11 +501,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-left-7':
                                 if(!historico_inputs_llaves[3]){
                                         historico_inputs_llaves[3] = id;
+                                        historico_llaves_input_phone[3]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[3]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[3] = id;
+                                                historico_llaves_input_phone[3]="phone-"+id;
                                                 setearInputs("#cuartos-left-3");
                                         }
                                 }
@@ -499,11 +515,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-right-0':
                                 if(!historico_inputs_llaves[4]){
                                         historico_inputs_llaves[4] = id;
+                                        historico_llaves_input_phone[4]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[4]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[4] = id;
+                                                historico_llaves_input_phone[4]="phone-"+id;
                                                 setearInputs("#cuartos-right-0");
                                         }
                                 }
@@ -511,11 +529,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-right-1':
                                 if(!historico_inputs_llaves[4]){
                                         historico_inputs_llaves[4] = id;
+                                        historico_llaves_input_phone[4]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[4]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[4] = id;
+                                                historico_llaves_input_phone[4]="phone-"+id;
                                                 setearInputs("#cuartos-right-0");
                                         }
                                 }
@@ -523,11 +543,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-right-2':
                                 if(!historico_inputs_llaves[5]){
                                         historico_inputs_llaves[5] = id;
+                                        historico_llaves_input_phone[5]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[5]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[5] = id;
+                                                historico_llaves_input_phone[5]="phone-"+id;
                                                 setearInputs("#cuartos-right-1");
                                         }
                                 }
@@ -535,11 +557,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-right-3':
                                 if(!historico_inputs_llaves[5]){
                                         historico_inputs_llaves[5] = id;
+                                        historico_llaves_input_phone[5]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[5]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[5] = id;
+                                                historico_llaves_input_phone[5]="phone-"+id;
                                                 setearInputs("#cuartos-right-1");
                                         }
                                 }
@@ -547,11 +571,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-right-4':
                                 if(!historico_inputs_llaves[6]){
                                         historico_inputs_llaves[6] = id;
+                                        historico_llaves_input_phone[6]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[6]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[6] = id;
+                                                historico_llaves_input_phone[6]="phone-"+id;
                                                 setearInputs("#cuartos-right-2");
                                         }
                                 }
@@ -564,6 +590,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                                         if(historico_inputs_llaves[6]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[6] = id;
+                                                historico_llaves_input_phone[6]="phone-"+id;
                                                 setearInputs("#cuartos-right-2");
                                         }
                                 }
@@ -571,11 +598,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-right-6':
                                 if(!historico_inputs_llaves[7]){
                                         historico_inputs_llaves[7] = id;
+                                        historico_llaves_input_phone[7]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[7]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[7] = id;
+                                                historico_llaves_input_phone[7]="phone-"+id;
                                                 setearInputs("#cuartos-right-3");
                                         }
                                 }
@@ -583,11 +612,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'octavos-right-7':
                                 if(!historico_inputs_llaves[7]){
                                         historico_inputs_llaves[7] = id;
+                                        historico_llaves_input_phone[7]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[7]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[7] = id;
+                                                historico_llaves_input_phone[7]="phone-"+id;
                                                 setearInputs("#cuartos-right-3");
                                         }
                                 }
@@ -595,11 +626,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'cuartos-left-0':
                                 if(!historico_inputs_llaves[8]){
                                         historico_inputs_llaves[8] = id;
+                                        historico_llaves_input_phone[8]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[8]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[8] = id;
+                                                historico_llaves_input_phone[8]="phone-"+id;
                                                 setearInputs("#semis-left-0");
                                         }
                                 }
@@ -607,11 +640,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'cuartos-left-1':
                                 if(!historico_inputs_llaves[8]){
                                         historico_inputs_llaves[8] = id;
+                                        historico_llaves_input_phone[8]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[8]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[8] = id;
+                                                historico_llaves_input_phone[8]="phone-"+id;
                                                 setearInputs("#semis-left-0");
                                         }
                                 }
@@ -619,11 +654,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'cuartos-left-2':
                                 if(!historico_inputs_llaves[9]){
                                         historico_inputs_llaves[9] = id;
+                                        historico_llaves_input_phone[9]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[9]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[9] = id;
+                                                historico_llaves_input_phone[9]="phone-"+id;
                                                 setearInputs("#semis-left-1");
                                         }
                                 }
@@ -631,11 +668,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'cuartos-left-3':
                                 if(!historico_inputs_llaves[9]){
                                         historico_inputs_llaves[9] = id;
+                                        historico_llaves_input_phone[9]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[9]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[9] = id;
+                                                historico_llaves_input_phone[9]="phone-"+id;
                                                 setearInputs("#semis-left-1");
                                         }
                                 }
@@ -643,11 +682,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'cuartos-right-0':
                                 if(!historico_inputs_llaves[10]){
                                         historico_inputs_llaves[10] = id;
+                                        historico_llaves_input_phone[10]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[10]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[10] = id;
+                                                historico_llaves_input_phone[10]="phone-"+id;
                                                 setearInputs("#semis-right-0");
                                         }
                                 }
@@ -655,11 +696,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'cuartos-right-1':
                                 if(!historico_inputs_llaves[10]){
                                         historico_inputs_llaves[10] = id;
+                                        historico_llaves_input_phone[10]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[10]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[10] = id;
+                                                historico_llaves_input_phone[10]="phone-"+id;
                                                 setearInputs("#semis-right-0");
                                         }
                                 }
@@ -667,11 +710,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'cuartos-right-2':
                                 if(!historico_inputs_llaves[11]){
                                         historico_inputs_llaves[11] = id;
+                                        historico_llaves_input_phone[11]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[11]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[11] = id;
+                                                historico_llaves_input_phone[11]="phone-"+id;
                                                 setearInputs("#semis-right-1");
                                         }
                                 }
@@ -679,11 +724,13 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                         case 'cuartos-right-3':
                                 if(!historico_inputs_llaves[11]){
                                         historico_inputs_llaves[11] = id;
+                                        historico_llaves_input_phone[11]="phone-"+id;
                                 }
                                 else{
                                         if(historico_inputs_llaves[11]!=id){
                                                 arreglar_fixture_ganador(id);
                                                 historico_inputs_llaves[11] = id;
+                                                historico_llaves_input_phone[11]="phone-"+id;
                                                 setearInputs("#semis-right-0");
                                         }
                                 }

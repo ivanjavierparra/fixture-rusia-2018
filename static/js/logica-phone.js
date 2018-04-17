@@ -254,13 +254,13 @@ $("#btn-tabla-final").click(function() {
                     
                     if ( goles_equipo1 > goles_equipo2 ){ //ganó equipo1.
                          pasarganador_phone(id_equipo1,id_posicion);
-                         arreglar_fixture_ganador(id_equipo1);
-                         //cambiaron_ganadores_partido_phone(id_equipo1);
+                         //arreglar_fixture_ganador(id_equipo1);
+                         cambiaron_ganadores_partido_phone(id_equipo1);
                     }
                     else if  ( goles_equipo1 < goles_equipo2 ){ //ganó equipo2.
                          pasarganador_phone(id_equipo2,id_posicion);
-                         arreglar_fixture_ganador(id_equipo2);
-                         //cambiaron_ganadores_partido_phone(id_equipo1);
+                         //arreglar_fixture_ganador(id_equipo2);
+                         cambiaron_ganadores_partido_phone(id_equipo2);
                     }
                     else{ //empataron.
                          pasarganador_phone("",id_posicion);
@@ -273,17 +273,19 @@ $("#btn-tabla-final").click(function() {
 
 
                 //para usar esta funcion debemos actualizar nuestro arreglo en logica desktop
-               /* function cambiaron_ganadores_partido_phone(id){
+                function cambiaron_ganadores_partido_phone(id){
                         var selector = "#";
                         switch(id){
                                 case 'phone-octavos-left-0':
                                         if(!historico_llaves_input_phone[0]){
                                                 historico_llaves_input_phone[0] = id;
+                                                historico_inputs_llaves[0] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[0]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[0] = id;
+                                                        historico_inputs_llaves[0] = id.substr(6);
                                                         $("#cuartos-left-0").val(0);
                                                         $("#phone-cuartos-left-0").val(0);
                                                 }
@@ -292,11 +294,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-left-1':
                                         if(!historico_llaves_input_phone[0]){
                                                 historico_llaves_input_phone[0] = id;
+                                                historico_inputs_llaves[0] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[0]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[0] = id;
+                                                        historico_inputs_llaves[0] = id.substr(6);
                                                         $("#cuartos-left-0").val(0);
                                                         $("#phone-cuartos-left-0").val(0);
                                                 }
@@ -305,11 +309,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-left-2':
                                         if(!historico_llaves_input_phone[1]){
                                                 historico_llaves_input_phone[1] = id;
+                                                historico_inputs_llaves[1] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[1]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[1] = id;
+                                                        historico_inputs_llaves[1] = id.substr(6);
                                                         $("#cuartos-left-1").val(0);
                                                         $("#phone-cuartos-left-1").val(0);
                                                 }
@@ -318,11 +324,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-left-3':
                                         if(!historico_llaves_input_phone[1]){
                                                 historico_llaves_input_phone[1] = id;
+                                                historico_inputs_llaves[1] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[1]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[1] = id;
+                                                        historico_inputs_llaves[1] = id.substr(6);
                                                         $("#cuartos-left-1").val(0);
                                                         $("#phone-cuartos-left-1").val(0);
                                                 }
@@ -331,11 +339,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-left-4':
                                         if(!historico_llaves_input_phone[2]){
                                                 historico_llaves_input_phone[2] = id;
+                                                historico_inputs_llaves[2] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[2]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[2] = id;
+                                                        historico_inputs_llaves[2] = id.substr(6);
                                                         $("#cuartos-left-2").val(0);
                                                         $("#phone-cuartos-left-2").val(0);
                                                 }
@@ -344,11 +354,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-left-5':
                                         if(!historico_llaves_input_phone[2]){
                                                 historico_llaves_input_phone[2] = id;
+                                                historico_inputs_llaves[2] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[2]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[2] = id;
+                                                        historico_inputs_llaves[2] = id.substr(6);
                                                         $("#cuartos-left-2").val(0);
                                                         $("#phone-cuartos-left-2").val(0);
                                                 }
@@ -357,11 +369,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-left-6':
                                         if(!historico_llaves_input_phone[3]){
                                                 historico_llaves_input_phone[3] = id;
+                                                historico_inputs_llaves[3] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[3]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[3] = id;
+                                                        historico_inputs_llaves[3] = id.substr(6);
                                                         $("#cuartos-left-3").val(0);
                                                         $("#phone-cuartos-left-3").val(0);
                                                 }
@@ -370,11 +384,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-left-7':
                                         if(!historico_llaves_input_phone[3]){
                                                 historico_llaves_input_phone[3] = id;
+                                                historico_inputs_llaves[3] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[3]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[3] = id;
+                                                        historico_inputs_llaves[3] = id.substr(6);
                                                         $("#cuartos-left-3").val(0);
                                                         $("#phone-cuartos-left-3").val(0);
                                                 }
@@ -383,11 +399,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-right-0':
                                         if(!historico_llaves_input_phone[4]){
                                                 historico_llaves_input_phone[4] = id;
+                                                historico_inputs_llaves[4] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[4]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[4] = id;
+                                                        historico_inputs_llaves[4] = id.substr(6);
                                                         $("#cuartos-right-0").val(0);
                                                         $("#phone-cuartos-right-0").val(0);
                                                 }
@@ -396,11 +414,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-right-1':
                                         if(!historico_llaves_input_phone[4]){
                                                 historico_llaves_input_phone[4] = id;
+                                                historico_inputs_llaves[4] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[4]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[4] = id;
+                                                        historico_inputs_llaves[4] = id.substr(6);
                                                         $("#cuartos-right-0").val(0);
                                                         $("#phone-cuartos-right-0").val(0);
                                                 }
@@ -409,11 +429,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-right-2':
                                         if(!historico_llaves_input_phone[5]){
                                                 historico_llaves_input_phone[5] = id;
+                                                historico_inputs_llaves[5] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[5]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[5] = id;
+                                                        historico_inputs_llaves[5] = id.substr(6);
                                                         $("#cuartos-right-1").val(0);
                                                         $("#phone-cuartos-right-1").val(0);
                                                 }
@@ -422,11 +444,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-right-3':
                                         if(!historico_llaves_input_phone[5]){
                                                 historico_llaves_input_phone[5] = id;
+                                                historico_inputs_llaves[5] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[5]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[5] = id;
+                                                        historico_inputs_llaves[5] = id.substr(6);
                                                         $("#cuartos-right-1").val(0);
                                                         $("#phone-cuartos-right-1").val(0);
                                                 }
@@ -435,11 +459,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-right-4':
                                         if(!historico_llaves_input_phone[6]){
                                                 historico_llaves_input_phone[6] = id;
+                                                historico_inputs_llaves[6] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[6]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[6] = id;
+                                                        historico_inputs_llaves[6] = id.substr(6);
                                                         $("#cuartos-right-2").val(0);
                                                         $("#phone-cuartos-right-2").val(0);
                                                 }
@@ -448,11 +474,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-right-5':
                                         if(!historico_llaves_input_phone[6]){
                                                 historico_llaves_input_phone[6] = id;
+                                                historico_inputs_llaves[6] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[6]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[6] = id;
+                                                        historico_inputs_llaves[6] = id.substr(6);
                                                         $("#cuartos-right-2").val(0);
                                                         $("#phone-cuartos-right-2").val(0);
                                                 }
@@ -461,11 +489,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-right-6':
                                         if(!historico_llaves_input_phone[7]){
                                                 historico_llaves_input_phone[7] = id;
+                                                historico_inputs_llaves[7] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[7]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[7] = id;
+                                                        historico_inputs_llaves[7] = id.substr(6);
                                                         $("#cuartos-right-3").val(0);
                                                         $("#phone-cuartos-right-3").val(0);
                                                 }
@@ -474,11 +504,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-octavos-right-7':
                                         if(!historico_llaves_input_phone[7]){
                                                 historico_llaves_input_phone[7] = id;
+                                                historico_inputs_llaves[7] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[7]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[7] = id;
+                                                        historico_inputs_llaves[7] = id.substr(6);
                                                         $("#cuartos-right-3").val(0);
                                                         $("#phone-cuartos-right-3").val(0);
                                                 }
@@ -487,6 +519,7 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-cuartos-left-0':
                                         if(!historico_llaves_input_phone[8]){
                                                 historico_llaves_input_phone[8] = id;
+                                                historico_inputs_llaves[8] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[8]!=id){
@@ -500,11 +533,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-cuartos-left-1':
                                         if(!historico_llaves_input_phone[8]){
                                                 historico_llaves_input_phone[8] = id;
+                                                historico_inputs_llaves[8] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[8]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[8] = id;
+                                                        historico_inputs_llaves[8] = id.substr(6);
                                                         $("#semis-left-0").val(0);
                                                         $("#phone-semis-left-0").val(0);
                                                 }
@@ -513,11 +548,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-cuartos-left-2':
                                         if(!historico_llaves_input_phone[9]){
                                                 historico_llaves_input_phone[9] = id;
+                                                historico_inputs_llaves[9] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[9]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[9] = id;
+                                                        historico_inputs_llaves[9] = id.substr(6);
                                                         $("#semis-left-1").val(0);
                                                         $("#phone-semis-left-1").val(0);
                                                 }
@@ -526,11 +563,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-cuartos-left-3':
                                         if(!historico_llaves_input_phone[9]){
                                                 historico_llaves_input_phone[9] = id;
+                                                historico_inputs_llaves[9] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[9]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[9] = id;
+                                                        historico_inputs_llaves[9] = id.substr(6);
                                                         setearInputs("#semis-left-1");
                                                         $("#semis-left-1").val(0);
                                                         $("#phone-semis-left-1").val(0);
@@ -540,11 +579,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-cuartos-right-0':
                                         if(!historico_llaves_input_phone[10]){
                                                 historico_llaves_input_phone[10] = id;
+                                                historico_inputs_llaves[10] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[10]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[10] = id;
+                                                        historico_inputs_llaves[10] = id.substr(6);
                                                         $("#semis-right-0").val(0);
                                                         $("#phone-semis-right-0").val(0);
                                                 }
@@ -553,11 +594,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-cuartos-right-1':
                                         if(!historico_llaves_input_phone[10]){
                                                 historico_llaves_input_phone[10] = id;
+                                                historico_inputs_llaves[10] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[10]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[10] = id;
+                                                        historico_inputs_llaves[10] = id.substr(6);
                                                         $("#semis-right-0").val(0);
                                                         $("#phone-semis-right-0").val(0);
                                                 }
@@ -566,11 +609,13 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-cuartos-right-2':
                                         if(!historico_llaves_input_phone[11]){
                                                 historico_llaves_input_phone[11] = id;
+                                                historico_inputs_llaves[11] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[11]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[11] = id;
+                                                        historico_inputs_llaves[11] = id.substr(6);
                                                         $("#semis-right-1").val(0);
                                                         $("#phone-semis-right-1").val(0);
                                                 }
@@ -579,18 +624,20 @@ $("#btn-tabla-final").click(function() {
                                 case 'phone-cuartos-right-3':
                                         if(!historico_llaves_input_phone[11]){
                                                 historico_llaves_input_phone[11] = id;
+                                                historico_inputs_llaves[11] = id.substr(6);
                                         }
                                         else{
                                                 if(historico_llaves_input_phone[11]!=id){
                                                         arreglar_fixture_ganador(id);
                                                         historico_llaves_input_phone[11] = id;
+                                                        historico_inputs_llaves[11] = id.substr(6);
                                                         $("#semis-right-1").val(0);
                                                         $("#phone-semis-right-1").val(0);
                                                 }
                                         }
                                         break; 
                         }
-                }*/
+                }
 
 
 
