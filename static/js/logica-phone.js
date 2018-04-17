@@ -272,10 +272,13 @@ $("#btn-tabla-final").click(function() {
                 function pasarganador_phone(id_input,id_posicion){
                     var id_span_posicion = "#equipo-"+id_posicion;
                     var id_img_posicion = "#bandera-"+id_posicion;
+                    //$(id_posicion).val(0);
 
                     /* desktop */
                     var selector_desktop_span2 = "#equipo-" + id_posicion.substr(6);
                     var selector_desktop_img2 = "#bandera-" + id_posicion.substr(6);
+                    var selector_desktop = "#" + id_posicion.substr(6);
+                    //$(selector_desktop).val(0);
                     /* fin desktop */
     
                     if(id_input!=""){

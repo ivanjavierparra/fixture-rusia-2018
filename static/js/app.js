@@ -208,6 +208,21 @@ var app = (function(scope = {}) {
         var pos2 = "" +  grupo.posicion2.fase + "-" + grupo.posicion2.tipo + "-" + grupo.posicion2.lugar + "";
         var selector_input_2 = pos2.toLowerCase();
 
+        /* desktop */
+        var sd = "#" + selector_input_1;
+        $(sd).val(0);
+        sd = "#" + selector_input_2;
+        $(sd).val(0);
+        /* fin desktop */
+        
+        /* phone */
+        var sp = "#phone-" + selector_input_1;
+        $(sp).val(0);
+        sp = "#phone-" + selector_input_2;
+        $(sp).val(0);
+        /* fin phone */
+
+        
         //---->paso datos a llaves-phone y llaves-desktop<---------
         //validacion: si usuario me borra todo el modal, actualizo la tabla.
         if((grupo.equipos[0].puntos == 0) && ( (grupo.equipos[0].goles_a_favor - grupo.equipos[0].goles_en_contra )==0 )){
@@ -229,8 +244,10 @@ var app = (function(scope = {}) {
             var span1_phone = "#equipo-phone-" + selector_input_1;
             var img1_phone = "#bandera-phone-" + selector_input_1;
             
+            
             var span2_phone = "#equipo-phone-" + selector_input_2;
             var img2_phone = "#bandera-phone-" + selector_input_2;
+            
 
             $(span1_phone).html("Equipo 1"); //equipos[0] es el ganador del grupo
             $(img1_phone).attr("src","static/img/sinbandera.jpg");
@@ -247,7 +264,6 @@ var app = (function(scope = {}) {
             cambiaron_ganadores(grupo.equipos[0],grupo.equipos[1]);
 
             /* desktop */
-            console.log("entre 2");
             var span1 = "#equipo-" + selector_input_1;
             var img1 = "#bandera-" + selector_input_1;
 

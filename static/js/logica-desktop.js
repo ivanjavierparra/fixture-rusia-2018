@@ -1512,14 +1512,21 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                 var id_img2 = "#bandera-"+id_posicion;
                 var selector_phone_span2 = "#equipo-phone-" + id_posicion;
                 var selector_phone_img2 = "#bandera-phone-" + id_posicion;
+                var id_phone = "#phone-" + id_posicion;
+                var id_p = "#" + id_posicion
+
+                //$(id_p).val(0);
+                //$(id_phone).val(0);
 
                 if(id_input!=""){
                         var id_span1 = "#equipo-"+id_input;
                         var id_img1 = "#bandera-"+id_input;
                         var selector_imagen = "" + $(id_img1).attr('src') + "";
-                                                
+                        
+                        
                         $(id_span2).html($(id_span1).html());
                         $(id_img2).attr("src",selector_imagen);
+                        
 
                         /* phone */
                         $(selector_phone_span2).html($(id_span1).html());
