@@ -1,5 +1,6 @@
 var id_semis_left_phone = "";
 var id_semis_right_phone = "";
+var historico_llaves_input_phone = [];
 
 $("#btn-tabla-octavos").click(function() {
                 
@@ -254,19 +255,343 @@ $("#btn-tabla-final").click(function() {
                     if ( goles_equipo1 > goles_equipo2 ){ //ganó equipo1.
                          pasarganador_phone(id_equipo1,id_posicion);
                          arreglar_fixture_ganador(id_equipo1);
+                         //cambiaron_ganadores_partido_phone(id_equipo1);
                     }
                     else if  ( goles_equipo1 < goles_equipo2 ){ //ganó equipo2.
                          pasarganador_phone(id_equipo2,id_posicion);
                          arreglar_fixture_ganador(id_equipo2);
+                         //cambiaron_ganadores_partido_phone(id_equipo1);
                     }
                     else{ //empataron.
                          pasarganador_phone("",id_posicion);
                          ocultarImagenPosiciones();
-                        if ((id_equipo1.indexOf("octavos") > -1) || (id_equipo1.indexOf("cuartos") > -1)){
-                                arreglar_fixture_empate(id_equipo1);
-                        }
+                         arreglar_fixture_empate(id_equipo1);
+                                
+                        
                     }
                 }
+
+
+                //para usar esta funcion debemos actualizar nuestro arreglo en logica desktop
+               /* function cambiaron_ganadores_partido_phone(id){
+                        var selector = "#";
+                        switch(id){
+                                case 'phone-octavos-left-0':
+                                        if(!historico_llaves_input_phone[0]){
+                                                historico_llaves_input_phone[0] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[0]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[0] = id;
+                                                        $("#cuartos-left-0").val(0);
+                                                        $("#phone-cuartos-left-0").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-left-1':
+                                        if(!historico_llaves_input_phone[0]){
+                                                historico_llaves_input_phone[0] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[0]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[0] = id;
+                                                        $("#cuartos-left-0").val(0);
+                                                        $("#phone-cuartos-left-0").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-left-2':
+                                        if(!historico_llaves_input_phone[1]){
+                                                historico_llaves_input_phone[1] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[1]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[1] = id;
+                                                        $("#cuartos-left-1").val(0);
+                                                        $("#phone-cuartos-left-1").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-left-3':
+                                        if(!historico_llaves_input_phone[1]){
+                                                historico_llaves_input_phone[1] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[1]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[1] = id;
+                                                        $("#cuartos-left-1").val(0);
+                                                        $("#phone-cuartos-left-1").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-left-4':
+                                        if(!historico_llaves_input_phone[2]){
+                                                historico_llaves_input_phone[2] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[2]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[2] = id;
+                                                        $("#cuartos-left-2").val(0);
+                                                        $("#phone-cuartos-left-2").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-left-5':
+                                        if(!historico_llaves_input_phone[2]){
+                                                historico_llaves_input_phone[2] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[2]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[2] = id;
+                                                        $("#cuartos-left-2").val(0);
+                                                        $("#phone-cuartos-left-2").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-left-6':
+                                        if(!historico_llaves_input_phone[3]){
+                                                historico_llaves_input_phone[3] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[3]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[3] = id;
+                                                        $("#cuartos-left-3").val(0);
+                                                        $("#phone-cuartos-left-3").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-left-7':
+                                        if(!historico_llaves_input_phone[3]){
+                                                historico_llaves_input_phone[3] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[3]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[3] = id;
+                                                        $("#cuartos-left-3").val(0);
+                                                        $("#phone-cuartos-left-3").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-right-0':
+                                        if(!historico_llaves_input_phone[4]){
+                                                historico_llaves_input_phone[4] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[4]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[4] = id;
+                                                        $("#cuartos-right-0").val(0);
+                                                        $("#phone-cuartos-right-0").val(0);
+                                                }
+                                        }
+                                        break;
+                                case 'phone-octavos-right-1':
+                                        if(!historico_llaves_input_phone[4]){
+                                                historico_llaves_input_phone[4] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[4]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[4] = id;
+                                                        $("#cuartos-right-0").val(0);
+                                                        $("#phone-cuartos-right-0").val(0);
+                                                }
+                                        }
+                                        break;       
+                                case 'phone-octavos-right-2':
+                                        if(!historico_llaves_input_phone[5]){
+                                                historico_llaves_input_phone[5] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[5]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[5] = id;
+                                                        $("#cuartos-right-1").val(0);
+                                                        $("#phone-cuartos-right-1").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-octavos-right-3':
+                                        if(!historico_llaves_input_phone[5]){
+                                                historico_llaves_input_phone[5] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[5]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[5] = id;
+                                                        $("#cuartos-right-1").val(0);
+                                                        $("#phone-cuartos-right-1").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-octavos-right-4':
+                                        if(!historico_llaves_input_phone[6]){
+                                                historico_llaves_input_phone[6] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[6]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[6] = id;
+                                                        $("#cuartos-right-2").val(0);
+                                                        $("#phone-cuartos-right-2").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-octavos-right-5':
+                                        if(!historico_llaves_input_phone[6]){
+                                                historico_llaves_input_phone[6] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[6]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[6] = id;
+                                                        $("#cuartos-right-2").val(0);
+                                                        $("#phone-cuartos-right-2").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-octavos-right-6':
+                                        if(!historico_llaves_input_phone[7]){
+                                                historico_llaves_input_phone[7] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[7]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[7] = id;
+                                                        $("#cuartos-right-3").val(0);
+                                                        $("#phone-cuartos-right-3").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-octavos-right-7':
+                                        if(!historico_llaves_input_phone[7]){
+                                                historico_llaves_input_phone[7] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[7]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[7] = id;
+                                                        $("#cuartos-right-3").val(0);
+                                                        $("#phone-cuartos-right-3").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-cuartos-left-0':
+                                        if(!historico_llaves_input_phone[8]){
+                                                historico_llaves_input_phone[8] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[8]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[8] = id;
+                                                        $("#semis-left-0").val(0);
+                                                        $("#phone-semis-left-0").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-cuartos-left-1':
+                                        if(!historico_llaves_input_phone[8]){
+                                                historico_llaves_input_phone[8] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[8]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[8] = id;
+                                                        $("#semis-left-0").val(0);
+                                                        $("#phone-semis-left-0").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-cuartos-left-2':
+                                        if(!historico_llaves_input_phone[9]){
+                                                historico_llaves_input_phone[9] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[9]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[9] = id;
+                                                        $("#semis-left-1").val(0);
+                                                        $("#phone-semis-left-1").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-cuartos-left-3':
+                                        if(!historico_llaves_input_phone[9]){
+                                                historico_llaves_input_phone[9] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[9]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[9] = id;
+                                                        setearInputs("#semis-left-1");
+                                                        $("#semis-left-1").val(0);
+                                                        $("#phone-semis-left-1").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-cuartos-right-0':
+                                        if(!historico_llaves_input_phone[10]){
+                                                historico_llaves_input_phone[10] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[10]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[10] = id;
+                                                        $("#semis-right-0").val(0);
+                                                        $("#phone-semis-right-0").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-cuartos-right-1':
+                                        if(!historico_llaves_input_phone[10]){
+                                                historico_llaves_input_phone[10] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[10]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[10] = id;
+                                                        $("#semis-right-0").val(0);
+                                                        $("#phone-semis-right-0").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-cuartos-right-2':
+                                        if(!historico_llaves_input_phone[11]){
+                                                historico_llaves_input_phone[11] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[11]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[11] = id;
+                                                        $("#semis-right-1").val(0);
+                                                        $("#phone-semis-right-1").val(0);
+                                                }
+                                        }
+                                        break; 
+                                case 'phone-cuartos-right-3':
+                                        if(!historico_llaves_input_phone[11]){
+                                                historico_llaves_input_phone[11] = id;
+                                        }
+                                        else{
+                                                if(historico_llaves_input_phone[11]!=id){
+                                                        arreglar_fixture_ganador(id);
+                                                        historico_llaves_input_phone[11] = id;
+                                                        $("#semis-right-1").val(0);
+                                                        $("#phone-semis-right-1").val(0);
+                                                }
+                                        }
+                                        break; 
+                        }
+                }*/
+
 
 
                 function pasarganador_phone(id_input,id_posicion){
