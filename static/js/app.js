@@ -226,7 +226,6 @@ var app = (function(scope = {}) {
         //---->paso datos a llaves-phone y llaves-desktop<---------
         //validacion: si usuario me borra todo el modal, actualizo la tabla.
         if((grupo.equipos[0].puntos == 0) && ( (grupo.equipos[0].goles_a_favor - grupo.equipos[0].goles_en_contra )==0 )){
-            console.log("entre 1");
             var span1 = "#equipo-" + selector_input_1;
             var img1 = "#bandera-" + selector_input_1;
 
@@ -291,8 +290,6 @@ var app = (function(scope = {}) {
             $(img2_phone).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
             /* fin phone */
         }
-		
-        localStorage.setItem('fixture', JSON.stringify(fixture));
         $('#modal-partidos').modal('toggle');
     }
 

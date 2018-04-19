@@ -669,20 +669,20 @@ $("#btn-tabla-final").click(function() {
                     }else{
                             if (id_posicion.charAt(id_posicion.length-1)%2==0){
                                     $(id_span_posicion).html("Equipo 1");
-                                    $(id_img_posicion).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                    $(id_img_posicion).attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
     
                                     /* desktop */
                                     $(selector_desktop_span2).html("Equipo 1");
-                                    $(selector_desktop_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                    $(selector_desktop_img2).attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
                                     /* fin desktop */
                             }
                             else{
                                     $(id_span_posicion).html("Equipo 2");
-                                    $(id_img_posicion).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                    $(id_img_posicion).attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
                                     
                                     /* desktop */
                                     $(selector_desktop_span2).html("Equipo 2");
-                                    $(selector_desktop_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                    $(selector_desktop_img2).attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
                                     /* fin desktop */
                             }
                     }

@@ -1613,20 +1613,20 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
                 }else{
                         if (id_posicion.charAt(id_posicion.length-1)%2==0){
                                 $(id_span2).html("Equipo 1");
-                                $(id_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                $(id_img2).attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
 
                                 /* phone */
                                 $(selector_phone_span2).html("Equipo 1");
-                                $(selector_phone_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                $(selector_phone_img2).attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
                                 /* fin phone */
                         }
                         else{
                                 $(id_span2).html("Equipo 2");
-                                $(id_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                $(id_img2).attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
                                 
                                 /* phone */
                                 $(selector_phone_span2).html("Equipo 2");
-                                $(selector_phone_img2).attr("src","http://localhost/fixture/static/img/sinbandera.jpg");
+                                $(selector_phone_img2).attr("src","http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg");
                                 /* fin phone */
                         }
                 }
@@ -1642,7 +1642,7 @@ var historico_inputs_llaves = [];//12 posiciones--> 0 representa partido 1 de oc
             var id_img = "bandera-"+id_input;
             var imagen_source = document.getElementById(id_img).src;
             var texto = document.getElementById(id_span).innerHTML;
-            if((imagen_source=="http://localhost/fixture/static/img/sinbandera.jpg") || (texto =="Equipo 1") || (texto == "Equipo 2")) {
+            if((imagen_source=="http://localhost/fixture-rusia-2018/static/img/sinbandera.jpg") || (texto =="Equipo 1") || (texto == "Equipo 2")) {
                 ocultarImagenPosiciones();    
                 return false;
              }
