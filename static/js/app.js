@@ -233,6 +233,39 @@ var app = (function(scope = {}) {
         )
     };
 
+    var pasarganadorllave = function (numero_partido,local_o_visitante){
+        
+        //validacion id;
+        
+        //busco partido
+        var fases = this.getFixture().fases;
+        var partido;
+        var fase;
+        for (var i=0; i<fases.length; i++){
+            fase = fases[i];
+            if (fase.getPartido(numero_partido)){
+                partido = fase.getPartido(numero_partido)
+                break;
+            }
+
+        }
+        
+        
+        //deberia tener array con relacion id_input_local y id_input_visitante
+        
+        //seteo goles al partido y veo quien es el ganador
+        
+            partido.partidoSiguiente.equipoLocal = partido.equipoLocal;
+        
+        
+        
+        
+        
+                
+        this.actualizarLlavesDesktop();
+        this.actualizarLlavesPhone();
+
+    }
 
 	var aceptarModal = function() {
         var grupo = fixture.getGrupo(modal_activo);
@@ -289,6 +322,6 @@ var app = (function(scope = {}) {
         $('#modal-partidos').modal('toggle');
     }
 
-    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,actualizarLlavesDesktop,actualizarLlavesPhone});
+    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,actualizarLlavesDesktop,actualizarLlavesPhone,pasarganadorllave});
 
 })();
