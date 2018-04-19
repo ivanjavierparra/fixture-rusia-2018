@@ -54,14 +54,14 @@
                         <td style="border-top:#e4c275;">
                             <img id="bandera-local-desktop-partido-${partido.numero}" src="static/img/banderas/${partido.equipoLocal ? partido.equipoLocal.foto + ".png" : "sinbandera.jpg"}" height="24" width="24">
                             <span id="equipo-local-desktop-partido-${partido.numero}">${partido.equipoLocal ? partido.equipoLocal.nombre : "Equipo1"}</span>
-                            <input id="goles-local-desktop-partido-${partido.numero}"  onchange="app.pasarganadorllave(${partido.numero},'local')" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                            <input id="goles-local-desktop-partido-${partido.numero}"  onchange="app.cargarGolesPartido(this)" type="number" value=${partido.equipoLocal ? partido.goles_local : ''} size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
                         </td>
                     </tr>
                     <tr>
                         <td style="border-top:#e4c275;">
                             <img id="bandera-visitante-desktop-partido-${partido.numero}"  src="static/img/banderas/${partido.equipoVisitante ? partido.equipoVisitante.foto + ".png" : "sinbandera.jpg"}" height="24" width="24">
                             <span id="equipo-visitante-desktop-partido-${partido.numero}">${partido.equipoVisitante ? partido.equipoVisitante.nombre : "Equipo2"}</span>
-                            <input id="goles-visitante-desktop-partido-${partido.numero}"  onchange="app.pasarganadorllave(${partido.numero},'visitante')" type="number" size="1" min="0" max="10" style="font-size: 11px;text-align: center;width: 40px">
+                            <input id="goles-visitante-desktop-partido-${partido.numero}"  onchange="app.cargarGolesPartido(this)" type="number" value=${partido.equipoVisitante ? partido.goles_visitante : ''} size="1" min="0" max="10" style="font-size: 11px;text-align: center;width: 40px">
                         </td>
                     </tr>
                 </tbody>
@@ -88,10 +88,10 @@
                     <span id="equipo-local-phone-partido-${partido.numero}">${partido.equipoLocal ? partido.equipoLocal.nombre : "Equipo1"}</span>
                 </div>
                 <div class="col-2 text-center">
-                    <input id="goles-local-phone-partido-${partido.numero}"  onchange="verinputsphone(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                    <input id="goles-local-phone-partido-${partido.numero}"  onchange="app.cargarGolesPartido(this)" type="number" value=${partido.equipoLocal ? partido.goles_local : ''} size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
                 </div>
                 <div class="col-2 text-center">
-                    <input id="goles-visitante-phone-partido-${partido.numero}" onchange="verinputsphone(this.id)" type="number"  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                    <input id="goles-visitante-phone-partido-${partido.numero}" onchange="app.cargarGolesPartido(this)" type="number" value=${partido.equipoVisitante ? partido.goles_visitante : ''}  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
                 </div>
                 <div class="col-4 text-center">
                     <img id="bandera-visitante-phone-partido-${partido.numero}"  src="static/img/banderas/${partido.equipoVisitante ? partido.equipoVisitante.foto + ".png" : "sinbandera.jpg"}" height="24" width="24">

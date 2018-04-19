@@ -233,38 +233,50 @@ var app = (function(scope = {}) {
         )
     };
 
-    var pasarganadorllave = function (numero_partido,local_o_visitante){
+    var cargarGolesPartido = function (input){
         
-        //validacion id;
-        
-        //busco partido
-        var fases = this.getFixture().fases;
-        var partido;
-        var fase;
-        for (var i=0; i<fases.length; i++){
-            fase = fases[i];
-            if (fase.getPartido(numero_partido)){
-                partido = fase.getPartido(numero_partido)
-                break;
+        var input_rival;
+        //Fijarme si los inputs tienen valor:
+        if (input.id.includes("local")){
+            var selector = "#"+input.id.replace("local","visitante");
+            input_rival = $(selector).get(0);     
+        } else {
+            var selector = "#"+input.id.replace("visitante","local");
+            input_rival = $(selector).get(0);
+        }
+
+        if(input.value!="" && input_rival.value!=""){
+            var numero_partido = parseInt(input.id.substring(input.id.length-2));
+            var partido;
+            var fase;
+            fases = this.getFixture().fases;
+            for (var i=0; i<fases.length; i++){
+                fase = fases[i];
+                if (fase.getPartido(numero_partido)){
+                    partido = fase.getPartido(numero_partido)
+                    break;
+                }
+    
+            }
+            if(input.id.includes("local")){
+                partido.goles_local = parseInt(input.value);
+                partido.goles_visitante = parseInt(input_rival.value);
+            }else{
+                partido.goles_local = parseInt(input_rival.value);
+                partido.goles_visitante = parseInt(input.value);
             }
 
-        }
-        
-        
-        //deberia tener array con relacion id_input_local y id_input_visitante
-        
-        //seteo goles al partido y veo quien es el ganador
-        
-            partido.partidoSiguiente.equipoLocal = partido.equipoLocal;
-        
-        
-        
-        
-        
+            //comparacion de quien gano
+            var numero_partido = parseInt(input.id.substring(input.id.length-2));
+            if (numero_partido%2==0){
+                partido.partidoSiguiente.equipoVisitante = partido.getGanador();
+            }else{
+                partido.partidoSiguiente.equipoLocal = partido.getGanador();
+            } 
                 
-        this.actualizarLlavesDesktop();
-        this.actualizarLlavesPhone();
-
+            this.actualizarLlavesPhone();
+            this.actualizarLlavesDesktop();
+        }
     }
 
 	var aceptarModal = function() {
@@ -304,10 +316,17 @@ var app = (function(scope = {}) {
         var selector = "#grupo" + grupo.letra;
         $(selector).html(app.templates.grupoTemplate(grupo));
 
+        var fases = this.getFixture().fases;
         //Para Este grupo, obtengo el primero y el segundo para ponerlo en los partidos correspondientes(MODELO)
         if (grupo.equipos[0].puntos == 0 && (grupo.equipos[0].goles_a_favor-grupo.equipos[0].goles_en_contra) == 0){
-            grupo.partido1.equipoLocal = null;
-            grupo.partido2.equipoVisitante = null;
+            for(var i=4;i<fases.length;i--){
+                var partido = fases[i].getPartido(grupo.partido1.numero);
+                partido.equipoLocal = null;
+                partido.equipoVisitante = null;
+                partido = fases[i].getPartido(grupo.partido2.numero);
+                partido.equipoLocal = null;
+                partido.equipoVisitante = null;
+            }
         }else{
             grupo.partido1.equipoLocal = grupo.equipos[0];
             grupo.partido2.equipoVisitante = grupo.equipos[1];
@@ -322,6 +341,6 @@ var app = (function(scope = {}) {
         $('#modal-partidos').modal('toggle');
     }
 
-    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,actualizarLlavesDesktop,actualizarLlavesPhone,pasarganadorllave});
+    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,actualizarLlavesDesktop,actualizarLlavesPhone,cargarGolesPartido});
 
 })();
