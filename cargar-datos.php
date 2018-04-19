@@ -149,7 +149,7 @@
     $equipos_A = array($rusia,$arabia,$egipto,$uruguay);
     $partidos_A = array($partidoRusiaArabia,$partidoEgiptoUruguay,$partidoRusiaEgipto,$partidoUruguayArabia,$partidoUruguayRusia,$partidoArabiaEgipto);
 
-    $grupoa = new Grupo("A",$equipos_A,$partidos_A,50,51);
+    $grupoa = new Grupo("A",$equipos_A,$partidos_A,49,51);
     
 
     /* GRUPO  B */
@@ -167,7 +167,7 @@
 
     $equipos_B = array($portugal,$espana,$marruecos,$iran);
     $partidos_B = array($partidoMarruecosIran,$partidoPortugalEspana,$partidoPortugalMarruecos,$partidoIranEspana,$partidoIranPortugal,$partidoEspanaMarruecos);
-    $grupob = new Grupo("B",$equipos_B,$partidos_B,51,50);
+    $grupob = new Grupo("B",$equipos_B,$partidos_B,51,49);
     
 
     /* GRUPO  C */
@@ -185,7 +185,7 @@
 
     $equipos_C = array($francia,$australia,$peru,$dinamarca);
     $partidos_C = array($partidoFranciaAustralia,$partidoPeruDinamarca,$partidoDinamarcaAustralia,$partidoFranciaPeru,$partidoDinamarcaFrancia,$partidoAustraliaPeru);
-    $grupoc = new Grupo("C",$equipos_C,$partidos_C,49,52);
+    $grupoc = new Grupo("C",$equipos_C,$partidos_C,50,52);
 
 
     /* GRUPO  D */
@@ -203,7 +203,7 @@
 
     $equipos_D = array($argentina,$islandia,$croacia,$nigeria);
     $partidos_D = array($partidoArgentinaIslandia,$partidoCrociaNigeria,$partidoArgentinaCroacia,$partidoNigeriaIslandia,$partidoNigeriaArgentina,$partidoIslandiaCroacia);
-    $grupod = new Grupo("D",$equipos_D,$partidos_D,52,49);
+    $grupod = new Grupo("D",$equipos_D,$partidos_D,52,50);
 
 
     /* GRUPO E */
@@ -282,16 +282,16 @@
 
     $faseOctavos= new Fase("Octavos",array($partidoOctavos1,
                                         $partidoOctavos2,
-                                        $partidoOctavos3,
-                                        $partidoOctavos4,
                                         $partidoOctavos5,
                                         $partidoOctavos6,
+                                        $partidoOctavos3,
+                                        $partidoOctavos4,
                                         $partidoOctavos7,
                                         $partidoOctavos8));
     $faseCuartos= new Fase("Cuartos",array($partidoCuartos1,
-                                            $partidoOctavos2,
-                                            $partidoOctavos3,
-                                            $partidoOctavos4));
+                                            $partidoCuartos2,
+                                            $partidoCuartos3,
+                                            $partidoCuartos4));
     $faseSemis= new Fase("Semis",array($partidoSemis1,$partidoSemis2));
     $faseTercer= new Fase("Tercer Puesto",array($partidoTercerPuesto));
     $faseFinal= new Fase("Final",array($partidoFinal));

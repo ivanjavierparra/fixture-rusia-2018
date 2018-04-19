@@ -1,39 +1,39 @@
 var id_semis_left_phone = "";
 var id_semis_right_phone = "";
 
-$("#btn-tabla-octavos").click(function() {
+$("#btn-tabla-Octavos").click(function() {
                 
-    $("#tabla-octavos").show();
-    $("#tabla-cuartos").hide();
-    $("#tabla-semis").hide();
-    $("#tabla-final").hide();
+    $("#tabla-Octavos").show();
+    $("#tabla-Cuartos").hide();
+    $("#tabla-Semis").hide();
+    $("#tabla-Final").hide();
 
 });
 
-$("#btn-tabla-cuartos").click(function() {
+$("#btn-tabla-Cuartos").click(function() {
 
-    $("#tabla-octavos").hide();
-    $("#tabla-cuartos").show();
-    $("#tabla-semis").hide();
-    $("#tabla-final").hide();
-
-});
-
-$("#btn-tabla-semis").click(function() {
-
-    $("#tabla-octavos").hide();
-    $("#tabla-cuartos").hide();
-    $("#tabla-semis").show();
-    $("#tabla-final").hide();
+    $("#tabla-Octavos").hide();
+    $("#tabla-Cuartos").show();
+    $("#tabla-Semis").hide();
+    $("#tabla-Final").hide();
 
 });
 
-$("#btn-tabla-final").click(function() {
+$("#btn-tabla-Semis").click(function() {
 
-    $("#tabla-octavos").hide();
-    $("#tabla-cuartos").hide();
-    $("#tabla-semis").hide();
-    $("#tabla-final").show();
+    $("#tabla-Octavos").hide();
+    $("#tabla-Cuartos").hide();
+    $("#tabla-Semis").show();
+    $("#tabla-Final").hide();
+
+});
+
+$("#btn-tabla-Final").click(function() {
+
+    $("#tabla-Octavos").hide();
+    $("#tabla-Cuartos").hide();
+    $("#tabla-Semis").hide();
+    $("#tabla-Final").show();
 
 }); 
 

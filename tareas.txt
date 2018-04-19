@@ -1,5 +1,4 @@
-1. validar inputs en modal de grupo 
-2. limpiar valores cuando pasas de un modal a otro.
-3. lógica de llaves de phone.
-4. ver penales.
-5. cambiar estética de las llaves.
+1. validar inputs en modal de grupo
+2. resetear inputs de las llaves cuando se cambia el equipo
+3. cuando se vuelve del local storage simular el app.aceptarmodal()
+4. 

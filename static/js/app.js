@@ -96,7 +96,6 @@ var app = (function(scope = {}) {
             }
             return 0;
         };
-    
         return Object.assign({},{
             letra:grupo.letra,
             partido1:octavos.getPartido(grupo.partido1),
@@ -125,11 +124,23 @@ var app = (function(scope = {}) {
             }
         }
         return Object.assign({},{nombre:fase.nombre,partidos:partidosACargar},{
-            getPartido: function(numero){
-                for(var i=0;i<this.partidos.length;i++){
-                    if(numero == this.partidos[i].numero){
-                        return this.partidos[i];
+            getPartido: function(numero_o_partido){
+                if(numero_o_partido){
+                    if (Number.isInteger(numero_o_partido)){
+                        for(var i=0;i<this.partidos.length;i++){
+                            if(numero_o_partido == this.partidos[i].numero){
+                                return this.partidos[i];
+                            }
+                        }    
+                    }else{
+                        for(var i=0;i<this.partidos.length;i++){
+                            if(numero_o_partido.numero == this.partidos[i].numero){
+                                return this.partidos[i];
+                            }
+                        }   
                     }
+                }else{
+                    return null;
                 }
             }
         })
@@ -200,8 +211,30 @@ var app = (function(scope = {}) {
         }
     }
 	
-	
-	var aceptarModal = () => {
+    var actualizarLlavesPhone = function(){
+        this.getFixture().fases.map(f =>
+            f.partidos.map(
+                p => {
+                    var selector = '#phone-partido-' + p.numero;
+                    $(selector).html(this.templates.partidoPhoneTemplate(p));
+                }
+            )
+        )
+    };
+    
+    var actualizarLlavesDesktop = function(){
+        this.getFixture().fases.map(f =>
+            f.partidos.map(
+                p => {
+                    var selector = '#desktop-partido-' + p.numero;
+                    $(selector).html(this.templates.partidoDesktopTemplate(p));
+                }
+            )
+        )
+    };
+
+
+	var aceptarModal = function() {
         var grupo = fixture.getGrupo(modal_activo);
         var equipos;
         var inputs = $(".input_modal");
@@ -237,81 +270,25 @@ var app = (function(scope = {}) {
         grupo.ordenarEquipos();
         var selector = "#grupo" + grupo.letra;
         $(selector).html(app.templates.grupoTemplate(grupo));
-		
+
+        //Para Este grupo, obtengo el primero y el segundo para ponerlo en los partidos correspondientes(MODELO)
+        if (grupo.equipos[0].puntos == 0 && (grupo.equipos[0].goles_a_favor-grupo.equipos[0].goles_en_contra) == 0){
+            grupo.partido1.equipoLocal = null;
+            grupo.partido2.equipoVisitante = null;
+        }else{
+            grupo.partido1.equipoLocal = grupo.equipos[0];
+            grupo.partido2.equipoVisitante = grupo.equipos[1];
+        }
         
-        var pos1 = "" +  grupo.posicion1.fase + "-" + grupo.posicion1.tipo + "-" + grupo.posicion1.lugar + "";
-        var selector_input_1 = pos1.toLowerCase();
-        var pos2 = "" +  grupo.posicion2.fase + "-" + grupo.posicion2.tipo + "-" + grupo.posicion2.lugar + "";
-        var selector_input_2 = pos2.toLowerCase();
+        
+        //re-dibujo las llaves
+        this.actualizarLlavesPhone();
+        this.actualizarLlavesDesktop();
 
-        //paso datos a llaves-phone y llaves-desktop
-        if((grupo.equipos[0].puntos == 0) && ( (grupo.equipos[0].goles_a_favor - grupo.equipos[0].goles_en_contra )==0 )){
-            console.log("entre 1");
-            var span1 = "#equipo-" + selector_input_1;
-            var img1 = "#bandera-" + selector_input_1;
-
-            var span2 = "#equipo-" + selector_input_2;
-            var img2 = "#bandera-" + selector_input_2;
-
-            $(span1).html("Equipo 1"); //equipos[0] es el ganador del grupo
-            $(img1).attr("src","static/img/sinbandera.jpg");
-            
-            $(span2).html("Equipo 2"); //equipos[1] es el segundo del grupo
-            $(img2).attr("src","static/img/sinbandera.jpg");
-            /* fin desktop */
-
-            /* phone */
-            var span1_phone = "#equipo-phone-" + selector_input_1;
-            var img1_phone = "#bandera-phone-" + selector_input_1;
-            
-            var span2_phone = "#equipo-phone-" + selector_input_2;
-            var img2_phone = "#bandera-phone-" + selector_input_2;
-
-            $(span1_phone).html("Equipo 1"); //equipos[0] es el ganador del grupo
-            $(img1_phone).attr("src","static/img/sinbandera.jpg");
-            
-            $(span2_phone).html("Equipo 2"); //equipos[1] es el segundo del grupo
-            $(img2_phone).attr("src","static/img/sinbandera.jpg");
-            /* fin phone */
-            arreglar_fixture_empate(selector_input_1);
-            arreglar_fixture_empate(selector_input_2);
-            ocultarImagenPosiciones();
-        }
-        else{
-            /* desktop */
-            console.log("entre 2");
-            var span1 = "#equipo-" + selector_input_1;
-            var img1 = "#bandera-" + selector_input_1;
-
-            var span2 = "#equipo-" + selector_input_2;
-            var img2 = "#bandera-" + selector_input_2;
-
-            $(span1).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
-            $(img1).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
-            
-            $(span2).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
-            $(img2).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
-            /* fin desktop */
-
-            /* phone */
-            var span1_phone = "#equipo-phone-" + selector_input_1;
-            var img1_phone = "#bandera-phone-" + selector_input_1;
-            
-            var span2_phone = "#equipo-phone-" + selector_input_2;
-            var img2_phone = "#bandera-phone-" + selector_input_2;
-
-            $(span1_phone).html(grupo.equipos[0].nombre); //equipos[0] es el ganador del grupo
-            $(img1_phone).attr("src","static/img/banderas/" + grupo.equipos[0].foto + ".png");
-            
-            $(span2_phone).html(grupo.equipos[1].nombre); //equipos[1] es el segundo del grupo
-            $(img2_phone).attr("src","static/img/banderas/" + grupo.equipos[1].foto + ".png");
-            /* fin phone */
-        }
-		
         localStorage.setItem('fixture', JSON.stringify(fixture));
         $('#modal-partidos').modal('toggle');
     }
 
-    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal});
+    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,actualizarLlavesDesktop,actualizarLlavesPhone});
 
 })();
