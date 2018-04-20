@@ -284,9 +284,13 @@ var app = (function(scope = {}) {
                         fases[0].partidos[0].equipoVisitante = partido.getPerdedor();
                     }
                 }catch (e){
-                    $('#bandera-ganador').attr("src","static/img/banderas/"+ partido.getGanador().foto +".png");
-                    $('#equipo-ganador').text("partido.getGanador().nombre");
-                    console.log(partido.getGanador().nombre);
+                    if(partido.numero==64){
+                        $('#bandera-phone-ganador').attr("src","static/img/banderas/"+ partido.getGanador().foto +".png");
+                        $('#equipo-phone-ganador').text(partido.getGanador().nombre);
+                        $('#bandera-desktop-ganador').attr("src","static/img/banderas/"+ partido.getGanador().foto +".png");
+                        $('#equipo-desktop-ganador').text(partido.getGanador().nombre);
+                        console.log(partido.getGanador().nombre);
+                    }
                 }
                     
             }else{
@@ -296,9 +300,13 @@ var app = (function(scope = {}) {
                         fases[0].partidos[0].equipoLocal = partido.getPerdedor();
                     }
                 }catch (e){
-                    $('#bandera-ganador').attr("src","static/img/banderas/"+ partido.getGanador().foto +".png");
-                    $('#equipo-ganador').text("partido.getGanador().nombre");
-                    console.log(partido.getGanador().nombre);
+                    if(partido.numero==64){
+                        $('#bandera-phone-ganador').attr("src","static/img/banderas/"+ partido.getGanador().foto +".png");
+                        $('#equipo-phone-ganador').text(partido.getGanador().nombre);
+                        $('#bandera-desktop-ganador').attr("src","static/img/banderas/"+ partido.getGanador().foto +".png");
+                        $('#equipo-desktop-ganador').text(partido.getGanador().nombre);
+                        console.log(partido.getGanador().nombre);
+                    }
                 }
             } 
             localStorage.setItem('fixture', JSON.stringify(fixture));
