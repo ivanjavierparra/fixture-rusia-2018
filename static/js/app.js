@@ -49,6 +49,15 @@ var app = (function(scope = {}) {
             } else {
                 return null;
             }
+        },
+        getPerdedor: function() {
+            if (this.goles_local > this.goles_visitante){
+                return this.equipoVisitante;
+            } else if (this.goles_local < this.goles_visitante) {
+                return this.equipoLocal;
+            } else {
+                return null;
+            }
         }
         })
     }
@@ -269,9 +278,28 @@ var app = (function(scope = {}) {
             //comparacion de quien gano
             var numero_partido = parseInt(input.id.substring(input.id.length-2));
             if (numero_partido%2==0){
-                partido.partidoSiguiente.equipoVisitante = partido.getGanador();
+                try{
+                    partido.partidoSiguiente.equipoVisitante = partido.getGanador();
+                    if(partido.numero==62){
+                        fases[0].partidos[0].equipoVisitante = partido.getPerdedor();
+                    }
+                }catch (e){
+                    $('#bandera-ganador').attr("src","static/img/banderas/"+ partido.getGanador().foto +".png");
+                    $('#equipo-ganador').text("partido.getGanador().nombre");
+                    console.log(partido.getGanador().nombre);
+                }
+                    
             }else{
-                partido.partidoSiguiente.equipoLocal = partido.getGanador();
+                try{
+                    partido.partidoSiguiente.equipoLocal = partido.getGanador();
+                    if(partido.numero==61){
+                        fases[0].partidos[0].equipoLocal = partido.getPerdedor();
+                    }
+                }catch (e){
+                    $('#bandera-ganador').attr("src","static/img/banderas/"+ partido.getGanador().foto +".png");
+                    $('#equipo-ganador').text("partido.getGanador().nombre");
+                    console.log(partido.getGanador().nombre);
+                }
             } 
             localStorage.setItem('fixture', JSON.stringify(fixture));
             this.actualizarLlavesPhone();
