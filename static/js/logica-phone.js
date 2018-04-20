@@ -6,7 +6,6 @@ $("#btn-tabla-Octavos").click(function() {
     $("#tabla-Octavos").show();
     $("#tabla-Cuartos").hide();
     $("#tabla-Semis").hide();
-    $("#tabla-Tercer Puesto").hide();
     $("#tabla-Final").hide();
 
 });
@@ -16,7 +15,6 @@ $("#btn-tabla-Cuartos").click(function() {
     $("#tabla-Octavos").hide();
     $("#tabla-Cuartos").show();
     $("#tabla-Semis").hide();
-    $("#tabla-Tercer Puesto").hide();
     $("#tabla-Final").hide();
 
 });
@@ -26,27 +24,15 @@ $("#btn-tabla-Semis").click(function() {
     $("#tabla-Octavos").hide();
     $("#tabla-Cuartos").hide();
     $("#tabla-Semis").show();
-    $("#tabla-Tercer Puesto").hide();
     $("#tabla-Final").hide();
 
 });
-
-$("#btn-tabla-Tercer Puesto").click(function() {
-
-        $("#tabla-Octavos").hide();
-        $("#tabla-Cuartos").hide();
-        $("#tabla-Semis").hide();
-        $("#tabla-Tercer Puesto").show();
-        $("#tabla-Final").hide();
-    
-    });
 
 $("#btn-tabla-Final").click(function() {
 
     $("#tabla-Octavos").hide();
     $("#tabla-Cuartos").hide();
     $("#tabla-Semis").hide();
-    $("#tabla-Tercer Puesto").hide();
     $("#tabla-Final").show();
 
 }); 

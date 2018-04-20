@@ -1,8 +1,6 @@
 var app = (function(scope = {}) {
     let fixture = {};
-    let modal_activo = "";
-    let historial_ganadores_modal = []; 
-    
+	let modal_activo = "";
 
     var equipoFactory = (equipo) => {
         return Object.assign({},{nombre: equipo.nombre,
@@ -315,71 +313,19 @@ var app = (function(scope = {}) {
         }
         //armo tabla con puntos y goles (Reordenando los td de la tabla del grupo correspondiente)
         grupo.ordenarEquipos();
-        var numero = convertirLetra(modal_activo);
-        if(!historial_ganadores_modal[numero])historial_ganadores_modal[numero]=grupo.equipos[0];
-        console.log(historial_ganadores_modal[numero]);
-        //seteo solo si posicion es vacia....
         var selector = "#grupo" + grupo.letra;
         $(selector).html(app.templates.grupoTemplate(grupo));
 
         var fases = this.getFixture().fases;
-        
         //Para Este grupo, obtengo el primero y el segundo para ponerlo en los partidos correspondientes(MODELO)
-        if ((grupo.equipos[0].puntos == 0) && ((grupo.equipos[0].goles_a_favor-grupo.equipos[0].goles_en_contra) == 0) && (historial_ganadores_modal[numero])){
-            //borro el equipo que esta en historial en primera posicion
-            var equipo_a_borrar = historial_ganadores_modal[numero];
-            historial_ganadores_modal[numero] = null;
-            
-        /*                        LEEME                      */
-        /* -------------------------------------------------- */
-            //para que funcione esta parte hay que guardar en historial_ganadores_modal el 2do del grupo....y asi lo borro junto al primerro
-
-            for(var i=4;i>-1;i--){
-                
-             if(i==4){//fase octavos
-                
+        if (grupo.equipos[0].puntos == 0 && (grupo.equipos[0].goles_a_favor-grupo.equipos[0].goles_en_contra) == 0){
+            for(var i=4;i<fases.length;i--){
                 var partido = fases[i].getPartido(grupo.partido1.numero);
-                if(partido.equipoLocal==equipo_a_borrar){
-                    partido.equipoLocal = null;
-                }
-                else {
-                    if (partido.equipoVisitante==equipo_a_borrar){
-                        partido.equipoVisitante = null;
-                    }
-                }
-               
-
+                partido.equipoLocal = null;
+                partido.equipoVisitante = null;
                 partido = fases[i].getPartido(grupo.partido2.numero);
-                if(partido.equipoLocal==equipo_a_borrar){
-                    partido.equipoLocal = null;
-                }
-                else {
-                    if (partido.equipoVisitante==equipo_a_borrar){
-                        partido.equipoVisitante = null;
-                    }
-                } 
-             }
-             else{
-
-                 var partidos = fases[i].partidos;
-                 for(var h=0;h<partidos.length;h++){
-                    
-                        if(partidos[h].equipoLocal==equipo_a_borrar){
-                            partidos[h].equipoLocal = null;
-                        }
-                        else {
-                            if (partidos[h].equipoVisitante==equipo_a_borrar){
-                                partidos[h].equipoVisitante = null;
-                            }
-                        }
-                     
-                 }
-                 
-                 
-             }
-                
-                
-                
+                partido.equipoLocal = null;
+                partido.equipoVisitante = null;
             }
         }else{
             grupo.partido1.equipoLocal = grupo.equipos[0];
@@ -395,19 +341,6 @@ var app = (function(scope = {}) {
         $('#modal-partidos').modal('toggle');
     }
 
-    function convertirLetra(modal){
-        switch (modal){
-                case 'A': return 0; break;
-                case 'B': return 1; break;
-                case 'C': return 2; break;
-                case 'D': return 3; break;
-                case 'E': return 4; break;
-                case 'F': return 5; break;
-                case 'G': return 6; break;
-                case 'H': return 7; break;
-        }
-    }
-
-    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,actualizarLlavesDesktop,actualizarLlavesPhone,cargarGolesPartido,convertirLetra});
+    return Object.assign(scope, {getFixture,run,grupoFactory,fixtureFactory,cargarModal,aceptarModal,actualizarLlavesDesktop,actualizarLlavesPhone,cargarGolesPartido});
 
 })();
