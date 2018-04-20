@@ -39,6 +39,47 @@
                         </div>
                 </div>
             </div>
+            <div id="ganadorcito" style="display: none; color: gold">
+                    <!-- partido harcodeado-->    
+                    <div id="phone-partido-63">
+                            <div style="margin-top: 20px;margin-bottom: 10px;">
+                                <center>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#datos-phone-partido-63">+</button>
+                                    3er Puesto
+                                    <div id="phone-datos-partido-63" class="collapse">
+                                        Fecha:07/07<br>Horario: 15 hs<br>Estadio: Estadio de Moscú
+                                    </div>
+                                </center>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <img id="bandera-local-phone-partido-63" src="static/img/banderas/sinbandera.jpg" height="24" width="24">
+                                    <span id="equipo-local-phone-partido-63">Equipo1</span>
+                                </div>
+                                <div class="col-2 text-center">
+                                    <input id="goles-local-phone-partido-63"  onchange="app.cargarGolesPartido(this)" type="number" value=${partido.equipoLocal ? partido.goles_local : ''} size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                </div>
+                                <div class="col-2 text-center">
+                                    <input id="goles-visitante-phone-partido-63" onchange="app.cargarGolesPartido(this)" type="number" value=${partido.equipoVisitante ? partido.goles_visitante : ''}  size="1" min="0" max="10"style="font-size: 11px;text-align: center;width: 40px">
+                                </div>
+                                <div class="col-4 text-center">
+                                    <img id="bandera-visitante-phone-partido-63"  src="static/img/banderas/sinbandera.jpg" height="24" width="24">
+                                    <span id="equipo-visitante-phone-partido-63">Equipo2</span>
+                                </div>
+                            </div>
+                    </div>
+                    <!-- copa harcodeada -->
+                    <div  id="campeon-phone-copa" style="margin-top: 10%;">
+                        <center>
+                                    <img src="static/img/copa.png" height="100" width="69">
+                                    <p style="font-weight: 500; font-size: 18px;text-align: center;display: block;margin: 7px 0; color: yellow">CAMPEÓN</p>
+                                    <div  id="pais-campeon">
+                                            <img id="bandera-ganador"  src="static/img/sinbandera.jpg" height="30" width="30">
+                                            <span id="equipo-ganador" style="font-size: 18px; color: gold">Equipo Ganador</span>
+                                    </div>                                
+                        </center>
+                    </div>
+            </div>
         </div>
         <div id="llaves-desktop" class="container-fluid" >
             <div class="grid-container">
@@ -60,7 +101,14 @@
 
                 <div class="grid-semis-i" id="desktop-partido-61">61</div>
 
-                <div class="grid-campeon" id="campeon">Campeon</div>
+                <div class="grid-campeon" id="campeon" style="block-size: 10px">
+                       <img src="static/img/copa.png" height="100" width="69">
+                        <p style="font-weight: 500; font-size: 18px;text-align: center;display: block;margin: 7px 0; color: yellow">CAMPEÓN</p>
+                        <div  id="pais-campeon">
+                                <img id="bandera-ganador"  src="static/img/sinbandera.jpg" height="30" width="30">
+                                <span id="equipo-ganador" style="font-size: 18px; color: gold">Equipo Ganador</span>
+                        </div>                                
+                </div>
                 <div class="grid-final" id="desktop-partido-64">64</div>
                 <div class="grid-tercer" id="desktop-partido-63">63</div>
 

@@ -38,7 +38,7 @@
                     <tr>
                         <th>
                             <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#datos-desktop-partido-${partido.numero}">+</button>
-                            Partido ${partido.numero}
+                            Partido ${ partido.numero==63 ? "3er Puesto" : partido.numero==64 ? "Final"   : partido.numero }
                         </th>                                
                     </tr>
                 </thead>

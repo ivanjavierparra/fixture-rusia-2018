@@ -7,6 +7,7 @@ $("#btn-tabla-Octavos").click(function() {
     $("#tabla-Cuartos").hide();
     $("#tabla-Semis").hide();
     $("#tabla-Final").hide();
+    $("#ganadorcito").hide();
 
 });
 
@@ -16,6 +17,7 @@ $("#btn-tabla-Cuartos").click(function() {
     $("#tabla-Cuartos").show();
     $("#tabla-Semis").hide();
     $("#tabla-Final").hide();
+    $("#ganadorcito").hide();
 
 });
 
@@ -25,6 +27,7 @@ $("#btn-tabla-Semis").click(function() {
     $("#tabla-Cuartos").hide();
     $("#tabla-Semis").show();
     $("#tabla-Final").hide();
+    $("#ganadorcito").hide();
 
 });
 
@@ -34,6 +37,7 @@ $("#btn-tabla-Final").click(function() {
     $("#tabla-Cuartos").hide();
     $("#tabla-Semis").hide();
     $("#tabla-Final").show();
+    $("#ganadorcito").show();
 
 }); 
 
