@@ -31,7 +31,7 @@
     
 
     var partidoDesktopTemplate = function(partido){
-        return `<div class="col-12 text-center">
+        return `<div class="col-12 text-center" style="position: relative;left: 50%;top: 50%;transform: translate(-50%, -50%);">
         <div class="table-responsive" style="border-radius: 10px;background-color: #e4c275;">
             <table id="tabla-desktop-partido-${partido.numero}" class="table table-sm table-llaves">
                 <thead>

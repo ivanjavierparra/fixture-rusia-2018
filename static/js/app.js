@@ -273,7 +273,7 @@ var app = (function(scope = {}) {
             }else{
                 partido.partidoSiguiente.equipoLocal = partido.getGanador();
             } 
-                
+            localStorage.setItem('fixture', JSON.stringify(fixture));
             this.actualizarLlavesPhone();
             this.actualizarLlavesDesktop();
         }
